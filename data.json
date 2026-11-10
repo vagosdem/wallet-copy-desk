@@ -1,0 +1,735 @@
+{
+  "mode": "paper",
+  "disclaimer": "All figures are paper / simulated. No live orders are placed from this desk.",
+  "generated_at": "2026-11-11 00:09:12 EET (Europe/Athens)",
+  "generated_at_iso": "2026-11-11T00:09:12+02:00",
+  "generated_at_hhmm": "00:09",
+  "timezone": "Europe/Athens",
+  "watcher": {
+    "up": true,
+    "status_label": "Watcher up",
+    "pid": 21959,
+    "started_at": "2026-11-10 22:19:59 EET (Europe/Athens)",
+    "started_at_iso": "2026-11-10T22:19:59+02:00",
+    "log_exists": true,
+    "log_has_start": true,
+    "log_has_stop": false,
+    "last_log_line": "scan failed for 4ueq9Qy3ECqaAjm1T7aqt1PJ343kJcwWQ2Vjuxb2SaSu: HTTP 429"
+  },
+  "price": {
+    "symbol": "JUP/USDC",
+    "source": "Jupiter Price API v3",
+    "source_url": "https://api.jup.ag/price/v3?ids=JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+    "note": "USD mark used as a USDC proxy; the API did not return a 1h change.",
+    "usd": 0.250225080157,
+    "usd_display": "0.250225",
+    "change_1h_pct": null,
+    "change_24h_pct": -1.168736,
+    "marked_at": "2026-11-11 00:09:12 EET (Europe/Athens)",
+    "marked_at_iso": "2026-11-11T00:09:12+02:00",
+    "marked_at_hhmm": "00:09",
+    "raw": {
+      "liquidity": 5266936.394741038,
+      "blockId": 467883144
+    }
+  },
+  "kpis": {
+    "start_cash_usdc": 1000.0,
+    "cash_usdc": 924.85,
+    "cash_usdc_display": "924.85",
+    "open_jup": 292.678919,
+    "open_jup_display": "292.678919",
+    "open_cost_usdc": 75.15,
+    "open_cost_usdc_display": "75.15",
+    "open_mark_usdc": 73.235606,
+    "open_mark_usdc_display": "73.24",
+    "equity_usdc": 998.085606,
+    "equity_usdc_display": "998.09",
+    "equity_change_usdc": -1.914394,
+    "equity_change_usdc_display": "1.91",
+    "equity_change_sign": "down",
+    "equity_change_pct": -0.1914,
+    "fills": 3,
+    "skips": 0,
+    "realized_pnl_usdc": 0.0,
+    "realized_pnl_usdc_display": "0.00",
+    "unrealized_pnl_usdc": -1.914394,
+    "unrealized_pnl_usdc_display": "-1.91",
+    "closed_trades": 0,
+    "closed_wins": 0,
+    "closed_losses": 0,
+    "closed_label": "no closed trades yet"
+  },
+  "equity_series": [
+    {
+      "t": "22:19",
+      "iso": "2026-11-10T22:19:59+02:00",
+      "equity": 1000.0,
+      "equity_display": "1000.00",
+      "kind": "start"
+    },
+    {
+      "t": "20:26",
+      "iso": "2026-11-10T20:26:35+02:00",
+      "equity": 1000.0,
+      "equity_display": "1000.00",
+      "kind": "fill"
+    },
+    {
+      "t": "20:37",
+      "iso": "2026-11-10T20:37:32+02:00",
+      "equity": 1000.0,
+      "equity_display": "1000.00",
+      "kind": "fill"
+    },
+    {
+      "t": "22:16",
+      "iso": "2026-11-10T22:16:10+02:00",
+      "equity": 1000.0,
+      "equity_display": "1000.00",
+      "kind": "fill"
+    },
+    {
+      "t": "00:09",
+      "iso": "2026-11-11T00:09:12+02:00",
+      "equity": 998.085606,
+      "equity_display": "998.09",
+      "kind": "mark"
+    }
+  ],
+  "leaders": [
+    {
+      "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+      "wallet_short": "7vBb4gR\u2026arNx",
+      "solscan": "https://solscan.io/account/7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+      "signals": 3,
+      "fills": 3,
+      "skips": 0,
+      "open_jup": 292.678919,
+      "open_jup_display": "292.678919",
+      "open_cost_usdc": 75.15,
+      "open_cost_usdc_display": "75.15",
+      "open_mark_usdc": 73.235606,
+      "open_mark_usdc_display": "73.24",
+      "deployed_usdc": 75.15,
+      "deployed_usdc_display": "75.15",
+      "realized_pnl_usdc": 0.0,
+      "realized_pnl_usdc_display": "0.00",
+      "unrealized_pnl_usdc": -1.914394,
+      "unrealized_pnl_usdc_display": "-1.91",
+      "cash_note": "Paper cash is held at desk level, not split by leader. Deployed is this wallet's open cost."
+    },
+    {
+      "wallet": "CiNxknJj1E57wfWv7P1vR7mYg7yJ5BuTS6nr5i1AQ728",
+      "wallet_short": "CiNxknJ\u2026Q728",
+      "solscan": "https://solscan.io/account/CiNxknJj1E57wfWv7P1vR7mYg7yJ5BuTS6nr5i1AQ728",
+      "signals": 0,
+      "fills": 0,
+      "skips": 0,
+      "open_jup": 0.0,
+      "open_jup_display": "0",
+      "open_cost_usdc": 0.0,
+      "open_cost_usdc_display": "0.00",
+      "open_mark_usdc": 0.0,
+      "open_mark_usdc_display": "0.00",
+      "deployed_usdc": 0.0,
+      "deployed_usdc_display": "0.00",
+      "realized_pnl_usdc": 0.0,
+      "realized_pnl_usdc_display": "0.00",
+      "unrealized_pnl_usdc": 0.0,
+      "unrealized_pnl_usdc_display": "0.00",
+      "cash_note": "Paper cash is held at desk level, not split by leader. Deployed is this wallet's open cost."
+    },
+    {
+      "wallet": "4ueq9Qy3ECqaAjm1T7aqt1PJ343kJcwWQ2Vjuxb2SaSu",
+      "wallet_short": "4ueq9Qy\u2026SaSu",
+      "solscan": "https://solscan.io/account/4ueq9Qy3ECqaAjm1T7aqt1PJ343kJcwWQ2Vjuxb2SaSu",
+      "signals": 0,
+      "fills": 0,
+      "skips": 0,
+      "open_jup": 0.0,
+      "open_jup_display": "0",
+      "open_cost_usdc": 0.0,
+      "open_cost_usdc_display": "0.00",
+      "open_mark_usdc": 0.0,
+      "open_mark_usdc_display": "0.00",
+      "deployed_usdc": 0.0,
+      "deployed_usdc_display": "0.00",
+      "realized_pnl_usdc": 0.0,
+      "realized_pnl_usdc_display": "0.00",
+      "unrealized_pnl_usdc": 0.0,
+      "unrealized_pnl_usdc_display": "0.00",
+      "cash_note": "Paper cash is held at desk level, not split by leader. Deployed is this wallet's open cost."
+    }
+  ],
+  "desk": [
+    {
+      "id": "desk-lead",
+      "name": "Desk Lead",
+      "who": "copy",
+      "role": "Runs the room and the overnight shift; wakes the human only for invalidation hits.",
+      "color": "#4f46e5",
+      "bg": "#eef2ff"
+    },
+    {
+      "id": "wallet-scout",
+      "name": "Wallet Scout",
+      "who": "bot",
+      "role": "Reports observed swaps.",
+      "color": "#0284c7",
+      "bg": "#e0f2fe"
+    },
+    {
+      "id": "fill-analyst",
+      "name": "Fill Analyst",
+      "who": "bot",
+      "role": "Compares leader vs follower fills.",
+      "color": "#0f766e",
+      "bg": "#ccfbf1"
+    },
+    {
+      "id": "risk-reviewer",
+      "name": "Risk Reviewer",
+      "who": "bot",
+      "role": "Checks decisions vs paper rules.",
+      "color": "#be123c",
+      "bg": "#ffe4e6"
+    },
+    {
+      "id": "ledger-reporter",
+      "name": "Ledger Reporter",
+      "who": "bot",
+      "role": "Cash/P&L digests.",
+      "color": "#b45309",
+      "bg": "#fef3c7"
+    },
+    {
+      "id": "wallet-researcher",
+      "name": "Wallet Researcher",
+      "who": "bot",
+      "role": "Vets candidate wallets.",
+      "color": "#7c3aed",
+      "bg": "#ede9fe"
+    },
+    {
+      "id": "strategy-tester",
+      "name": "Strategy Tester",
+      "who": "bot",
+      "role": "Filtered vs baseline.",
+      "color": "#334155",
+      "bg": "#e2e8f0"
+    }
+  ],
+  "cash_note": "Paper cash is a single desk balance. Per-wallet figures show deployed open cost plus realized and unrealized P&L.",
+  "decisions": [
+    {
+      "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+      "wallet_short": "7vBb4gR\u2026arNx",
+      "signature": "Wyo6q1cbwuYjxCRzgSgjxWwRpuxhhHAaXsAjNRAft8NKSwdBrfQhFu8ez1KqbrVc3R3qnjgH5w6XV6XXcNMbzxU",
+      "explorer": "https://explorer.solana.com/tx/Wyo6q1cbwuYjxCRzgSgjxWwRpuxhhHAaXsAjNRAft8NKSwdBrfQhFu8ez1KqbrVc3R3qnjgH5w6XV6XXcNMbzxU",
+      "solscan": "https://solscan.io/tx/Wyo6q1cbwuYjxCRzgSgjxWwRpuxhhHAaXsAjNRAft8NKSwdBrfQhFu8ez1KqbrVc3R3qnjgH5w6XV6XXcNMbzxU",
+      "chain_time": "2026-11-10 22:15:45 EET (Europe/Athens)",
+      "chain_time_iso": "2026-11-10T22:15:45+02:00",
+      "observed_time": "2026-11-10 22:16:10 EET (Europe/Athens)",
+      "observed_time_iso": "2026-11-10T22:16:10+02:00",
+      "time_hhmm": "22:16",
+      "side": "buy",
+      "tag": "BUY",
+      "decision": "paper_fill",
+      "reason": "all paper rules passed",
+      "size_usdc": 25.0,
+      "size_usdc_display": "25.00",
+      "jup": 97.807234,
+      "jup_display": "97.807234",
+      "effective_price": 0.25611603,
+      "effective_price_display": "0.256116"
+    },
+    {
+      "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+      "wallet_short": "7vBb4gR\u2026arNx",
+      "signature": "4kdVDzqjLA21UMZRTWgEqKY1HWYaJeGFrE2bmskoTy9DmnEE1gczRi8P4og2eStfqRYEywjNfPt3ucnUtnT2RCax",
+      "explorer": "https://explorer.solana.com/tx/4kdVDzqjLA21UMZRTWgEqKY1HWYaJeGFrE2bmskoTy9DmnEE1gczRi8P4og2eStfqRYEywjNfPt3ucnUtnT2RCax",
+      "solscan": "https://solscan.io/tx/4kdVDzqjLA21UMZRTWgEqKY1HWYaJeGFrE2bmskoTy9DmnEE1gczRi8P4og2eStfqRYEywjNfPt3ucnUtnT2RCax",
+      "chain_time": "2026-11-10 20:37:17 EET (Europe/Athens)",
+      "chain_time_iso": "2026-11-10T20:37:17+02:00",
+      "observed_time": "2026-11-10 20:37:32 EET (Europe/Athens)",
+      "observed_time_iso": "2026-11-10T20:37:32+02:00",
+      "time_hhmm": "20:37",
+      "side": "buy",
+      "tag": "BUY",
+      "decision": "paper_fill",
+      "reason": "all paper rules passed",
+      "size_usdc": 25.0,
+      "size_usdc_display": "25.00",
+      "jup": 96.97802,
+      "jup_display": "96.97802",
+      "effective_price": 0.25830595,
+      "effective_price_display": "0.258306"
+    },
+    {
+      "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+      "wallet_short": "7vBb4gR\u2026arNx",
+      "signature": "5zYqgbr5z5pX47EyxwVExo7mRyuM3Uq62iHDbZYd4VaNsCjauzeL7gxaBTdcQD2hSxtte6kgqogm5qK6Lq4z4urt",
+      "explorer": "https://explorer.solana.com/tx/5zYqgbr5z5pX47EyxwVExo7mRyuM3Uq62iHDbZYd4VaNsCjauzeL7gxaBTdcQD2hSxtte6kgqogm5qK6Lq4z4urt",
+      "solscan": "https://solscan.io/tx/5zYqgbr5z5pX47EyxwVExo7mRyuM3Uq62iHDbZYd4VaNsCjauzeL7gxaBTdcQD2hSxtte6kgqogm5qK6Lq4z4urt",
+      "chain_time": "2026-11-10 20:26:15 EET (Europe/Athens)",
+      "chain_time_iso": "2026-11-10T20:26:15+02:00",
+      "observed_time": "2026-11-10 20:26:35 EET (Europe/Athens)",
+      "observed_time_iso": "2026-11-10T20:26:35+02:00",
+      "time_hhmm": "20:26",
+      "side": "buy",
+      "tag": "BUY",
+      "decision": "paper_fill",
+      "reason": "all paper rules passed",
+      "size_usdc": 25.0,
+      "size_usdc_display": "25.00",
+      "jup": 97.893665,
+      "jup_display": "97.893665",
+      "effective_price": 0.2558899,
+      "effective_price_display": "0.255890"
+    }
+  ],
+  "risk": {
+    "buy_size_usdc": 25.0,
+    "max_open_cost_usdc": 100.0,
+    "open_cost_usdc": 75.15,
+    "open_cost_usdc_display": "75.15",
+    "utilization_pct": 75.15,
+    "signal_window_s": 45,
+    "max_impact_pct": 0.5,
+    "max_adverse_pct": 1.0,
+    "invalidation_below_cost_pct": 10.0,
+    "positions": [
+      {
+        "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+        "wallet_short": "7vBb4gR\u2026arNx",
+        "jup": 292.678919,
+        "jup_display": "292.678919",
+        "cost_usdc": 75.15,
+        "cost_usdc_display": "75.15",
+        "cost_basis": 0.25676602,
+        "cost_basis_display": "0.256766",
+        "invalidation_price": 0.23108941,
+        "invalidation_price_display": "0.231089",
+        "mark_price": 0.25022508,
+        "mark_price_display": "0.250225",
+        "pct_from_cost": -2.5474,
+        "room_to_invalidation_pct_of_cost": 7.4526,
+        "pct_above_invalidation": 8.2806,
+        "hit": false
+      }
+    ]
+  },
+  "overnight": {
+    "has_runs": true,
+    "label": "last run 2026-11-10 23:14:35 EET (Europe/Athens) \u00b7 clean",
+    "last_run": "2026-11-10 23:14:35 EET (Europe/Athens)",
+    "last_run_iso": "2026-11-10T23:14:35+02:00",
+    "last_result": "clean",
+    "last_text": "Watcher running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 0.05% below cost (mark 75.12 USDC vs 75.15 USDC cost at 0.256647 USDC/JUP) and has not hit the 10% invalidation level.",
+    "clean_count": 2,
+    "alert_count": 0,
+    "runs": [
+      {
+        "time": "2026-11-10 22:10:36 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T22:10:36+02:00",
+        "result": "clean",
+        "text": "Watcher running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 1.40% below cost (mark 49.40 USDC vs 50.10 USDC cost at 0.253495 USDC/JUP) and has not hit the 10% invalidation level.",
+        "alert": false
+      },
+      {
+        "time": "2026-11-10 23:14:35 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T23:14:35+02:00",
+        "result": "clean",
+        "text": "Watcher running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 0.05% below cost (mark 75.12 USDC vs 75.15 USDC cost at 0.256647 USDC/JUP) and has not hit the 10% invalidation level.",
+        "alert": false
+      }
+    ]
+  },
+  "digest": {
+    "has_entries": true,
+    "entries": [
+      {
+        "time": "2026-11-10 21:11:47 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T21:11:47+02:00",
+        "title": "Daily paper digest",
+        "summary": "cash 949.90 USDC; realized P&L 0.00 USDC; open 194.871685 JUP; 2 fills, 0 skips"
+      }
+    ]
+  },
+  "bot_activity": {
+    "source": "transcripts",
+    "note": "One-line summaries from real bot transcripts and the Wallet Copy Desk group on 10 Nov 2026. No entries were invented. Desk Lead watcher, digest, and overnight events are added by dashboard_data.py from local logs, not from this file.",
+    "has_transcripts": true,
+    "bots": [
+      {
+        "id": "desk-lead",
+        "name": "Desk Lead",
+        "who": "copy",
+        "role": "Runs the room and the overnight shift; wakes the human only for invalidation hits.",
+        "color": "#4f46e5",
+        "bg": "#eef2ff",
+        "has_activity": true,
+        "event_count": 7,
+        "events": [
+          {
+            "bot_id": "desk-lead",
+            "bot_name": "Desk Lead",
+            "who": "copy",
+            "source": "overnight",
+            "time": "2026-11-10 23:14:35 EET (Europe/Athens)",
+            "time_iso": "2026-11-10T23:14:35+02:00",
+            "summary": "Overnight watch: clean \u2014 Watcher running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 0.05% below cost (mark 75.12 USDC vs 75.15 USDC cost at 0.256647 USDC/JUP) and has not\u2026"
+          },
+          {
+            "bot_id": "desk-lead",
+            "bot_name": "Desk Lead",
+            "who": "copy",
+            "source": "watcher",
+            "time": "2026-11-10 22:19:59 EET (Europe/Athens)",
+            "time_iso": "2026-11-10T22:19:59+02:00",
+            "summary": "Started the paper watcher on the three leader wallets (pid 21959)."
+          },
+          {
+            "bot_id": "desk-lead",
+            "bot_name": "Desk Lead",
+            "who": "copy",
+            "source": "watcher",
+            "time": "2026-11-10 22:16:10 EET (Europe/Athens)",
+            "time_iso": "2026-11-10T22:16:10+02:00",
+            "summary": "Recorded paper buy fill on 7vBb4gR\u2026arNx (25.00 USDC for 97.807234 JUP; all paper rules passed)."
+          },
+          {
+            "bot_id": "desk-lead",
+            "bot_name": "Desk Lead",
+            "who": "copy",
+            "source": "overnight",
+            "time": "2026-11-10 22:10:36 EET (Europe/Athens)",
+            "time_iso": "2026-11-10T22:10:36+02:00",
+            "summary": "Overnight watch: clean \u2014 Watcher running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 1.40% below cost (mark 49.40 USDC vs 50.10 USDC cost at 0.253495 USDC/JUP) and has not\u2026"
+          },
+          {
+            "bot_id": "desk-lead",
+            "bot_name": "Desk Lead",
+            "who": "copy",
+            "source": "digest",
+            "time": "2026-11-10 21:11:47 EET (Europe/Athens)",
+            "time_iso": "2026-11-10T21:11:47+02:00",
+            "summary": "Wrote a silent daily digest (cash 949.90 USDC; realized P&L 0.00 USDC; open 194.871685 JUP; 2 fills, 0 skips)."
+          },
+          {
+            "bot_id": "desk-lead",
+            "bot_name": "Desk Lead",
+            "who": "copy",
+            "source": "watcher",
+            "time": "2026-11-10 20:37:32 EET (Europe/Athens)",
+            "time_iso": "2026-11-10T20:37:32+02:00",
+            "summary": "Recorded paper buy fill on 7vBb4gR\u2026arNx (25.00 USDC for 96.97802 JUP; all paper rules passed)."
+          },
+          {
+            "bot_id": "desk-lead",
+            "bot_name": "Desk Lead",
+            "who": "copy",
+            "source": "watcher",
+            "time": "2026-11-10 20:26:35 EET (Europe/Athens)",
+            "time_iso": "2026-11-10T20:26:35+02:00",
+            "summary": "Recorded paper buy fill on 7vBb4gR\u2026arNx (25.00 USDC for 97.893665 JUP; all paper rules passed)."
+          }
+        ]
+      },
+      {
+        "id": "wallet-scout",
+        "name": "Wallet Scout",
+        "who": "bot",
+        "role": "Reports observed swaps.",
+        "color": "#0284c7",
+        "bg": "#e0f2fe",
+        "has_activity": true,
+        "event_count": 1,
+        "events": [
+          {
+            "bot_id": "wallet-scout",
+            "bot_name": "Wallet Scout",
+            "who": "bot",
+            "source": "group",
+            "time": "2026-11-10 20:31 EET (Europe/Athens)",
+            "time_iso": "2026-11-10T20:31:00+02:00",
+            "summary": "Listed the three synthetic demo signals from demo-report.json (buy, half-exit, late-entry)."
+          }
+        ]
+      },
+      {
+        "id": "fill-analyst",
+        "name": "Fill Analyst",
+        "who": "bot",
+        "role": "Compares leader vs follower fills.",
+        "color": "#0f766e",
+        "bg": "#ccfbf1",
+        "has_activity": true,
+        "event_count": 1,
+        "events": [
+          {
+            "bot_id": "fill-analyst",
+            "bot_name": "Fill Analyst",
+            "who": "bot",
+            "source": "group",
+            "time": "2026-11-10 20:31 EET (Europe/Athens)",
+            "time_iso": "2026-11-10T20:31:00+02:00",
+            "summary": "Explained the two synthetic paper fills and the adverse-price skip on demo-late-entry."
+          }
+        ]
+      },
+      {
+        "id": "risk-reviewer",
+        "name": "Risk Reviewer",
+        "who": "bot",
+        "role": "Checks decisions vs paper rules.",
+        "color": "#be123c",
+        "bg": "#ffe4e6",
+        "has_activity": true,
+        "event_count": 2,
+        "events": [
+          {
+            "bot_id": "risk-reviewer",
+            "bot_name": "Risk Reviewer",
+            "who": "bot",
+            "source": "group",
+            "time": "2026-11-10 20:32 EET (Europe/Athens)",
+            "time_iso": "2026-11-10T20:32:00+02:00",
+            "summary": "Identified the 1.00% adverse-price rule as the only block on demo-late-entry, about 4.7% worse than the leader."
+          },
+          {
+            "bot_id": "risk-reviewer",
+            "bot_name": "Risk Reviewer",
+            "who": "bot",
+            "source": "group",
+            "time": "2026-11-10 20:31 EET (Europe/Athens)",
+            "time_iso": "2026-11-10T20:31:00+02:00",
+            "summary": "Asked for the decision record before naming a blocking rule."
+          }
+        ]
+      },
+      {
+        "id": "ledger-reporter",
+        "name": "Ledger Reporter",
+        "who": "bot",
+        "role": "Cash/P&L digests.",
+        "color": "#b45309",
+        "bg": "#fef3c7",
+        "has_activity": true,
+        "event_count": 1,
+        "events": [
+          {
+            "bot_id": "ledger-reporter",
+            "bot_name": "Ledger Reporter",
+            "who": "bot",
+            "source": "group",
+            "time": "2026-11-10 20:31 EET (Europe/Athens)",
+            "time_iso": "2026-11-10T20:31:00+02:00",
+            "summary": "Verified synthetic demo realized P&L of 2.38 USDC and 24.925 JUP still open."
+          }
+        ]
+      },
+      {
+        "id": "wallet-researcher",
+        "name": "Wallet Researcher",
+        "who": "bot",
+        "role": "Vets candidate wallets.",
+        "color": "#7c3aed",
+        "bg": "#ede9fe",
+        "has_activity": true,
+        "event_count": 1,
+        "events": [
+          {
+            "bot_id": "wallet-researcher",
+            "bot_name": "Wallet Researcher",
+            "who": "bot",
+            "source": "private",
+            "time": "2026-11-10 20:22 EET (Europe/Athens)",
+            "time_iso": "2026-11-10T20:22:00+02:00",
+            "summary": "Checked its files, found no wallet batch, and asked for public addresses or a history export."
+          }
+        ]
+      },
+      {
+        "id": "strategy-tester",
+        "name": "Strategy Tester",
+        "who": "bot",
+        "role": "Filtered vs baseline.",
+        "color": "#334155",
+        "bg": "#e2e8f0",
+        "has_activity": true,
+        "event_count": 1,
+        "events": [
+          {
+            "bot_id": "strategy-tester",
+            "bot_name": "Strategy Tester",
+            "who": "bot",
+            "source": "private",
+            "time": "2026-11-10 20:23 EET (Europe/Athens)",
+            "time_iso": "2026-11-10T20:23:00+02:00",
+            "summary": "Checked its files, found no paper-results batch, and asked for a ledger JSON or digest."
+          }
+        ]
+      },
+      {
+        "id": "group",
+        "name": "Wallet Copy Desk group",
+        "who": "group",
+        "role": "Group chat",
+        "color": "#334155",
+        "bg": "#e2e8f0",
+        "has_activity": true,
+        "event_count": 1,
+        "events": [
+          {
+            "bot_id": "group",
+            "bot_name": "Wallet Copy Desk group",
+            "who": "bot",
+            "source": "group",
+            "time": "2026-11-10 20:31 EET (Europe/Athens)",
+            "time_iso": "2026-11-10T20:31:00+02:00",
+            "summary": "User posted the synthetic acceptance test, tagging Wallet Scout, Fill Analyst, Risk Reviewer, and Ledger Reporter."
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "bot_id": "desk-lead",
+        "bot_name": "Desk Lead",
+        "who": "copy",
+        "source": "overnight",
+        "time": "2026-11-10 23:14:35 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T23:14:35+02:00",
+        "summary": "Overnight watch: clean \u2014 Watcher running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 0.05% below cost (mark 75.12 USDC vs 75.15 USDC cost at 0.256647 USDC/JUP) and has not\u2026"
+      },
+      {
+        "bot_id": "desk-lead",
+        "bot_name": "Desk Lead",
+        "who": "copy",
+        "source": "watcher",
+        "time": "2026-11-10 22:19:59 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T22:19:59+02:00",
+        "summary": "Started the paper watcher on the three leader wallets (pid 21959)."
+      },
+      {
+        "bot_id": "desk-lead",
+        "bot_name": "Desk Lead",
+        "who": "copy",
+        "source": "watcher",
+        "time": "2026-11-10 22:16:10 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T22:16:10+02:00",
+        "summary": "Recorded paper buy fill on 7vBb4gR\u2026arNx (25.00 USDC for 97.807234 JUP; all paper rules passed)."
+      },
+      {
+        "bot_id": "desk-lead",
+        "bot_name": "Desk Lead",
+        "who": "copy",
+        "source": "overnight",
+        "time": "2026-11-10 22:10:36 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T22:10:36+02:00",
+        "summary": "Overnight watch: clean \u2014 Watcher running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 1.40% below cost (mark 49.40 USDC vs 50.10 USDC cost at 0.253495 USDC/JUP) and has not\u2026"
+      },
+      {
+        "bot_id": "desk-lead",
+        "bot_name": "Desk Lead",
+        "who": "copy",
+        "source": "digest",
+        "time": "2026-11-10 21:11:47 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T21:11:47+02:00",
+        "summary": "Wrote a silent daily digest (cash 949.90 USDC; realized P&L 0.00 USDC; open 194.871685 JUP; 2 fills, 0 skips)."
+      },
+      {
+        "bot_id": "desk-lead",
+        "bot_name": "Desk Lead",
+        "who": "copy",
+        "source": "watcher",
+        "time": "2026-11-10 20:37:32 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T20:37:32+02:00",
+        "summary": "Recorded paper buy fill on 7vBb4gR\u2026arNx (25.00 USDC for 96.97802 JUP; all paper rules passed)."
+      },
+      {
+        "bot_id": "risk-reviewer",
+        "bot_name": "Risk Reviewer",
+        "who": "bot",
+        "source": "group",
+        "time": "2026-11-10 20:32 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T20:32:00+02:00",
+        "summary": "Identified the 1.00% adverse-price rule as the only block on demo-late-entry, about 4.7% worse than the leader."
+      },
+      {
+        "bot_id": "group",
+        "bot_name": "Wallet Copy Desk group",
+        "who": "bot",
+        "source": "group",
+        "time": "2026-11-10 20:31 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T20:31:00+02:00",
+        "summary": "User posted the synthetic acceptance test, tagging Wallet Scout, Fill Analyst, Risk Reviewer, and Ledger Reporter."
+      },
+      {
+        "bot_id": "wallet-scout",
+        "bot_name": "Wallet Scout",
+        "who": "bot",
+        "source": "group",
+        "time": "2026-11-10 20:31 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T20:31:00+02:00",
+        "summary": "Listed the three synthetic demo signals from demo-report.json (buy, half-exit, late-entry)."
+      },
+      {
+        "bot_id": "risk-reviewer",
+        "bot_name": "Risk Reviewer",
+        "who": "bot",
+        "source": "group",
+        "time": "2026-11-10 20:31 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T20:31:00+02:00",
+        "summary": "Asked for the decision record before naming a blocking rule."
+      },
+      {
+        "bot_id": "ledger-reporter",
+        "bot_name": "Ledger Reporter",
+        "who": "bot",
+        "source": "group",
+        "time": "2026-11-10 20:31 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T20:31:00+02:00",
+        "summary": "Verified synthetic demo realized P&L of 2.38 USDC and 24.925 JUP still open."
+      },
+      {
+        "bot_id": "fill-analyst",
+        "bot_name": "Fill Analyst",
+        "who": "bot",
+        "source": "group",
+        "time": "2026-11-10 20:31 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T20:31:00+02:00",
+        "summary": "Explained the two synthetic paper fills and the adverse-price skip on demo-late-entry."
+      },
+      {
+        "bot_id": "desk-lead",
+        "bot_name": "Desk Lead",
+        "who": "copy",
+        "source": "watcher",
+        "time": "2026-11-10 20:26:35 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T20:26:35+02:00",
+        "summary": "Recorded paper buy fill on 7vBb4gR\u2026arNx (25.00 USDC for 97.893665 JUP; all paper rules passed)."
+      },
+      {
+        "bot_id": "strategy-tester",
+        "bot_name": "Strategy Tester",
+        "who": "bot",
+        "source": "private",
+        "time": "2026-11-10 20:23 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T20:23:00+02:00",
+        "summary": "Checked its files, found no paper-results batch, and asked for a ledger JSON or digest."
+      },
+      {
+        "bot_id": "wallet-researcher",
+        "bot_name": "Wallet Researcher",
+        "who": "bot",
+        "source": "private",
+        "time": "2026-11-10 20:22 EET (Europe/Athens)",
+        "time_iso": "2026-11-10T20:22:00+02:00",
+        "summary": "Checked its files, found no wallet batch, and asked for public addresses or a history export."
+      }
+    ]
+  }
+}
