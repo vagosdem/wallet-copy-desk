@@ -1,9 +1,9 @@
 {
   "mode": "paper",
   "disclaimer": "All figures are paper / simulated. No live orders are placed from this desk.",
-  "generated_at": "2026-11-11 01:14:30 EET (Europe/Athens)",
-  "generated_at_iso": "2026-11-11T01:14:30+02:00",
-  "generated_at_hhmm": "01:14",
+  "generated_at": "2026-11-11 01:34:35 EET (Europe/Athens)",
+  "generated_at_iso": "2026-11-11T01:34:35+02:00",
+  "generated_at_hhmm": "01:34",
   "timezone": "Europe/Athens",
   "watcher": {
     "up": true,
@@ -21,16 +21,16 @@
     "source": "Jupiter Price API v3",
     "source_url": "https://api.jup.ag/price/v3?ids=JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
     "note": "USD mark used as a USDC proxy; the API did not return a 1h change.",
-    "usd": 0.250176903227,
-    "usd_display": "0.250177",
+    "usd": 0.251603469874,
+    "usd_display": "0.251603",
     "change_1h_pct": null,
-    "change_24h_pct": -1.119427,
-    "marked_at": "2026-11-11 01:14:31 EET (Europe/Athens)",
-    "marked_at_iso": "2026-11-11T01:14:31+02:00",
-    "marked_at_hhmm": "01:14",
+    "change_24h_pct": -0.394063,
+    "marked_at": "2026-11-11 01:34:36 EET (Europe/Athens)",
+    "marked_at_iso": "2026-11-11T01:34:36+02:00",
+    "marked_at_hhmm": "01:34",
     "raw": {
-      "liquidity": 5274647.895492977,
-      "blockId": 467901391
+      "liquidity": 5308813.79338358,
+      "blockId": 467907097
     }
   },
   "kpis": {
@@ -41,20 +41,20 @@
     "open_jup_display": "292.678919",
     "open_cost_usdc": 75.15,
     "open_cost_usdc_display": "75.15",
-    "open_mark_usdc": 73.221506,
-    "open_mark_usdc_display": "73.22",
-    "equity_usdc": 998.071506,
-    "equity_usdc_display": "998.07",
-    "equity_change_usdc": -1.928494,
-    "equity_change_usdc_display": "1.93",
+    "open_mark_usdc": 73.639032,
+    "open_mark_usdc_display": "73.64",
+    "equity_usdc": 998.489032,
+    "equity_usdc_display": "998.49",
+    "equity_change_usdc": -1.510968,
+    "equity_change_usdc_display": "1.51",
     "equity_change_sign": "down",
-    "equity_change_pct": -0.1928,
+    "equity_change_pct": -0.1511,
     "fills": 3,
     "skips": 0,
     "realized_pnl_usdc": 0.0,
     "realized_pnl_usdc_display": "0.00",
-    "unrealized_pnl_usdc": -1.928494,
-    "unrealized_pnl_usdc_display": "-1.93",
+    "unrealized_pnl_usdc": -1.510968,
+    "unrealized_pnl_usdc_display": "-1.51",
     "closed_trades": 0,
     "closed_wins": 0,
     "closed_losses": 0,
@@ -90,10 +90,10 @@
       "kind": "fill"
     },
     {
-      "t": "01:14",
-      "iso": "2026-11-11T01:14:31+02:00",
-      "equity": 998.071506,
-      "equity_display": "998.07",
+      "t": "01:34",
+      "iso": "2026-11-11T01:34:36+02:00",
+      "equity": 998.489032,
+      "equity_display": "998.49",
       "kind": "mark"
     }
   ],
@@ -109,14 +109,14 @@
       "open_jup_display": "292.678919",
       "open_cost_usdc": 75.15,
       "open_cost_usdc_display": "75.15",
-      "open_mark_usdc": 73.221506,
-      "open_mark_usdc_display": "73.22",
+      "open_mark_usdc": 73.639032,
+      "open_mark_usdc_display": "73.64",
       "deployed_usdc": 75.15,
       "deployed_usdc_display": "75.15",
       "realized_pnl_usdc": 0.0,
       "realized_pnl_usdc_display": "0.00",
-      "unrealized_pnl_usdc": -1.928494,
-      "unrealized_pnl_usdc_display": "-1.93",
+      "unrealized_pnl_usdc": -1.510968,
+      "unrealized_pnl_usdc_display": "-1.51",
       "cash_note": "Paper cash is held at desk level, not split by leader. Deployed is this wallet's open cost."
     },
     {
@@ -311,11 +311,11 @@
         "cost_basis_display": "0.256766",
         "invalidation_price": 0.23108941,
         "invalidation_price_display": "0.231089",
-        "mark_price": 0.2501769,
-        "mark_price_display": "0.250177",
-        "pct_from_cost": -2.5662,
-        "room_to_invalidation_pct_of_cost": 7.4338,
-        "pct_above_invalidation": 8.2598,
+        "mark_price": 0.25160347,
+        "mark_price_display": "0.251603",
+        "pct_from_cost": -2.0106,
+        "room_to_invalidation_pct_of_cost": 7.9894,
+        "pct_above_invalidation": 8.8771,
         "hit": false
       }
     ]
@@ -420,7 +420,7 @@
             "source": "watcher",
             "time": "2026-11-10 22:45:18 EET (Europe/Athens)",
             "time_iso": "2026-11-10T22:45:18+02:00",
-            "summary": "Started the paper watcher on the three leader wallets (pid 21959)."
+            "summary": "Started the paper watcher on the reviewed leader wallets (pid 21959)."
           },
           {
             "bot_id": "desk-lead",
@@ -661,7 +661,7 @@
         "source": "watcher",
         "time": "2026-11-10 22:45:18 EET (Europe/Athens)",
         "time_iso": "2026-11-10T22:45:18+02:00",
-        "summary": "Started the paper watcher on the three leader wallets (pid 21959)."
+        "summary": "Started the paper watcher on the reviewed leader wallets (pid 21959)."
       },
       {
         "bot_id": "desk-lead",
