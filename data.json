@@ -1,9 +1,9 @@
 {
   "mode": "paper",
   "disclaimer": "All figures are paper / simulated. No live orders are placed from this desk.",
-  "generated_at": "2026-11-11 00:09:12 EET (Europe/Athens)",
-  "generated_at_iso": "2026-11-11T00:09:12+02:00",
-  "generated_at_hhmm": "00:09",
+  "generated_at": "2026-11-11 00:18:40 EET (Europe/Athens)",
+  "generated_at_iso": "2026-11-11T00:18:40+02:00",
+  "generated_at_hhmm": "00:18",
   "timezone": "Europe/Athens",
   "watcher": {
     "up": true,
@@ -21,16 +21,16 @@
     "source": "Jupiter Price API v3",
     "source_url": "https://api.jup.ag/price/v3?ids=JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
     "note": "USD mark used as a USDC proxy; the API did not return a 1h change.",
-    "usd": 0.250225080157,
-    "usd_display": "0.250225",
+    "usd": 0.250362082075,
+    "usd_display": "0.250362",
     "change_1h_pct": null,
-    "change_24h_pct": -1.168736,
-    "marked_at": "2026-11-11 00:09:12 EET (Europe/Athens)",
-    "marked_at_iso": "2026-11-11T00:09:12+02:00",
-    "marked_at_hhmm": "00:09",
+    "change_24h_pct": -1.205295,
+    "marked_at": "2026-11-11 00:18:41 EET (Europe/Athens)",
+    "marked_at_iso": "2026-11-11T00:18:41+02:00",
+    "marked_at_hhmm": "00:18",
     "raw": {
-      "liquidity": 5266936.394741038,
-      "blockId": 467883144
+      "liquidity": 5270437.451721537,
+      "blockId": 467885866
     }
   },
   "kpis": {
@@ -41,20 +41,20 @@
     "open_jup_display": "292.678919",
     "open_cost_usdc": 75.15,
     "open_cost_usdc_display": "75.15",
-    "open_mark_usdc": 73.235606,
-    "open_mark_usdc_display": "73.24",
-    "equity_usdc": 998.085606,
-    "equity_usdc_display": "998.09",
-    "equity_change_usdc": -1.914394,
-    "equity_change_usdc_display": "1.91",
+    "open_mark_usdc": 73.275704,
+    "open_mark_usdc_display": "73.28",
+    "equity_usdc": 998.125704,
+    "equity_usdc_display": "998.13",
+    "equity_change_usdc": -1.874296,
+    "equity_change_usdc_display": "1.87",
     "equity_change_sign": "down",
-    "equity_change_pct": -0.1914,
+    "equity_change_pct": -0.1874,
     "fills": 3,
     "skips": 0,
     "realized_pnl_usdc": 0.0,
     "realized_pnl_usdc_display": "0.00",
-    "unrealized_pnl_usdc": -1.914394,
-    "unrealized_pnl_usdc_display": "-1.91",
+    "unrealized_pnl_usdc": -1.874296,
+    "unrealized_pnl_usdc_display": "-1.87",
     "closed_trades": 0,
     "closed_wins": 0,
     "closed_losses": 0,
@@ -90,10 +90,10 @@
       "kind": "fill"
     },
     {
-      "t": "00:09",
-      "iso": "2026-11-11T00:09:12+02:00",
-      "equity": 998.085606,
-      "equity_display": "998.09",
+      "t": "00:18",
+      "iso": "2026-11-11T00:18:41+02:00",
+      "equity": 998.125704,
+      "equity_display": "998.13",
       "kind": "mark"
     }
   ],
@@ -109,14 +109,14 @@
       "open_jup_display": "292.678919",
       "open_cost_usdc": 75.15,
       "open_cost_usdc_display": "75.15",
-      "open_mark_usdc": 73.235606,
-      "open_mark_usdc_display": "73.24",
+      "open_mark_usdc": 73.275704,
+      "open_mark_usdc_display": "73.28",
       "deployed_usdc": 75.15,
       "deployed_usdc_display": "75.15",
       "realized_pnl_usdc": 0.0,
       "realized_pnl_usdc_display": "0.00",
-      "unrealized_pnl_usdc": -1.914394,
-      "unrealized_pnl_usdc_display": "-1.91",
+      "unrealized_pnl_usdc": -1.874296,
+      "unrealized_pnl_usdc_display": "-1.87",
       "cash_note": "Paper cash is held at desk level, not split by leader. Deployed is this wallet's open cost."
     },
     {
@@ -311,23 +311,23 @@
         "cost_basis_display": "0.256766",
         "invalidation_price": 0.23108941,
         "invalidation_price_display": "0.231089",
-        "mark_price": 0.25022508,
-        "mark_price_display": "0.250225",
-        "pct_from_cost": -2.5474,
-        "room_to_invalidation_pct_of_cost": 7.4526,
-        "pct_above_invalidation": 8.2806,
+        "mark_price": 0.25036208,
+        "mark_price_display": "0.250362",
+        "pct_from_cost": -2.4941,
+        "room_to_invalidation_pct_of_cost": 7.5059,
+        "pct_above_invalidation": 8.3399,
         "hit": false
       }
     ]
   },
   "overnight": {
     "has_runs": true,
-    "label": "last run 2026-11-10 23:14:35 EET (Europe/Athens) \u00b7 clean",
-    "last_run": "2026-11-10 23:14:35 EET (Europe/Athens)",
-    "last_run_iso": "2026-11-10T23:14:35+02:00",
+    "label": "last run 2026-11-11 00:17:04 EET (Europe/Athens) \u00b7 clean",
+    "last_run": "2026-11-11 00:17:04 EET (Europe/Athens)",
+    "last_run_iso": "2026-11-11T00:17:04+02:00",
     "last_result": "clean",
-    "last_text": "Watcher running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 0.05% below cost (mark 75.12 USDC vs 75.15 USDC cost at 0.256647 USDC/JUP) and has not hit the 10% invalidation level.",
-    "clean_count": 2,
+    "last_text": "Watcher running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 2.21% below cost (mark 73.49 USDC vs 75.15 USDC cost at 0.251103 USDC/JUP) and has not hit the 10% invalidation level.",
+    "clean_count": 3,
     "alert_count": 0,
     "runs": [
       {
@@ -342,6 +342,13 @@
         "time_iso": "2026-11-10T23:14:35+02:00",
         "result": "clean",
         "text": "Watcher running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 0.05% below cost (mark 75.12 USDC vs 75.15 USDC cost at 0.256647 USDC/JUP) and has not hit the 10% invalidation level.",
+        "alert": false
+      },
+      {
+        "time": "2026-11-11 00:17:04 EET (Europe/Athens)",
+        "time_iso": "2026-11-11T00:17:04+02:00",
+        "result": "clean",
+        "text": "Watcher running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 2.21% below cost (mark 73.49 USDC vs 75.15 USDC cost at 0.251103 USDC/JUP) and has not hit the 10% invalidation level.",
         "alert": false
       }
     ]
@@ -370,8 +377,17 @@
         "color": "#4f46e5",
         "bg": "#eef2ff",
         "has_activity": true,
-        "event_count": 7,
+        "event_count": 8,
         "events": [
+          {
+            "bot_id": "desk-lead",
+            "bot_name": "Desk Lead",
+            "who": "copy",
+            "source": "overnight",
+            "time": "2026-11-11 00:17:04 EET (Europe/Athens)",
+            "time_iso": "2026-11-11T00:17:04+02:00",
+            "summary": "Overnight watch: clean \u2014 Watcher running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 2.21% below cost (mark 73.49 USDC vs 75.15 USDC cost at 0.251103 USDC/JUP) and has not\u2026"
+          },
           {
             "bot_id": "desk-lead",
             "bot_name": "Desk Lead",
@@ -595,6 +611,15 @@
       }
     ],
     "events": [
+      {
+        "bot_id": "desk-lead",
+        "bot_name": "Desk Lead",
+        "who": "copy",
+        "source": "overnight",
+        "time": "2026-11-11 00:17:04 EET (Europe/Athens)",
+        "time_iso": "2026-11-11T00:17:04+02:00",
+        "summary": "Overnight watch: clean \u2014 Watcher running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 2.21% below cost (mark 73.49 USDC vs 75.15 USDC cost at 0.251103 USDC/JUP) and has not\u2026"
+      },
       {
         "bot_id": "desk-lead",
         "bot_name": "Desk Lead",
