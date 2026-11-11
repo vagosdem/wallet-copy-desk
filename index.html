@@ -9,8 +9,8 @@
   <script src="vendor/lightweight-charts.standalone.production.js"></script>
   <style>
     :root {
-      --bg: #f5f5f5;
-      --ink: #111827;
+      --bg: #f6f7f8;
+      --ink: #111111;
       --muted: #6b7280;
       --faint: #9ca3af;
       --line: #ececec;
@@ -22,28 +22,34 @@
       --red-bg: #fee2e2;
       --red-ink: #991b1b;
       --blue: #2563eb;
-      --shadow: 0 1px 2px rgba(17,24,39,0.05), 0 10px 24px rgba(17,24,39,0.06);
+      --shadow: 0 1px 2px rgba(17,24,39,0.04), 0 8px 24px rgba(17,24,39,0.05);
       --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--font); }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--font); overflow-x: hidden; }
     body { min-height: 100vh; }
+    #app { overflow-x: hidden; }
     a { color: var(--blue); text-decoration: none; font-weight: 600; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 20px 18px 48px; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px 48px; width: 100%; min-width: 0; }
     .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-    h1 { font-size: 22px; font-weight: 750; letter-spacing: -0.03em; margin: 0; flex: 1 1 auto; }
-    .sub { font-size: 12px; color: var(--muted); margin: 8px 0 16px; }
-    .card { background: var(--card); border-radius: 16px; box-shadow: var(--shadow); padding: 18px; }
+    h1 { font-size: 18px; font-weight: 750; letter-spacing: -0.03em; margin: 0; }
+    .sub { font-size: 12px; color: var(--muted); margin: 6px 0 0; }
+    .card { background: var(--card); border-radius: 20px; box-shadow: var(--shadow); padding: 16px 18px; min-width: 0; }
+    button, .card, .modal { scroll-margin-top: 56px; }
     .title { font-size: 15px; font-weight: 650; letter-spacing: -0.01em; margin: 0 0 12px; }
     .pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 650; letter-spacing: 0.01em; line-height: 1.2; white-space: nowrap; }
     .dot { width: 7px; height: 7px; border-radius: 999px; display: inline-block; flex-shrink: 0; }
+    .dot.blink { animation: blink 1.2s ease-in-out infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.18; } }
     .grid { display: grid; gap: 12px; }
     .cols-2 { grid-template-columns: 1fr; }
     @media (min-width: 860px) { .cols-2 { grid-template-columns: 1.2fr 0.8fr; } }
-    .kpi-label { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: 0.04em; }
+    .kpi-label { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
     .kpi-num { font-variant-numeric: tabular-nums; font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; }
-    button, select, input[type="date"] {
+    .mono, .tabular, .log, .equity-num, .mult { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+    button, select, input[type="date"], input[type="text"] {
       font: inherit; color: var(--ink); background: #f9fafb; border: 1px solid var(--line);
       border-radius: 999px; padding: 5px 10px; cursor: pointer;
     }
@@ -57,9 +63,9 @@
     th { color: var(--muted); font-size: 11px; letter-spacing: 0.04em; cursor: pointer; user-select: none; white-space: nowrap; }
     th.sorted { color: var(--ink); }
     .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; padding: 2px 7px; border-radius: 6px; }
-    .tag.BUY { background: #dbeafe; color: #1d4ed8; }
-    .tag.SELL { background: #e5e7eb; color: #111827; }
-    .tag.SKIP { background: #f3f4f6; color: #6b7280; }
+    .tag.BUY { background: #dcfce7; color: #166534; }
+    .tag.SELL { background: #fee2e2; color: #991b1b; }
+    .tag.SKIP, .tag.UNRESOLVED { background: #f3f4f6; color: #6b7280; }
     .feed { display: flex; flex-direction: column; max-height: 420px; overflow: auto; }
     .feed-item { padding: 10px 0; border-top: 1px solid var(--line); font-size: 13px; line-height: 1.45; }
     .feed-item:first-child { border-top: 0; }
@@ -70,25 +76,75 @@
     .tl::before { content: ""; position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 99px; background: var(--green); }
     .tl.alert::before { background: var(--red); }
     .muted { color: var(--muted); } .faint { color: var(--faint); }
-    .tabular { font-variant-numeric: tabular-nums; }
     .up { color: var(--green); } .down { color: var(--red); }
     .footer { font-size: 11px; color: var(--faint); margin-top: 16px; line-height: 1.5; }
     .error { background: var(--red-bg); color: var(--red-ink); padding: 14px 16px; border-radius: 12px; }
     .live-ok { color: var(--green-ink); }
     .chart-box { position: relative; height: 220px; margin-top: 8px; }
     .chart-box.price { height: 320px; }
+    .chart-box.equity-live { height: 180px; }
     .banner { background: #fff7ed; color: #9a3412; border-radius: 10px; padding: 8px 12px; font-size: 12px; margin: 8px 0; line-height: 1.45; }
     .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 10px 0 14px; }
     .metric { background: #f9fafb; border-radius: 12px; padding: 10px 12px; }
     .metric .kpi-label { margin-bottom: 2px; }
     .metric .kpi-num { font-size: 18px; }
+    .ticker { background: #fff; border-bottom: 1px solid var(--line); overflow: hidden; display: flex; align-items: center; gap: 10px; padding: 8px 0; position: sticky; top: 0; z-index: 20; width: 100%; max-width: 100vw; }
+    .ticker-mask { flex: 1 1 auto; overflow: hidden; min-width: 0; mask-image: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent); }
+    .ticker-track { display: flex; gap: 22px; width: max-content; animation: marquee 36s linear infinite; }
+    .ticker-track:hover { animation-play-state: paused; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .tick { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; white-space: nowrap; }
+    .tick .sym { font-weight: 700; }
+    .tick .chg { font-family: var(--mono); font-weight: 650; }
+    .top { padding: 14px 0 8px; }
+    .seg { display: inline-flex; background: #eceef1; border-radius: 999px; padding: 3px; }
+    .seg button { border: 0; background: transparent; padding: 5px 14px; font-size: 13px; font-weight: 650; color: var(--muted); border-radius: 999px; }
+    .seg button.active { background: #fff; color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,0.06); outline: none; }
+    .status-line { font-size: 13px; color: var(--muted); margin: 8px 0 12px; }
+    .equity-num { font-size: 52px; font-weight: 750; letter-spacing: -0.05em; line-height: 1; }
+    @media (min-width: 700px) { .equity-num { font-size: 64px; } }
+    .equity-unit { font-size: 16px; font-weight: 600; color: var(--muted); margin-left: 6px; }
+    .mult { background: #111; color: #fff; border-radius: 999px; padding: 3px 10px; font-size: 14px; font-weight: 700; }
+    .live-meta { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+    .live-grid { display: grid; gap: 12px; min-width: 0; }
+    .grid, .live-grid > * { min-width: 0; }
+    @media (min-width: 960px) { .live-grid { grid-template-columns: 1.05fr 0.95fr; align-items: start; } }
+    .comp-row { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; padding: 8px 0; border-top: 1px solid var(--line); font-size: 14px; }
+    .comp-row:first-child { border-top: 0; padding-top: 0; }
+    .comp-row .name { font-weight: 650; flex: 1 1 auto; }
+    .comp-row .count { font-family: var(--mono); color: var(--green-ink); font-weight: 650; font-size: 13px; }
+    @media (max-width: 640px) { .comp-row .count { flex: 1 1 100%; padding-left: 18px; } }
+    .agent-row { display: grid; grid-template-columns: 132px 1fr auto; gap: 10px; align-items: start; padding: 10px 0; border-top: 1px solid var(--line); font-size: 13px; }
+    .agent-row:first-of-type { border-top: 0; }
+    @media (max-width: 640px) { .agent-row { grid-template-columns: 1fr; gap: 4px; } }
+    .log { font-size: 12.5px; line-height: 1.7; max-height: 280px; overflow: auto; background: #fafafa; border-radius: 12px; padding: 10px 12px; }
+    .log a { font-weight: 500; color: inherit; text-decoration: none; }
+    .log a:hover { text-decoration: underline; }
+    .log .pos { color: var(--green); }
+    .log .neg { color: var(--red); }
+    .log .dim { color: var(--muted); }
+    .comp-card h3 { margin: 0; font-size: 15px; font-weight: 700; }
+    .comp-file { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; font-size: 12px; font-weight: 650; }
+    .modal-back { position: fixed; inset: 0; background: rgba(17,24,39,0.35); z-index: 40; display: flex; align-items: flex-end; justify-content: center; padding: 12px; }
+    @media (min-width: 700px) { .modal-back { align-items: center; } }
+    .modal { background: #fff; border-radius: 24px 24px 16px 16px; width: min(440px, 100%); padding: 22px 22px 18px; box-shadow: 0 20px 50px rgba(0,0,0,0.18); max-height: 92vh; overflow: auto; }
+    .modal > .row { flex-wrap: nowrap; }
+    .modal .big { font-family: var(--mono); font-size: 42px; font-weight: 750; letter-spacing: -0.04em; line-height: 1; }
+    .recap-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+    .recap-stats div { background: #f4f5f6; border-radius: 12px; padding: 10px 8px; text-align: center; }
+    .recap-stats .n { font-family: var(--mono); font-size: 18px; font-weight: 750; }
+    .recap-stats .l { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    @media (max-width: 400px) { .recap-stats { grid-template-columns: repeat(2, 1fr); } .equity-num { font-size: 44px; } }
   </style>
 </head>
 <body>
-  <div class="wrap" id="app">
-    <div class="error">Loading dashboard data…</div>
+  <div id="app">
+    <div class="wrap"><div class="error">Loading dashboard data…</div></div>
   </div>
   <script>
+
     const FONT = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
     const GREEN = "#16a34a";
     const JUP_MINT = "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN";
@@ -104,7 +160,10 @@
     let priceChart = null;
     let equityChart = null;
     let chartObservers = [];
+    let equityAnimated = false;
     const state = {
+      view: "live",
+      recap: false,
       gmgnWallet: "all",
       gmgnSide: "all",
       gmgnToken: "",
@@ -139,7 +198,6 @@
       return hh + ":" + mm + " Europe/Athens";
     }
     function asOf(hhmm) { return (hhmm || "") + " Europe/Athens"; }
-
     function eventHmm(ev) {
       const iso = ev.time_iso || "";
       const fromIso = iso.match(/T(\d{2}:\d{2})/);
@@ -147,9 +205,9 @@
       const fromLabel = (ev.time || "").match(/\b(\d{2}:\d{2}):\d{2}\b/) || (ev.time || "").match(/\b(\d{2}:\d{2})\b/);
       return fromLabel ? fromLabel[1] : "—";
     }
-    function pill(label, bg, color, dot) {
+    function pill(label, bg, color, dot, blink) {
       return `<span class="pill" style="background:${bg};color:${color}">${
-        dot ? `<span class="dot" style="background:${dot}"></span>` : ""
+        dot ? `<span class="dot${blink ? " blink" : ""}" style="background:${dot}"></span>` : ""
       }${esc(label)}</span>`;
     }
     function currentMark() {
@@ -162,10 +220,10 @@
       const equity = k.cash_usdc + openMark;
       const change = equity - k.start_cash_usdc;
       const unrealized = openMark - k.open_cost_usdc;
-      return { px, openMark, equity, change, changePct: (change / k.start_cash_usdc) * 100, unrealized };
+      const multiple = equity / k.start_cash_usdc;
+      return { px, openMark, equity, change, changePct: (change / k.start_cash_usdc) * 100, unrealized, multiple };
     }
     function changeClass(n) { return n > 0 ? "up" : n < 0 ? "down" : ""; }
-
     function applyFilters(decisions) {
       return decisions.filter((row) => {
         if (state.wallet !== "all" && row.wallet !== state.wallet) return false;
@@ -178,7 +236,6 @@
         return true;
       });
     }
-
     function sortRows(rows) {
       const key = state.sortKey;
       const dir = state.sortDir === "asc" ? 1 : -1;
@@ -191,19 +248,16 @@
         return String(va).localeCompare(String(vb)) * dir;
       });
     }
-
     function setWallet(wallet) {
       state.wallet = state.wallet === wallet ? "all" : wallet;
       render();
     }
-
     function pointUnix(p) {
       if (p && typeof p.time === "number" && p.time > 0) return p.time;
       const parsed = Date.parse(p && p.iso);
       if (!Number.isNaN(parsed)) return Math.floor(parsed / 1000);
       return null;
     }
-
     function applyRange(points) {
       const hours = { "1H": 1, "6H": 6, "1D": 24, ALL: null }[state.range];
       if (!hours) return points;
@@ -214,7 +268,6 @@
       });
       return filtered.length ? filtered : points.slice(-2);
     }
-
     function currentEquityPoints() {
       const series = (DATA.charts && DATA.charts.equity && DATA.charts.equity.length)
         ? DATA.charts.equity
@@ -242,14 +295,12 @@
       }
       return applyRange(points);
     }
-
     function destroyCharts() {
       chartObservers.forEach((ro) => ro.disconnect());
       chartObservers = [];
       if (priceChart) { priceChart.remove(); priceChart = null; }
       if (equityChart) { equityChart.remove(); equityChart = null; }
     }
-
     function lwOptions(el, height) {
       return {
         width: el.clientWidth,
@@ -263,7 +314,6 @@
         handleScale: true,
       };
     }
-
     function watchSize(el, chart) {
       if (typeof ResizeObserver !== "function") return;
       const ro = new ResizeObserver(() => {
@@ -273,7 +323,6 @@
       ro.observe(el);
       chartObservers.push(ro);
     }
-
     function uniqueTimes(rows) {
       const out = [];
       let last = null;
@@ -286,7 +335,6 @@
       });
       return out;
     }
-
     function drawPriceChart() {
       const el = document.getElementById("priceChart");
       if (!el || !window.LightweightCharts) return;
@@ -298,15 +346,10 @@
       }
       priceChart = LightweightCharts.createChart(el, lwOptions(el, el.clientHeight || 320));
       const series = priceChart.addCandlestickSeries({
-        upColor: GREEN,
-        downColor: "#dc2626",
-        borderVisible: false,
-        wickUpColor: GREEN,
-        wickDownColor: "#dc2626",
+        upColor: GREEN, downColor: "#dc2626", borderVisible: false,
+        wickUpColor: GREEN, wickDownColor: "#dc2626",
       });
-      series.setData(candles.map((c) => ({
-        time: c.time, open: c.open, high: c.high, low: c.low, close: c.close
-      })));
+      series.setData(candles.map((c) => ({ time: c.time, open: c.open, high: c.high, low: c.low, close: c.close })));
       const markers = [];
       (charts.markers || []).forEach((m) => {
         markers.push({ time: m.time, position: m.position, color: m.color, shape: m.shape, text: m.text });
@@ -314,11 +357,9 @@
       if (state.showArchived) {
         ((charts.archived && charts.archived.markers) || []).forEach((m) => {
           markers.push({
-            time: m.time,
-            position: m.position,
+            time: m.time, position: m.position,
             color: m.side === "buy" ? "#15803d" : "#b91c1c",
-            shape: m.shape,
-            text: "ARCHIVED " + (m.text || m.side || ""),
+            shape: m.shape, text: "ARCHIVED " + (m.text || m.side || ""),
           });
         });
       }
@@ -327,11 +368,15 @@
       priceChart.timeScale().fitContent();
       watchSize(el, priceChart);
     }
-
+    function dottedStyle() {
+      return (window.LightweightCharts && LightweightCharts.LineStyle)
+        ? LightweightCharts.LineStyle.Dotted
+        : 1;
+    }
     function drawEquityChart() {
       const el = document.getElementById("equityChart");
       if (!el || !window.LightweightCharts) return;
-      equityChart = LightweightCharts.createChart(el, lwOptions(el, el.clientHeight || 220));
+      equityChart = LightweightCharts.createChart(el, lwOptions(el, el.clientHeight || 180));
       const current = uniqueTimes(currentEquityPoints().map((p) => ({
         time: pointUnix(p), value: p.equity
       })).filter((p) => p.time != null && p.value != null));
@@ -340,18 +385,23 @@
         topColor: "rgba(22,163,74,0.28)",
         bottomColor: "rgba(22,163,74,0.02)",
         lineWidth: 2,
-        title: "Current",
+        title: "Paper equity",
       });
       if (current.length) currentSeries.setData(current);
+      currentSeries.createPriceLine({
+        price: DATA.kpis.start_cash_usdc || 1000,
+        color: "#9ca3af",
+        lineWidth: 1,
+        lineStyle: dottedStyle(),
+        axisLabelVisible: true,
+        title: "start 1,000",
+      });
       if (state.showArchived) {
         const archived = uniqueTimes((((DATA.charts || {}).archived || {}).equity || []).map((p) => ({
           time: pointUnix(p), value: p.equity
         })).filter((p) => p.time != null && p.value != null));
         const archivedSeries = equityChart.addLineSeries({
-          color: "#c2410c",
-          lineWidth: 2,
-          lineStyle: 2,
-          title: "Archived run",
+          color: "#c2410c", lineWidth: 2, lineStyle: 2, title: "Archived run",
         });
         if (archived.length) archivedSeries.setData(archived);
       }
@@ -359,9 +409,46 @@
       watchSize(el, equityChart);
     }
 
-    function drawCharts() {
-      drawPriceChart();
-      drawEquityChart();
+    function tickerHtml() {
+      const items = (DATA.ticker && DATA.ticker.items) || [];
+      const live = DATA.watcher && DATA.watcher.up;
+      const chips = items.map((t) => {
+        const ch = t.change_1h_pct;
+        return `<span class="tick"><span class="sym">${esc(t.pair || t.symbol)}</span><span class="chg ${changeClass(ch)}">${esc(signed(ch))}%</span><span class="faint">1h</span></span>`;
+      });
+      const body = chips.length
+        ? chips.join("")
+        : `<span class="tick muted">No 1h token changes in this snapshot</span>`;
+      return `<div class="ticker">
+        ${pill(live ? "Live" : "Snapshot", live ? "#dcfce7" : "#f3f4f6", live ? "#166534" : "#6b7280", live ? "#16a34a" : "#9ca3af", live)}
+        <div class="ticker-mask"><div class="ticker-track">${body}${body}</div></div>
+      </div>`;
+    }
+
+    function headerHtml(m) {
+      const w = DATA.watcher;
+      const ui = DATA.ui || {};
+      return `
+        <div class="top">
+          <div class="row" style="justify-content:space-between;align-items:center">
+            <div class="row" style="gap:10px">
+              <h1>Wallet Copy Desk</h1>
+              ${pill("PAPER", "#fff7ed", "#9a3412")}
+            </div>
+            <div class="row">
+              <div class="seg" role="tablist" aria-label="Dashboard view">
+                <button type="button" data-view="desk" class="${state.view === "desk" ? "active" : ""}" role="tab" aria-selected="${state.view === "desk"}">desk</button>
+                <button type="button" data-view="live" class="${state.view === "live" ? "active" : ""}" role="tab" aria-selected="${state.view === "live"}">live</button>
+              </div>
+              ${pill(w.up ? "Live" : w.status_label, w.up ? "#dcfce7" : "#fee2e2", w.up ? "#166534" : "#991b1b", w.up ? "#16a34a" : "#dc2626", w.up)}
+            </div>
+          </div>
+          <div class="status-line">${esc(ui.status_line || "3 leaders · 6 agents · night shift 22:00 → 07:00")}</div>
+          <div class="sub">
+            paper mode · data as of ${esc(asOf(DATA.generated_at_hhmm))}
+            ${livePrice != null ? `· live JUP mark ${esc(athensNowLabel(liveAt))}` : liveError ? "· live price unavailable, showing snapshot mark" : ""}
+          </div>
+        </div>`;
     }
 
     function priceChartHtml() {
@@ -387,7 +474,7 @@
             : (currentN === 0 ? `<div class="muted" style="font-size:12px;margin-bottom:8px">No paper fills on the current ledger yet. You can display the archived run's ${archivedN} fills on this chart for reference.</div>` : "")}
           <div class="chart-box price" id="priceChart"></div>
           <div class="faint" style="font-size:11px;margin-top:6px">
-            Green arrows are paper buys, red arrows are paper sells. Candles are baked into data.json at refresh; the public site does not call the price API or use any key.
+            Green arrows are paper buys, red arrows are paper sells. Candles are baked into data.json at refresh; the public site does not call the price history API or use any key.
           </div>
         </div>`;
     }
@@ -468,15 +555,15 @@
             <div style="margin-top:10px"><a href="tearsheet.html">Open placeholder</a></div>
           </div>`;
       }
-      const m = q.metrics || {};
-      const win = m.win_rate != null ? (Number(m.win_rate) * 100).toFixed(1) + "%" : "—";
-      const dd = m.max_drawdown_pct != null ? Number(m.max_drawdown_pct).toFixed(2) + "%" : "—";
+      const metrics = q.metrics || {};
+      const win = metrics.win_rate != null ? (Number(metrics.win_rate) * 100).toFixed(1) + "%" : "—";
+      const dd = metrics.max_drawdown_pct != null ? Number(metrics.max_drawdown_pct).toFixed(2) + "%" : "—";
       return `
         <div class="card">
           <div class="title">QuantStats tearsheet</div>
           <div class="muted" style="font-size:12px;margin:-6px 0 10px">${esc(q.note || "Paper-mode marked-to-market daily equity.")}</div>
           <div class="metrics">
-            <div class="metric"><div class="kpi-label">SHARPE</div><div class="kpi-num">${m.sharpe != null ? Number(m.sharpe).toFixed(2) : "—"}</div></div>
+            <div class="metric"><div class="kpi-label">SHARPE</div><div class="kpi-num">${metrics.sharpe != null ? Number(metrics.sharpe).toFixed(2) : "—"}</div></div>
             <div class="metric"><div class="kpi-label">MAX DRAWDOWN</div><div class="kpi-num">${esc(dd)}</div></div>
             <div class="metric"><div class="kpi-label">WIN RATE</div><div class="kpi-num">${esc(win)}</div></div>
           </div>
@@ -484,77 +571,11 @@
         </div>`;
     }
 
-    function headerHtml(m) {
-      const w = DATA.watcher;
-      return `
-        <div class="row">
-          <h1>Wallet Copy Desk</h1>
-          <div class="row">
-            ${pill("PAPER MODE", "#fff7ed", "#9a3412")}
-            ${pill(w.status_label, w.up ? "#dcfce7" : "#fee2e2", w.up ? "#166534" : "#991b1b", w.up ? "#16a34a" : "#dc2626")}
-          </div>
-        </div>
-        <div class="sub">
-          data as of ${esc(asOf(DATA.generated_at_hhmm))}
-          · snapshot generated ${esc(DATA.generated_at)}
-          ${livePrice != null ? `· live mark ${esc(athensNowLabel(liveAt))} <span class="live-ok">live</span>` : liveError ? "· live price unavailable, showing snapshot mark" : ""}
-        </div>`;
-    }
-
-    function priceStripHtml(m) {
-      const ch24 = DATA.price.change_24h_pct;
-      const ch1 = DATA.price.change_1h_pct;
-      return `
-        <div class="card" style="padding:14px 18px">
-          <div class="row" style="justify-content:space-between;align-items:flex-start">
-            <div>
-              <div class="kpi-label">${esc(DATA.price.symbol)}</div>
-              <div class="kpi-num" style="font-size:26px;margin-top:2px">${esc(m.px.toFixed(6))}</div>
-            </div>
-            <div style="text-align:right">
-              ${ch24 != null ? `<div class="kpi-label">24h</div><div class="tabular ${changeClass(ch24)}" style="font-size:16px;font-weight:700">${esc(signed(ch24))}%</div>` : ""}
-              ${ch1 != null ? `<div class="kpi-label" style="margin-top:4px">1h</div><div class="tabular ${changeClass(ch1)}" style="font-size:13px;font-weight:700">${esc(signed(ch1))}%</div>` : ""}
-            </div>
-          </div>
-          <div class="faint" style="font-size:11px;margin-top:6px">
-            ${livePrice != null ? "live mark every 30s" : "snapshot mark"} · ${esc(DATA.price.source)} · USD used as a USDC proxy
-          </div>
-        </div>`;
-    }
-
-    function kpiHtml(m) {
-      const k = DATA.kpis;
-      const sign = m.change > 0 ? "up" : m.change < 0 ? "down" : "flat";
-      const changeLabel = sign === "flat" ? "0.00 USDC" : (m.change < 0 ? "−" : "+") + money(Math.abs(m.change)) + " USDC · " + signed(m.changePct) + "%";
-      const ranges = ["1H", "6H", "1D", "ALL"];
-      return `
-        <div class="card">
-          <div class="kpi-label">PAPER EQUITY</div>
-          <div class="kpi-num" style="font-size:42px;margin:4px 0 10px">${esc(money(m.equity))} <span style="font-size:16px;font-weight:600;color:var(--muted)">USDC</span></div>
-          ${pill(changeLabel, sign === "up" ? "#dcfce7" : sign === "down" ? "#fee2e2" : "#f3f4f6", sign === "up" ? "#166534" : sign === "down" ? "#991b1b" : "#6b7280")}
-          <div class="muted" style="font-size:13px;margin-top:12px;line-height:1.45">
-            started 1,000 USDC · cash ${esc(k.cash_usdc_display)} · ${k.fills} fill${k.fills === 1 ? "" : "s"} · ${k.skips} skip${k.skips === 1 ? "" : "s"}
-          </div>
-          <div class="muted" style="font-size:13px;margin-top:2px">
-            realized P&amp;L ${esc(k.realized_pnl_usdc_display)} USDC · unrealized ${esc(signed(m.unrealized))} USDC · ${esc(k.closed_label)}
-          </div>
-          <div class="filters" style="margin:14px 0 0">
-            ${ranges.map((r) => `<button type="button" data-range="${r}" class="${state.range === r ? "active" : ""}">${r}</button>`).join("")}
-          </div>
-          <div class="chart-box" id="equityChart"></div>
-          <div class="faint" style="font-size:11px;margin-top:6px">
-            Current paper equity (green), last point marked to market${livePrice != null ? " with the live JUP price" : ""}.
-            ${state.showArchived ? "The orange dashed line is the archived run and is not mixed into current P&amp;L. " : ""}
-            Open ${esc(k.open_jup_display)} JUP · mark ${esc(money(m.openMark))} USDC · cost ${esc(k.open_cost_usdc_display)} USDC.
-          </div>
-        </div>`;
-    }
-
     function leadersHtml(m) {
       return `
         <div class="card">
           <div class="title">Leader wallets</div>
-          <div class="muted" style="font-size:12px;margin:-6px 0 10px">Click a card to filter the trades table and activity. Paper cash is held at desk level.</div>
+          <div class="muted" style="font-size:12px;margin:-6px 0 10px">Click a card to filter the trades table. Paper cash is held at desk level.</div>
           <div class="grid" style="gap:10px">
             ${DATA.leaders.map((w) => {
               const mark = w.open_jup * m.px;
@@ -579,10 +600,9 @@
 
     function tradesHtml() {
       const rows = sortRows(applyFilters(DATA.decisions || []));
-      const wallets = DATA.leaders.map((w) => w.wallet);
       return `
         <div class="card">
-          <div class="title">Trades</div>
+          <div class="title">Paper trades</div>
           <div class="filters">
             <select id="kindFilter">
               <option value="all"${state.kind === "all" ? " selected" : ""}>Fills and skips</option>
@@ -597,7 +617,7 @@
             ${state.wallet !== "all" || state.kind !== "all" || state.date ? `<button type="button" id="clearFilters">Clear filters</button>` : ""}
             <span class="muted" style="font-size:12px">${rows.length} row${rows.length === 1 ? "" : "s"}</span>
           </div>
-          ${rows.length === 0 ? `<div class="muted">No paper decisions match these filters.</div>` : `
+          ${rows.length === 0 ? `<div class="muted">No paper decisions match these filters. The current ledger was opened at 14:42 Europe/Athens on 11 Nov 2026 and has no fills yet.</div>` : `
           <div style="overflow:auto">
             <table>
               <thead>
@@ -639,12 +659,9 @@
       });
       const chips = [`<button type="button" data-bot="all" class="${state.bot === "all" ? "active" : ""}">All</button>`]
         .concat(bots.map((b) => `<button type="button" data-bot="${esc(b.id)}" class="${state.bot === b.id ? "active" : ""}">${esc(b.name)}</button>`));
-      const selected = bots.find((b) => b.id === state.bot);
       let body;
-      if (state.bot !== "all" && selected && !selected.has_activity) {
+      if (!events.length) {
         body = `<div class="muted">no activity yet</div>`;
-      } else if (!events.length) {
-        body = `<div class="muted">${state.bot === "all" ? "no activity yet" : "no activity yet"}</div>`;
       } else {
         body = `<div class="feed">${events.map((ev) => `
           <div class="feed-item">
@@ -671,7 +688,7 @@
       const positions = (r.positions || []).filter((p) => state.wallet === "all" || p.wallet === state.wallet);
       return `
         <div class="card">
-          <div class="title">Risk rules</div>
+          <div class="title">Paper rules</div>
           <div style="font-size:13px;line-height:1.55;margin-bottom:12px">
             ${r.buy_size_usdc} USDC per buy · ${r.max_open_cost_usdc} USDC max open cost<br>
             ${r.signal_window_s}s signal window · ${Number(r.max_impact_pct).toFixed(2)}% max impact · ${r.max_adverse_pct}% max adverse vs leader<br>
@@ -682,8 +699,7 @@
           </div>
           <div class="bar"><div style="width:${Math.min(100, Math.max(0, r.utilization_pct))}%;background:${r.utilization_pct >= 90 ? "#dc2626" : "#2563eb"}"></div></div>
           <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px">
-            ${positions.length === 0 ? `<div class="muted">No open positions${state.wallet !== "all" ? " for this wallet" : ""}.</div>` : positions.map((p) => {
-              const mark = p.jup * m.px;
+            ${positions.length === 0 ? `<div class="muted">No open paper positions${state.wallet !== "all" ? " for this wallet" : ""} on the current ledger.</div>` : positions.map((p) => {
               const basis = p.cost_basis;
               const pctFromCost = basis ? ((m.px / basis) - 1) * 100 : 0;
               const room = basis ? ((m.px - p.invalidation_price) / basis) * 100 : 0;
@@ -707,8 +723,11 @@
       const digests = DATA.digest?.entries || [];
       return `
         <div class="card">
-          <div class="title">Overnight shift</div>
-          <div class="muted" style="font-size:13px;margin-bottom:10px">${esc(o.has_runs ? o.label : "first shift starts 22:00 Europe/Athens")} · ${o.clean_count || 0} clean · ${o.alert_count || 0} alert</div>
+          <div class="row" style="justify-content:space-between;align-items:flex-start">
+            <div class="title" style="margin:0">Overnight shift</div>
+            <button type="button" id="openRecap">Night recap</button>
+          </div>
+          <div class="muted" style="font-size:13px;margin:10px 0">${esc(o.has_runs ? o.label : "first shift starts 22:00 Europe/Athens")} · ${o.clean_count || 0} clean · ${o.alert_count || 0} alert</div>
           ${runs.length === 0 && digests.length === 0 ? `<div class="muted">No overnight runs logged yet.</div>` : `
             <div class="timeline">
               ${[...runs].reverse().map((run) => `
@@ -725,13 +744,53 @@
         </div>`;
     }
 
+    function recapModalHtml() {
+      if (!state.recap) return "";
+      const r = DATA.night_recap || {};
+      const end = r.end_equity_usdc;
+      const start = r.start_equity_usdc;
+      const endClass = end != null && start != null ? (end > start ? "up" : end < start ? "down" : "") : "";
+      const best = r.best_trade;
+      const worst = r.worst_trade;
+      return `<div class="modal-back" id="recapBack">
+        <div class="modal" role="dialog" aria-labelledby="recapTitle">
+          <div class="row" style="justify-content:space-between;align-items:flex-start">
+            <div>
+              <div class="title" id="recapTitle" style="margin:0">Night recap</div>
+              <div class="muted" style="font-size:12px;margin-top:4px">${esc(r.label || "22:00 → 07:00")} · PAPER${r.archived ? " · archived run" : ""}</div>
+            </div>
+            <button type="button" id="closeRecap">Close</button>
+          </div>
+          ${r.archived ? `<div class="banner">This recap is from the archived run, reset at 14:42 Europe/Athens on 11 Nov 2026. It is not mixed into the current paper ledger.</div>` : ""}
+          <div class="kpi-label" style="margin-top:16px">Start equity</div>
+          <div class="mono" style="font-size:22px;font-weight:700">${r.start_equity_usdc_display != null ? esc(r.start_equity_usdc_display) + " USDC" : "—"}</div>
+          <div class="kpi-label" style="margin-top:14px">End equity</div>
+          <div class="row" style="align-items:flex-end;gap:12px">
+            <div class="big ${endClass}">${r.end_equity_usdc_display != null ? esc(r.end_equity_usdc_display) : "—"}</div>
+            ${r.multiple_display ? `<span class="mult">${esc(r.multiple_display)}</span>` : ""}
+          </div>
+          <div class="recap-stats">
+            <div><div class="n">${r.checks ?? 0}</div><div class="l">checks</div></div>
+            <div><div class="n">${r.fills ?? 0}</div><div class="l">fills</div></div>
+            <div><div class="n">${r.alerts ?? 0}</div><div class="l">alerts</div></div>
+            <div><div class="n">${r.closed_trades ?? 0}</div><div class="l">closed</div></div>
+          </div>
+          <div style="font-size:13px;line-height:1.55">
+            ${best ? `<div>best · ${esc(best.wallet_short || "paper")} <span class="up">${esc(signed(best.pnl_usdc))} USDC</span></div>` : `<div class="muted">best · no closed paper trade this shift</div>`}
+            ${worst ? `<div>worst · ${esc(worst.wallet_short || "paper")} <span class="down">${esc(signed(worst.pnl_usdc))} USDC</span></div>` : `<div class="muted">worst · no closed paper trade this shift</div>`}
+            <div class="muted" style="margin-top:8px">${esc(r.invalidation || "Invalidation alert at 10% below cost")}</div>
+            <div class="muted" style="margin-top:8px">${esc(r.note || "")}</div>
+          </div>
+        </div>
+      </div>`;
+    }
+
     function gmgnTokenHtml(token) {
       if (!token) return 'unresolved';
       const mint = String(token.mint || '');
       const symbol = token.symbol || (mint ? mint.slice(0, 7) + '…' + mint.slice(-4) : 'unknown mint');
       return `<span title="${esc(mint)}">${esc(token.amount)} ${esc(symbol)}</span>`;
     }
-
     function gmgnFilteredEvents(g) {
       const query = state.gmgnToken.trim().toLowerCase();
       return (g.events || []).filter((ev) => {
@@ -744,7 +803,6 @@
         return true;
       });
     }
-
     function gmgnHtml() {
       const g = DATA.gmgn;
       if (!g?.enabled) return '';
@@ -778,7 +836,7 @@
         <div class="filters">
           <select id="gmgnWalletFilter" aria-label="GMGN wallet"><option value="all">All GMGN wallets</option>${(g.wallets || []).map((w) => `<option value="${esc(w.wallet)}"${state.gmgnWallet === w.wallet ? ' selected' : ''}>${esc(w.wallet_short)}</option>`).join('')}</select>
           <select id="gmgnSideFilter" aria-label="GMGN trade side">${[['all','All sides'],['buy','Buy'],['sell','Sell'],['swap','Token swap'],['unresolved','Unresolved']].map(([v,l])=>`<option value="${v}"${state.gmgnSide === v ? ' selected' : ''}>${l}</option>`).join('')}</select>
-          <input id="gmgnTokenFilter" type="text" value="${esc(state.gmgnToken)}" placeholder="Filter token mint or symbol" aria-label="GMGN token mint or symbol" style="font:inherit;border:1px solid var(--line);border-radius:999px;padding:5px 10px;max-width:100%">
+          <input id="gmgnTokenFilter" type="text" value="${esc(state.gmgnToken)}" placeholder="Filter token mint or symbol" aria-label="GMGN token mint or symbol" style="max-width:100%">
           <button id="gmgnApplyToken" type="button">Filter token</button>
           <span class="muted" style="font-size:12px">${rows.length} feed rows · newest ${esc(g.events_in_feed)} of ${esc(g.total_events)} observations</span>
         </div>
@@ -793,39 +851,196 @@
       </section>`;
     }
 
+    function componentCardsHtml() {
+      const comps = (DATA.ui && DATA.ui.components) || [];
+      if (!comps.length) return "";
+      return comps.map((c) => `
+        <div class="card comp-card">
+          <div class="row" style="justify-content:space-between;align-items:flex-start">
+            <div class="row" style="gap:8px">
+              <span class="dot" style="background:${esc(c.dot || '#16a34a')}"></span>
+              <div>
+                <h3>${esc(c.title)}</h3>
+                <div class="comp-file">${esc(c.file)}</div>
+              </div>
+            </div>
+            ${pill(c.ready_label, c.ready ? "#dcfce7" : "#f3f4f6", c.ready ? "#166534" : "#6b7280", c.ready ? "#16a34a" : "#9ca3af", c.ready)}
+          </div>
+          <div class="muted" style="font-size:13px;margin-top:8px">${esc(c.subtitle)}</div>
+          <div class="badges">
+            ${(c.agents || []).map((a) => `
+              <span class="badge" style="background:${esc(a.bg)};color:${esc(a.color)}">
+                <span class="dot blink" style="background:#16a34a"></span>
+                ${esc(a.name)}${a.titles ? ` <span style="font-weight:500;opacity:.75">· ${esc(a.titles)}</span>` : ""}
+              </span>`).join("")}
+          </div>
+        </div>`).join("");
+    }
+
+    function deskViewHtml(m) {
+      return `
+        <div class="grid" style="gap:12px">
+          ${componentCardsHtml()}
+          ${riskHtml(m)}
+          ${leadersHtml(m)}
+          ${priceChartHtml()}
+          ${analyticsHtml()}
+          ${quantstatsHtml()}
+          ${overnightHtml()}
+          ${gmgnHtml()}
+          ${tradesHtml()}
+          ${activityHtml()}
+        </div>`;
+    }
+
+    function liveViewHtml(m) {
+      const k = DATA.kpis;
+      const comps = (DATA.ui && DATA.ui.components) || [];
+      const agents = (DATA.ui && DATA.ui.agents) || [];
+      const feed = DATA.decision_feed || [];
+      const sign = m.change > 0 ? "up" : m.change < 0 ? "down" : "";
+      const pnl = (m.change > 0 ? "+" : m.change < 0 ? "−" : "") + money(Math.abs(m.change));
+      return `
+        <div class="live-grid">
+          <div class="grid" style="gap:12px">
+            <div class="card">
+              <div class="row" style="justify-content:space-between;align-items:flex-start">
+                <div>
+                  <div class="kpi-label">Paper equity</div>
+                  <div class="equity-num" id="equityNum" data-target="${m.equity}">${esc(money(m.equity))}<span class="equity-unit">USDC</span></div>
+                </div>
+                <div style="text-align:right">
+                  <div class="pill ${sign}" style="background:${sign === "up" ? "#dcfce7" : sign === "down" ? "#fee2e2" : "#f3f4f6"};color:${sign === "up" ? "#166534" : sign === "down" ? "#991b1b" : "#6b7280"}">${esc(pnl)}</div>
+                </div>
+              </div>
+              <div class="live-meta">
+                started 1,000 USDC · ${k.fills} paper fill${k.fills === 1 ? "" : "s"}
+                <span class="mult" style="margin-left:8px">${esc((m.multiple).toFixed(2) + "x")}</span>
+                <div>
+                  <span class="${sign}">${esc(pnl)} USDC lifetime P&amp;L</span>
+                  · ${esc(k.win_loss_record || "0W 0L")}
+                  · ${esc(k.closed_label)}
+                </div>
+              </div>
+              <div class="chart-box equity-live" id="equityChart"></div>
+              <div class="faint" style="font-size:11px;margin-top:6px">
+                Paper equity marked to market. The dotted line is the 1,000 USDC start.
+                ${k.fills === 0 ? " No paper fills on the current ledger yet." : ""}
+                ${state.showArchived ? " The orange dashed line is the archived run and is not mixed into current P&amp;L." : ""}
+              </div>
+              <div class="row" style="margin-top:10px">
+                <button type="button" id="openRecap">Night recap</button>
+              </div>
+            </div>
+            ${priceChartHtml()}
+          </div>
+          <div class="grid" style="gap:12px">
+            <div class="card">
+              <div class="title" style="margin-bottom:8px">Components</div>
+              ${comps.map((c) => `
+                <div class="comp-row">
+                  <span class="dot${c.ready ? " blink" : ""}" style="background:${c.ready ? GREEN : "#9ca3af"}"></span>
+                  <span class="name">${esc(c.file)}</span>
+                  <span class="count">${esc(c.count_label)}</span>
+                </div>`).join("") || `<div class="muted">No component stats in this snapshot.</div>`}
+            </div>
+            <div class="card">
+              <div class="row" style="justify-content:space-between">
+                <div class="title" style="margin:0">Agents</div>
+                <span class="muted" style="font-size:12px">${agents.length} on the desk</span>
+              </div>
+              <div class="muted" style="font-size:12px;margin:6px 0 4px">${esc((DATA.ui && DATA.ui.note) || "Last actions are recorded only. Nothing was invented.")}</div>
+              ${agents.map((a) => {
+                const act = a.last_action;
+                return `<div class="agent-row">
+                  <div>
+                    <span class="badge" style="background:${esc(a.bg)};color:${esc(a.color)}">${esc(a.name)}</span>
+                    <div class="faint" style="font-size:11px;margin-top:3px">${esc(a.titles || "")}</div>
+                  </div>
+                  <div>${act ? esc(act.summary) : `<span class="muted">no activity yet</span>`}
+                    ${act && act.time ? `<div class="faint" style="font-size:11px;margin-top:2px">${esc(act.time)}</div>` : ""}
+                  </div>
+                  <div class="muted" style="font-size:12px">${esc(a.component || "")}</div>
+                </div>`;
+              }).join("")}
+            </div>
+            <div class="card">
+              <div class="row" style="justify-content:space-between;align-items:center">
+                <div class="title" style="margin:0">Decisions</div>
+                <span class="pill" style="background:#dcfce7;color:#166534"><span class="dot blink" style="background:#16a34a"></span>streaming</span>
+              </div>
+              <div class="muted" style="font-size:12px;margin:6px 0 8px">Paper ledger decisions and GMGN watch-only events. Watch-only rows are not copied.</div>
+              <div class="log">
+                ${feed.length ? feed.map((row) => {
+                  const cls = row.tag === "BUY" || row.positive ? "pos" : (row.tag === "SELL" ? "neg" : "dim");
+                  const inner = esc(row.line);
+                  return row.solscan
+                    ? `<div class="${cls}"><a href="${esc(row.solscan)}" target="_blank" rel="noreferrer">${inner}</a></div>`
+                    : `<div class="${cls}">${inner}</div>`;
+                }).join("") : `<div class="dim">No paper decisions on the current ledger yet. GMGN watch-only events appear here when present.</div>`}
+              </div>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    function footerHtml() {
+      return `<div class="footer">
+        ${esc(DATA.disclaimer)} This is a public paper-mode monitor. Numbers update when data.json is republished; the JUP mark is polled live in the browser every 30 seconds and open positions are re-marked, but fills still come from the paper ledger. Price candles, 1h ticker changes, and analytics are baked in at refresh. Times are Europe/Athens.
+        · <a href="tearsheet.html">QuantStats tearsheet</a>
+      </div>`;
+    }
+
+    function animateEquity() {
+      const el = document.getElementById("equityNum");
+      if (!el || equityAnimated) return;
+      const target = Number(el.getAttribute("data-target"));
+      if (!Number.isFinite(target)) return;
+      equityAnimated = true;
+      const unit = el.querySelector(".equity-unit")?.outerHTML || "";
+      const start = performance.now();
+      const dur = 700;
+      function frame(now) {
+        const t = Math.min(1, (now - start) / dur);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.innerHTML = esc(money(target * eased)) + unit;
+        if (t < 1) requestAnimationFrame(frame);
+        else el.innerHTML = esc(money(target)) + unit;
+      }
+      requestAnimationFrame(frame);
+    }
+
     function render() {
       if (!DATA) return;
       const m = markedFigures();
       const app = document.getElementById("app");
       destroyCharts();
       app.innerHTML = `
-        ${headerHtml(m)}
-        <div class="grid" style="gap:12px">
-          ${priceStripHtml(m)}
-          ${priceChartHtml()}
-          ${kpiHtml(m)}
-          ${analyticsHtml()}
-          ${leadersHtml(m)}
-          ${tradesHtml()}
-          ${gmgnHtml()}
-          <div class="grid cols-2">
-            ${activityHtml()}
-            <div class="grid" style="gap:12px">
-              ${riskHtml(m)}
-              ${quantstatsHtml()}
-              ${overnightHtml()}
-            </div>
-          </div>
-          <div class="footer">
-            ${esc(DATA.disclaimer)} This is a public paper-mode monitor. Numbers update when data.json is republished; the JUP mark is polled live in the browser every 30 seconds and open positions are re-marked, but fills still come from the paper ledger. Price candles and analytics are baked in at refresh. Times are Europe/Athens.
-            · <a href="tearsheet.html">QuantStats tearsheet</a>
-          </div>
-        </div>`;
+        ${tickerHtml()}
+        <div class="wrap">
+          ${headerHtml(m)}
+          ${state.view === "live" ? liveViewHtml(m) : deskViewHtml(m)}
+          ${footerHtml()}
+        </div>
+        ${recapModalHtml()}`;
       bind();
-      drawCharts();
+      if (document.getElementById("priceChart")) drawPriceChart();
+      if (document.getElementById("equityChart")) drawEquityChart();
+      if (state.view === "live") animateEquity();
     }
 
     function bind() {
+      document.querySelectorAll("button[data-view]").forEach((btn) => {
+        btn.addEventListener("click", () => { state.view = btn.getAttribute("data-view"); render(); });
+      });
+      const recapOpen = document.getElementById("openRecap");
+      if (recapOpen) recapOpen.addEventListener("click", () => { state.recap = true; render(); });
+      const recapClose = document.getElementById("closeRecap");
+      if (recapClose) recapClose.addEventListener("click", () => { state.recap = false; render(); });
+      const recapBack = document.getElementById("recapBack");
+      if (recapBack) recapBack.addEventListener("click", (ev) => {
+        if (ev.target === recapBack) { state.recap = false; render(); }
+      });
       const archived = document.getElementById("archivedToggle");
       if (archived) archived.addEventListener("click", () => { state.showArchived = !state.showArchived; render(); });
       const gw = document.getElementById('gmgnWalletFilter');
@@ -837,7 +1052,6 @@
       if (gt) gt.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') applyToken(); });
       const ga = document.getElementById('gmgnApplyToken');
       if (ga) ga.addEventListener('click', applyToken);
-
       document.querySelectorAll("button[data-range]").forEach((btn) => {
         btn.addEventListener("click", () => { state.range = btn.getAttribute("data-range"); render(); });
       });
@@ -913,7 +1127,7 @@
         DATA = await res.json();
         if (!state.archivedDefaulted) {
           const currentMarkers = (DATA.charts && DATA.charts.markers) || [];
-          state.showArchived = currentMarkers.length === 0 && (((DATA.charts || {}).archived || {}).markers || []).length > 0;
+          state.showArchived = false;
           state.archivedDefaulted = true;
         }
         render();
@@ -921,7 +1135,7 @@
         setInterval(pollPrice, 30000);
         setInterval(pollPublishedData, 60000);
       } catch (err) {
-        app.innerHTML = `<div class="error">Could not load the paper dashboard data. ${esc(err.message || err)}</div>`;
+        app.innerHTML = `<div class="wrap"><div class="error">Could not load the paper dashboard data. ${esc(err.message || err)}</div></div>`;
       }
     }
 
