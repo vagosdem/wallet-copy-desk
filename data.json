@@ -1,9 +1,9 @@
 {
   "mode": "paper",
   "disclaimer": "Paper figures are simulated. GMGN watch-only rows are observed public-wallet activity, not copied. No live orders are placed from this desk.",
-  "generated_at": "2026-11-11 23:58:47 EET (Europe/Athens)",
-  "generated_at_iso": "2026-11-11T23:58:47+02:00",
-  "generated_at_hhmm": "23:58",
+  "generated_at": "2026-11-12 00:04:00 EET (Europe/Athens)",
+  "generated_at_iso": "2026-11-12T00:04:00+02:00",
+  "generated_at_hhmm": "00:04",
   "timezone": "Europe/Athens",
   "watcher": {
     "up": true,
@@ -21,16 +21,16 @@
     "source": "Jupiter Price API v3",
     "source_url": "https://api.jup.ag/price/v3?ids=JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
     "note": "USD mark used as a USDC proxy. 1h change is from the public GeckoTerminal JUP/USDC pool, fetched at refresh.",
-    "usd": 0.258039388937,
-    "usd_display": "0.258039",
-    "change_1h_pct": -0.219,
-    "change_24h_pct": 3.169353,
-    "marked_at": "2026-11-11 23:58:48 EET (Europe/Athens)",
-    "marked_at_iso": "2026-11-11T23:58:48+02:00",
-    "marked_at_hhmm": "23:58",
+    "usd": 0.25811906431,
+    "usd_display": "0.258119",
+    "change_1h_pct": 0.691,
+    "change_24h_pct": 3.116552,
+    "marked_at": "2026-11-12 00:04:01 EET (Europe/Athens)",
+    "marked_at_iso": "2026-11-12T00:04:01+02:00",
+    "marked_at_hhmm": "00:04",
     "raw": {
-      "liquidity": 5571073.3126625195,
-      "blockId": 468282529
+      "liquidity": 5569135.433118282,
+      "blockId": 468283969
     }
   },
   "kpis": {
@@ -41,28 +41,28 @@
     "open_jup_display": "363.163906",
     "open_cost_usdc": 96.151128,
     "open_cost_usdc_display": "96.15",
-    "open_mark_usdc": 93.710592,
-    "open_mark_usdc_display": "93.71",
-    "equity_usdc": 997.114202,
-    "equity_usdc_display": "997.11",
-    "equity_change_usdc": -2.885798,
-    "equity_change_usdc_display": "2.89",
+    "open_mark_usdc": 93.739528,
+    "open_mark_usdc_display": "93.74",
+    "equity_usdc": 997.143138,
+    "equity_usdc_display": "997.14",
+    "equity_change_usdc": -2.856862,
+    "equity_change_usdc_display": "2.86",
     "equity_change_sign": "down",
-    "equity_change_pct": -0.2886,
+    "equity_change_pct": -0.2857,
     "fills": 7,
     "skips": 12,
     "realized_pnl_usdc": -0.445262,
     "realized_pnl_usdc_display": "-0.45",
-    "unrealized_pnl_usdc": -2.440536,
-    "unrealized_pnl_usdc_display": "-2.44",
+    "unrealized_pnl_usdc": -2.4116,
+    "unrealized_pnl_usdc_display": "-2.41",
     "closed_trades": 2,
     "closed_wins": 0,
     "closed_losses": 2,
     "closed_label": "0 win / 2 loss on 2 closed sells",
     "equity_multiple": 0.9971,
     "equity_multiple_display": "1.00x",
-    "lifetime_pnl_usdc": -2.885798,
-    "lifetime_pnl_usdc_display": "-2.89",
+    "lifetime_pnl_usdc": -2.856862,
+    "lifetime_pnl_usdc_display": "-2.86",
     "win_loss_record": "0W 2L"
   },
   "equity_series": [
@@ -123,10 +123,10 @@
       "kind": "fill"
     },
     {
-      "t": "23:58",
-      "iso": "2026-11-11T23:58:48+02:00",
-      "equity": 997.114202,
-      "equity_display": "997.11",
+      "t": "00:04",
+      "iso": "2026-11-12T00:04:01+02:00",
+      "equity": 997.143138,
+      "equity_display": "997.14",
       "kind": "mark"
     }
   ],
@@ -142,14 +142,14 @@
       "open_jup_display": "363.163906",
       "open_cost_usdc": 96.151128,
       "open_cost_usdc_display": "96.15",
-      "open_mark_usdc": 93.710592,
-      "open_mark_usdc_display": "93.71",
+      "open_mark_usdc": 93.739528,
+      "open_mark_usdc_display": "93.74",
       "deployed_usdc": 96.151128,
       "deployed_usdc_display": "96.15",
       "realized_pnl_usdc": -0.445262,
       "realized_pnl_usdc_display": "-0.45",
-      "unrealized_pnl_usdc": -2.440536,
-      "unrealized_pnl_usdc_display": "-2.44",
+      "unrealized_pnl_usdc": -2.4116,
+      "unrealized_pnl_usdc_display": "-2.41",
       "cash_note": "Paper cash is held at desk level, not split by leader. Deployed is this wallet's open cost."
     },
     {
@@ -675,11 +675,11 @@
         "cost_basis_display": "0.264760",
         "invalidation_price": 0.23828363,
         "invalidation_price_display": "0.238284",
-        "mark_price": 0.25803939,
-        "mark_price_display": "0.258039",
-        "pct_from_cost": -2.5382,
-        "room_to_invalidation_pct_of_cost": 7.4618,
-        "pct_above_invalidation": 8.2909,
+        "mark_price": 0.25811906,
+        "mark_price_display": "0.258119",
+        "pct_from_cost": -2.5081,
+        "room_to_invalidation_pct_of_cost": 7.4919,
+        "pct_above_invalidation": 8.3243,
         "hit": false
       }
     ]
@@ -1670,12 +1670,12 @@
     "running_at_snapshot": false,
     "status": "running",
     "poll_interval_seconds": 60,
-    "last_cycle_completed_at": "2026-11-11T23:58:12+02:00",
-    "last_cycle_completed_ts": 1794434292.4827957,
-    "heartbeat_at": "2026-11-11T23:58:12+02:00",
+    "last_cycle_completed_at": "2026-11-12T00:03:12+02:00",
+    "last_cycle_completed_ts": 1794434592.4664252,
+    "heartbeat_at": "2026-11-12T00:03:12+02:00",
     "paused_until": null,
     "last_error": null,
-    "rpc_calls": 1874,
+    "rpc_calls": 1889,
     "rpc_error_count": 10,
     "coverage_warnings": [],
     "malformed_event_rows": 0,
@@ -1698,8 +1698,8 @@
         "trade_count": 223,
         "unresolved_count": 2,
         "pending_count": 0,
-        "last_poll_at": "2026-11-11T23:58:06+02:00",
-        "last_poll_ts": 1794434286.4712992,
+        "last_poll_at": "2026-11-12T00:03:06+02:00",
+        "last_poll_ts": 1794434586.4946783,
         "stale_at_snapshot": false,
         "coverage": "caught_up",
         "successful_fetched": 311,
@@ -1722,8 +1722,8 @@
         "trade_count": 2,
         "unresolved_count": 0,
         "pending_count": 0,
-        "last_poll_at": "2026-11-11T23:58:09+02:00",
-        "last_poll_ts": 1794434289.4668777,
+        "last_poll_at": "2026-11-12T00:03:09+02:00",
+        "last_poll_ts": 1794434589.4888194,
         "stale_at_snapshot": false,
         "coverage": "caught_up",
         "successful_fetched": 42,
@@ -1746,8 +1746,8 @@
         "trade_count": 131,
         "unresolved_count": 0,
         "pending_count": 0,
-        "last_poll_at": "2026-11-11T23:58:12+02:00",
-        "last_poll_ts": 1794434292.4801657,
+        "last_poll_at": "2026-11-12T00:03:12+02:00",
+        "last_poll_ts": 1794434592.4643779,
         "stale_at_snapshot": false,
         "coverage": "caught_up",
         "successful_fetched": 328,
@@ -13010,14 +13010,6 @@
       "note": "Hourly on-pool JUP/USDC candles, fetched at dashboard refresh. The public site is static and does not call this API or use any key.",
       "candles": [
         {
-          "time": 1793829600,
-          "open": 0.26299027207702497,
-          "high": 0.265409052413226,
-          "low": 0.26299027207702497,
-          "close": 0.263826567559863,
-          "volume": 82966.44986400002
-        },
-        {
           "time": 1793833200,
           "open": 0.263826567559863,
           "high": 0.26383069033099493,
@@ -14352,6 +14344,14 @@
           "low": 0.257604810450365,
           "close": 0.25832853799399297,
           "volume": 30321.431998000007
+        },
+        {
+          "time": 1794434400,
+          "open": 0.25832853799399297,
+          "high": 0.258687975405585,
+          "low": 0.25782940480372496,
+          "close": 0.25845014235544694,
+          "volume": 8592.52723999999
         }
       ],
       "count": 168,
@@ -14538,12 +14538,12 @@
         "kind": "fill"
       },
       {
-        "time": 1794434327,
-        "t": "23:58",
-        "iso": "2026-11-11T23:58:47+02:00",
-        "label": "2026-11-11 23:58:47 EET (Europe/Athens)",
-        "equity": 997.114202,
-        "equity_display": "997.11",
+        "time": 1794434640,
+        "t": "00:04",
+        "iso": "2026-11-12T00:04:00+02:00",
+        "label": "2026-11-12 00:04:00 EET (Europe/Athens)",
+        "equity": 997.143138,
+        "equity_display": "997.14",
         "kind": "mark"
       }
     ],
@@ -14636,12 +14636,12 @@
           "kind": "fill"
         },
         {
-          "time": 1794434327,
-          "t": "23:58",
-          "iso": "2026-11-11T23:58:47+02:00",
-          "label": "2026-11-11 23:58:47 EET (Europe/Athens)",
-          "equity": 1000.372689,
-          "equity_display": "1000.37",
+          "time": 1794434640,
+          "t": "00:04",
+          "iso": "2026-11-12T00:04:00+02:00",
+          "label": "2026-11-12 00:04:00 EET (Europe/Athens)",
+          "equity": 1000.396009,
+          "equity_display": "1000.40",
           "kind": "mark"
         }
       ],
@@ -14652,9 +14652,9 @@
   "quantstats": {
     "ready": false,
     "placeholder": "not enough data yet",
-    "reason": "Need at least 10 paper fills and 5 days of marked-to-market equity. This ledger has 7 fills over 1 day.",
+    "reason": "Need at least 10 paper fills and 5 days of marked-to-market equity. This ledger has 7 fills over 2 days.",
     "fills": 7,
-    "days": 1,
+    "days": 2,
     "min_fills": 10,
     "min_days": 5,
     "tearsheet": "tearsheet.html",
@@ -14663,16 +14663,16 @@
   "ticker": {
     "source": "GeckoTerminal public API (no key; fetched at refresh)",
     "note": "1h changes for JUP/USDC and tokens recently traded by the watch-only GMGN wallets. Tokens without a public 1h figure are omitted, not invented.",
-    "fetched_at": "2026-11-11 23:58:47 EET (Europe/Athens)",
-    "fetched_at_iso": "2026-11-11T23:58:47+02:00",
-    "fetched_at_hhmm": "23:58",
+    "fetched_at": "2026-11-12 00:04:00 EET (Europe/Athens)",
+    "fetched_at_iso": "2026-11-12T00:04:00+02:00",
+    "fetched_at_hhmm": "00:04",
     "items": [
       {
         "symbol": "JUP",
         "pair": "JUP/USDC",
         "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
-        "change_1h_pct": -0.219,
-        "price_usd": 0.258277,
+        "change_1h_pct": 0.691,
+        "price_usd": 0.258338,
         "pool_name": "JUP / USDC",
         "source": "GeckoTerminal public API",
         "origin": "paper_pair"
@@ -14681,8 +14681,8 @@
         "symbol": "Mustache",
         "pair": "Mustache",
         "mint": "2kTs6WZbnBBGJaqaKuk8kQ17APuodxvZN7dNv4Pypump",
-        "change_1h_pct": -69.56,
-        "price_usd": 3e-06,
+        "change_1h_pct": -59.83,
+        "price_usd": 4e-06,
         "pool_name": "Mustache / SOL",
         "source": "GeckoTerminal public API",
         "origin": "gmgn_watch_only"
@@ -14691,8 +14691,8 @@
         "symbol": "WoW",
         "pair": "WoW",
         "mint": "WARcTjZyqpwsU3ATmaJkd9qAHUQVFGDWXgXbvseRaFT",
-        "change_1h_pct": -27.69,
-        "price_usd": 3.4e-05,
+        "change_1h_pct": -47.31,
+        "price_usd": 2.4e-05,
         "pool_name": "WoW / GLDx",
         "source": "GeckoTerminal public API",
         "origin": "gmgn_watch_only"
@@ -14701,8 +14701,8 @@
         "symbol": "Max",
         "pair": "Max",
         "mint": "5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump",
-        "change_1h_pct": 17466.27,
-        "price_usd": 0.007664,
+        "change_1h_pct": 398.48,
+        "price_usd": 0.008011,
         "pool_name": "Max / SOL",
         "source": "GeckoTerminal public API",
         "origin": "gmgn_watch_only"
@@ -14711,19 +14711,9 @@
         "symbol": "POPPING",
         "pair": "POPPING",
         "mint": "6oVwaiAn8C9VY5aUMQZNWUNCknom4Puis4cyDwdjb9xd",
-        "change_1h_pct": -69.64,
+        "change_1h_pct": -62.68,
         "price_usd": 2e-06,
         "pool_name": "POPPING / SOL",
-        "source": "GeckoTerminal public API",
-        "origin": "gmgn_watch_only"
-      },
-      {
-        "symbol": "mini",
-        "pair": "mini",
-        "mint": "DjV9FM5qfBLTgoRYKoW3KKLGZ86KnZAV88g1hNWEpump",
-        "change_1h_pct": -74.97,
-        "price_usd": 3e-06,
-        "pool_name": "mini / PUMP",
         "source": "GeckoTerminal public API",
         "origin": "gmgn_watch_only"
       },
@@ -14731,7 +14721,7 @@
         "symbol": "WALK",
         "pair": "WALK",
         "mint": "CG14X6YJ5JeRx7NuyztnUNL1kufHramkJubLyMohpump",
-        "change_1h_pct": -50.96,
+        "change_1h_pct": -45.42,
         "price_usd": 4e-06,
         "pool_name": "WALK / SOL",
         "source": "GeckoTerminal public API",
@@ -14741,7 +14731,7 @@
         "symbol": "GODZILLA",
         "pair": "GODZILLA",
         "mint": "5oovW26rqcURLQ3P9bcGskn364dXJqPGJ5HBKoQ7pump",
-        "change_1h_pct": -26.59,
+        "change_1h_pct": -11.2,
         "price_usd": 1.5e-05,
         "pool_name": "GODZILLA / SOL",
         "source": "GeckoTerminal public API",
@@ -14758,7 +14748,7 @@
         "origin": "gmgn_watch_only"
       }
     ],
-    "omitted": 0
+    "omitted": 1
   },
   "night_recap": {
     "has_shift": true,
