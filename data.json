@@ -1,16 +1,16 @@
 {
   "mode": "paper",
   "disclaimer": "Paper figures are simulated. GMGN watch-only rows are observed public-wallet activity, not copied. No live orders are placed from this desk.",
-  "generated_at": "2026-11-11 14:43:07 EET (Europe/Athens)",
-  "generated_at_iso": "2026-11-11T14:43:07+02:00",
-  "generated_at_hhmm": "14:43",
+  "generated_at": "2026-11-11 15:28:57 EET (Europe/Athens)",
+  "generated_at_iso": "2026-11-11T15:28:57+02:00",
+  "generated_at_hhmm": "15:28",
   "timezone": "Europe/Athens",
   "watcher": {
     "up": true,
     "status_label": "Watcher up",
     "pid": 248950,
-    "started_at": "2026-11-11 14:42:20 EET (Europe/Athens)",
-    "started_at_iso": "2026-11-11T14:42:20+02:00",
+    "started_at": "2026-11-11 14:57:12 EET (Europe/Athens)",
+    "started_at_iso": "2026-11-11T14:57:12+02:00",
     "log_exists": true,
     "log_has_start": true,
     "log_has_stop": false,
@@ -21,16 +21,16 @@
     "source": "Jupiter Price API v3",
     "source_url": "https://api.jup.ag/price/v3?ids=JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
     "note": "USD mark used as a USDC proxy; the API did not return a 1h change.",
-    "usd": 0.256978018817,
-    "usd_display": "0.256978",
+    "usd": 0.259176363312,
+    "usd_display": "0.259176",
     "change_1h_pct": null,
-    "change_24h_pct": 1.259271,
-    "marked_at": "2026-11-11 14:43:08 EET (Europe/Athens)",
-    "marked_at_iso": "2026-11-11T14:43:08+02:00",
-    "marked_at_hhmm": "14:43",
+    "change_24h_pct": 2.085217,
+    "marked_at": "2026-11-11 15:28:58 EET (Europe/Athens)",
+    "marked_at_iso": "2026-11-11T15:28:58+02:00",
+    "marked_at_hhmm": "15:28",
     "raw": {
-      "liquidity": 5501875.795558141,
-      "blockId": 468127544
+      "liquidity": 5535869.406033621,
+      "blockId": 468140301
     }
   },
   "kpis": {
@@ -62,15 +62,15 @@
   },
   "equity_series": [
     {
-      "t": "14:42",
-      "iso": "2026-11-11T14:42:20+02:00",
+      "t": "14:57",
+      "iso": "2026-11-11T14:57:12+02:00",
       "equity": 1000.0,
       "equity_display": "1000.00",
       "kind": "start"
     },
     {
-      "t": "14:43",
-      "iso": "2026-11-11T14:43:08+02:00",
+      "t": "15:28",
+      "iso": "2026-11-11T15:28:58+02:00",
       "equity": 1000.0,
       "equity_display": "1000.00",
       "kind": "mark"
@@ -326,8 +326,8 @@
             "bot_name": "Desk Lead",
             "who": "copy",
             "source": "watcher",
-            "time": "2026-11-11 14:42:20 EET (Europe/Athens)",
-            "time_iso": "2026-11-11T14:42:20+02:00",
+            "time": "2026-11-11 14:57:12 EET (Europe/Athens)",
+            "time_iso": "2026-11-11T14:57:12+02:00",
             "summary": "Started the paper watcher on the reviewed leader wallets (pid 248950)."
           },
           {
@@ -594,8 +594,8 @@
         "bot_name": "Desk Lead",
         "who": "copy",
         "source": "watcher",
-        "time": "2026-11-11 14:42:20 EET (Europe/Athens)",
-        "time_iso": "2026-11-11T14:42:20+02:00",
+        "time": "2026-11-11 14:57:12 EET (Europe/Athens)",
+        "time_iso": "2026-11-11T14:57:12+02:00",
         "summary": "Started the paper watcher on the reviewed leader wallets (pid 248950)."
       },
       {
@@ -781,14 +781,14 @@
     "tracking_started_ts": 1794361308.7669125,
     "pid": null,
     "running_at_snapshot": false,
-    "status": "running",
+    "status": "polling",
     "poll_interval_seconds": 60,
-    "last_cycle_completed_at": "2026-11-11T14:42:46+02:00",
-    "last_cycle_completed_ts": 1794400966.0012918,
-    "heartbeat_at": "2026-11-11T14:42:46+02:00",
+    "last_cycle_completed_at": "2026-11-11T15:28:03+02:00",
+    "last_cycle_completed_ts": 1794403683.577469,
+    "heartbeat_at": "2026-11-11T15:28:57+02:00",
     "paused_until": null,
     "last_error": null,
-    "rpc_calls": 737,
+    "rpc_calls": 837,
     "rpc_error_count": 4,
     "coverage_warnings": [],
     "malformed_event_rows": 0,
@@ -808,15 +808,15 @@
         "pnl_30d": "+7.7% / +$27.4K",
         "pnl_attribution": "as reported by GMGN; captured snapshot, not independently verified or live",
         "win_rate_as_reported": "30D 45.3%",
-        "trade_count": 151,
+        "trade_count": 153,
         "unresolved_count": 2,
         "pending_count": 0,
-        "last_poll_at": "2026-11-11T14:42:22+02:00",
-        "last_poll_ts": 1794400942.0133295,
+        "last_poll_at": "2026-11-11T15:28:57+02:00",
+        "last_poll_ts": 1794403737.5885308,
         "stale_at_snapshot": false,
         "coverage": "caught_up",
-        "successful_fetched": 210,
-        "ignored_non_swaps": 57,
+        "successful_fetched": 217,
+        "ignored_non_swaps": 62,
         "failed_skipped": 0
       },
       {
@@ -835,12 +835,12 @@
         "trade_count": 2,
         "unresolved_count": 0,
         "pending_count": 0,
-        "last_poll_at": "2026-11-11T14:42:24+02:00",
-        "last_poll_ts": 1794400944.9921794,
+        "last_poll_at": "2026-11-11T15:28:00+02:00",
+        "last_poll_ts": 1794403680.5855393,
         "stale_at_snapshot": false,
         "coverage": "caught_up",
-        "successful_fetched": 26,
-        "ignored_non_swaps": 24,
+        "successful_fetched": 28,
+        "ignored_non_swaps": 26,
         "failed_skipped": 0
       },
       {
@@ -859,8 +859,8 @@
         "trade_count": 49,
         "unresolved_count": 0,
         "pending_count": 0,
-        "last_poll_at": "2026-11-11T14:42:28+02:00",
-        "last_poll_ts": 1794400948.0031242,
+        "last_poll_at": "2026-11-11T15:28:03+02:00",
+        "last_poll_ts": 1794403683.5760906,
         "stale_at_snapshot": false,
         "coverage": "caught_up",
         "successful_fetched": 144,
@@ -869,6 +869,116 @@
       }
     ],
     "events": [
+      {
+        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:5XBZdUX6MV4TmqEmK3PBMUhSPK4GNML21pxLixWED1gPqK3ZSE8WyuFgSt3BM1B89EsrdL99rME68PMcaS7bcRRU",
+        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
+        "signature": "5XBZdUX6MV4TmqEmK3PBMUhSPK4GNML21pxLixWED1gPqK3ZSE8WyuFgSt3BM1B89EsrdL99rME68PMcaS7bcRRU",
+        "status": "resolved",
+        "side": "buy",
+        "venue": "Pump AMM",
+        "venues": [
+          "Pump AMM"
+        ],
+        "input": {
+          "mint": "So11111111111111111111111111111111111111112",
+          "symbol": "SOL",
+          "amount": "1.0101"
+        },
+        "output": {
+          "mint": "2SX3prnhH7b147eiMqooiD9tq4NYy598reVZwUam9iq5",
+          "symbol": null,
+          "amount": "35470716.9347"
+        },
+        "asset_changes": [
+          {
+            "mint": "2SX3prnhH7b147eiMqooiD9tq4NYy598reVZwUam9iq5",
+            "symbol": null,
+            "amount": "35470716.9347",
+            "signed_amount": "35470716.9347"
+          },
+          {
+            "mint": "So11111111111111111111111111111111111111112",
+            "symbol": "SOL",
+            "amount": "1.0101",
+            "signed_amount": "-1.0101"
+          }
+        ],
+        "usd_estimate": 84.95999864960554,
+        "usd_basis": {
+          "method": "SOL at current indicative mark, not historical execution price",
+          "estimated": true,
+          "sol_usd": 84.11048277359225,
+          "marked_at": "2026-11-11T15:18:04+02:00",
+          "source": "Jupiter Price API v3"
+        },
+        "time": "2026-11-11 15:16:46 EET (Europe/Athens)",
+        "time_iso": "2026-11-11T15:16:46+02:00",
+        "observed_at": "2026-11-11T15:18:06+02:00",
+        "reason": null,
+        "flags": [
+          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
+          "unknown_token_symbol_use_mint"
+        ],
+        "mode": "watch_only",
+        "copied": false,
+        "wallet_short": "DGma4Ux\u2026iFCm",
+        "solscan": "https://solscan.io/tx/5XBZdUX6MV4TmqEmK3PBMUhSPK4GNML21pxLixWED1gPqK3ZSE8WyuFgSt3BM1B89EsrdL99rME68PMcaS7bcRRU"
+      },
+      {
+        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:5cCa1cbFyRY3e4Yz2kLCYu7pVXSH4TYoHCdbQ15eFeJfTWHiitx5oGni6oyPrXZMhuJxTt85LBhLUdGE6JCc4H7Z",
+        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
+        "signature": "5cCa1cbFyRY3e4Yz2kLCYu7pVXSH4TYoHCdbQ15eFeJfTWHiitx5oGni6oyPrXZMhuJxTt85LBhLUdGE6JCc4H7Z",
+        "status": "resolved",
+        "side": "sell",
+        "venue": "Pump AMM",
+        "venues": [
+          "Pump AMM"
+        ],
+        "input": {
+          "mint": "HVg4fTkoC3tCqPLU7DtrqxhqDNda2m7G7gMEXUEypump",
+          "symbol": null,
+          "amount": "5369106.128063"
+        },
+        "output": {
+          "mint": "So11111111111111111111111111111111111111112",
+          "symbol": "SOL",
+          "amount": "0.460902517"
+        },
+        "asset_changes": [
+          {
+            "mint": "HVg4fTkoC3tCqPLU7DtrqxhqDNda2m7G7gMEXUEypump",
+            "symbol": null,
+            "amount": "5369106.128063",
+            "signed_amount": "-5369106.128063"
+          },
+          {
+            "mint": "So11111111111111111111111111111111111111112",
+            "symbol": "SOL",
+            "amount": "0.460902517",
+            "signed_amount": "0.460902517"
+          }
+        ],
+        "usd_estimate": 38.631505608919475,
+        "usd_basis": {
+          "method": "SOL at current indicative mark, not historical execution price",
+          "estimated": true,
+          "sol_usd": 83.8170853575952,
+          "marked_at": "2026-11-11T15:06:18+02:00",
+          "source": "Jupiter Price API v3"
+        },
+        "time": "2026-11-11 15:00:26 EET (Europe/Athens)",
+        "time_iso": "2026-11-11T15:00:26+02:00",
+        "observed_at": "2026-11-11T15:06:21+02:00",
+        "reason": null,
+        "flags": [
+          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
+          "unknown_token_symbol_use_mint"
+        ],
+        "mode": "watch_only",
+        "copied": false,
+        "wallet_short": "DGma4Ux\u2026iFCm",
+        "solscan": "https://solscan.io/tx/5cCa1cbFyRY3e4Yz2kLCYu7pVXSH4TYoHCdbQ15eFeJfTWHiitx5oGni6oyPrXZMhuJxTt85LBhLUdGE6JCc4H7Z"
+      },
       {
         "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:4dNfFBMWP9JxUZMNXGw5XwcJvHetWHyFF6prp9ECh8cPAr4B3xiNQns1EK3MgMGrstKQd4tSaXu1jgGdm14iktb3",
         "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
@@ -11552,122 +11662,1773 @@
         "copied": false,
         "wallet_short": "DGma4Ux\u2026iFCm",
         "solscan": "https://solscan.io/tx/2J7ZSU3cU88hjrxkCm2ACH7aAUntRDWWkdbiGdS6yL4xRoQeAm68EZNv7zrRhoVGHHN7BjvEusGFLh9vnK34jFgv"
-      },
-      {
-        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:2vBRjYhCXUomHjbbKEnNApkcE9WSqCpCm7ZuVZzMKLFYvXKCpxriYgHnTK6onp8DdpXHena9dp4x5YX4fVUexKpN",
-        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
-        "signature": "2vBRjYhCXUomHjbbKEnNApkcE9WSqCpCm7ZuVZzMKLFYvXKCpxriYgHnTK6onp8DdpXHena9dp4x5YX4fVUexKpN",
-        "status": "resolved",
-        "side": "buy",
-        "venue": "pump.fun",
-        "venues": [
-          "pump.fun"
-        ],
-        "input": {
-          "mint": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "amount": "1.010099999"
-        },
-        "output": {
-          "mint": "DmqrKdy5JrrfxNmvzesYodNWyWS6ZKMMqHyQeJKnsnow",
-          "symbol": null,
-          "amount": "15748612.982005"
-        },
-        "asset_changes": [
-          {
-            "mint": "DmqrKdy5JrrfxNmvzesYodNWyWS6ZKMMqHyQeJKnsnow",
-            "symbol": null,
-            "amount": "15748612.982005",
-            "signed_amount": "15748612.982005"
-          },
-          {
-            "mint": "So11111111111111111111111111111111111111112",
-            "symbol": "SOL",
-            "amount": "1.010099999",
-            "signed_amount": "-1.010099999"
-          }
-        ],
-        "usd_estimate": 84.27007292666549,
-        "usd_basis": {
-          "method": "SOL at current indicative mark, not historical execution price",
-          "estimated": true,
-          "sol_usd": 83.42745570744772,
-          "marked_at": "2026-11-11T03:53:06+02:00",
-          "source": "Jupiter Price API v3"
-        },
-        "time": "2026-11-11 03:54:06 EET (Europe/Athens)",
-        "time_iso": "2026-11-11T03:54:06+02:00",
-        "observed_at": "2026-11-11T03:55:07+02:00",
-        "reason": null,
-        "flags": [
-          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
-          "unknown_token_symbol_use_mint"
-        ],
-        "mode": "watch_only",
-        "copied": false,
-        "wallet_short": "DGma4Ux\u2026iFCm",
-        "solscan": "https://solscan.io/tx/2vBRjYhCXUomHjbbKEnNApkcE9WSqCpCm7ZuVZzMKLFYvXKCpxriYgHnTK6onp8DdpXHena9dp4x5YX4fVUexKpN"
-      },
-      {
-        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:2QWyS7rM5kvTXT7CiEaRRDw9byj69MM41HCr2jTgRahtorAgvGxD1doTUq5cBz4HMLFkMbKcSRunZ9jH4ZZYT4Em",
-        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
-        "signature": "2QWyS7rM5kvTXT7CiEaRRDw9byj69MM41HCr2jTgRahtorAgvGxD1doTUq5cBz4HMLFkMbKcSRunZ9jH4ZZYT4Em",
-        "status": "resolved",
-        "side": "sell",
-        "venue": "pump.fun",
-        "venues": [
-          "pump.fun"
-        ],
-        "input": {
-          "mint": "HVLrJDYzUZiJvCtX5746pTCsnGwpKqGzJLVVoAsDpump",
-          "symbol": null,
-          "amount": "4824822.338182"
-        },
-        "output": {
-          "mint": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "amount": "0.776712727"
-        },
-        "asset_changes": [
-          {
-            "mint": "HVLrJDYzUZiJvCtX5746pTCsnGwpKqGzJLVVoAsDpump",
-            "symbol": null,
-            "amount": "4824822.338182",
-            "signed_amount": "-4824822.338182"
-          },
-          {
-            "mint": "So11111111111111111111111111111111111111112",
-            "symbol": "SOL",
-            "amount": "0.776712727",
-            "signed_amount": "0.776712727"
-          }
-        ],
-        "usd_estimate": 64.9846126171842,
-        "usd_basis": {
-          "method": "SOL at current indicative mark, not historical execution price",
-          "estimated": true,
-          "sol_usd": 83.66621320624273,
-          "marked_at": "2026-11-11T03:45:26+02:00",
-          "source": "Jupiter Price API v3"
-        },
-        "time": "2026-11-11 03:49:35 EET (Europe/Athens)",
-        "time_iso": "2026-11-11T03:49:35+02:00",
-        "observed_at": "2026-11-11T03:50:31+02:00",
-        "reason": null,
-        "flags": [
-          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
-          "unknown_token_symbol_use_mint"
-        ],
-        "mode": "watch_only",
-        "copied": false,
-        "wallet_short": "DGma4Ux\u2026iFCm",
-        "solscan": "https://solscan.io/tx/2QWyS7rM5kvTXT7CiEaRRDw9byj69MM41HCr2jTgRahtorAgvGxD1doTUq5cBz4HMLFkMbKcSRunZ9jH4ZZYT4Em"
       }
     ],
     "events_in_feed": 200,
-    "total_resolved": 202,
+    "total_resolved": 204,
     "total_unresolved": 2,
-    "total_events": 204,
+    "total_events": 206,
     "feed_limit": 200
+  },
+  "analytics": {
+    "engine": "duckdb",
+    "current": {
+      "label": "current",
+      "note": "Current paper ledger after the 14:42 Europe/Athens reset on 11 Nov 2026.",
+      "source": "duckdb",
+      "query_method": "duckdb_attach_readonly",
+      "database": "paper.sqlite3",
+      "signals": 0,
+      "fills": 0,
+      "skips": 0,
+      "fill_rate": null,
+      "fill_rate_display": "\u2014",
+      "avg_signal_to_observe_s": null,
+      "median_signal_to_observe_s": null,
+      "avg_fill_signal_to_observe_s": null,
+      "open_cost_usdc": 0.0,
+      "open_cost_usdc_display": "0.00",
+      "realized_pnl_usdc": 0.0,
+      "realized_pnl_usdc_display": "0.00",
+      "leaders": [
+        {
+          "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+          "wallet_short": "7vBb4gR\u2026arNx",
+          "solscan": "https://solscan.io/account/7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+          "signals": 0,
+          "fills": 0,
+          "skips": 0,
+          "fill_rate": null,
+          "fill_rate_display": "\u2014",
+          "avg_signal_to_observe_s": null,
+          "median_signal_to_observe_s": null,
+          "avg_fill_signal_to_observe_s": null,
+          "open_cost_usdc": 0.0,
+          "open_cost_usdc_display": "0.00",
+          "realized_pnl_usdc": 0.0,
+          "realized_pnl_usdc_display": "0.00",
+          "skips_by_reason": []
+        },
+        {
+          "wallet": "CiNxknJj1E57wfWv7P1vR7mYg7yJ5BuTS6nr5i1AQ728",
+          "wallet_short": "CiNxknJ\u2026Q728",
+          "solscan": "https://solscan.io/account/CiNxknJj1E57wfWv7P1vR7mYg7yJ5BuTS6nr5i1AQ728",
+          "signals": 0,
+          "fills": 0,
+          "skips": 0,
+          "fill_rate": null,
+          "fill_rate_display": "\u2014",
+          "avg_signal_to_observe_s": null,
+          "median_signal_to_observe_s": null,
+          "avg_fill_signal_to_observe_s": null,
+          "open_cost_usdc": 0.0,
+          "open_cost_usdc_display": "0.00",
+          "realized_pnl_usdc": 0.0,
+          "realized_pnl_usdc_display": "0.00",
+          "skips_by_reason": []
+        },
+        {
+          "wallet": "4ueq9Qy3ECqaAjm1T7aqt1PJ343kJcwWQ2Vjuxb2SaSu",
+          "wallet_short": "4ueq9Qy\u2026SaSu",
+          "solscan": "https://solscan.io/account/4ueq9Qy3ECqaAjm1T7aqt1PJ343kJcwWQ2Vjuxb2SaSu",
+          "signals": 0,
+          "fills": 0,
+          "skips": 0,
+          "fill_rate": null,
+          "fill_rate_display": "\u2014",
+          "avg_signal_to_observe_s": null,
+          "median_signal_to_observe_s": null,
+          "avg_fill_signal_to_observe_s": null,
+          "open_cost_usdc": 0.0,
+          "open_cost_usdc_display": "0.00",
+          "realized_pnl_usdc": 0.0,
+          "realized_pnl_usdc_display": "0.00",
+          "skips_by_reason": []
+        }
+      ],
+      "markers": []
+    },
+    "gmgn": {
+      "mode": "watch_only",
+      "copied": false,
+      "wallets": [
+        {
+          "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
+          "wallet_short": "DGma4Ux\u2026iFCm",
+          "events": 155,
+          "resolved": 153,
+          "unresolved": 2,
+          "buys": 95,
+          "sells": 58,
+          "volume_usd": 13268.51,
+          "volume_usd_display": "13268.51",
+          "note": "Watch-only. These trades are not copied and do not enter paper P&L. USD is an estimate, not an execution price."
+        },
+        {
+          "wallet": "EXyRocWQQMWXrHFgeaH9pwAsUZQDvPz4m8qJFbmmJYiu",
+          "wallet_short": "EXyRocW\u2026JYiu",
+          "events": 2,
+          "resolved": 2,
+          "unresolved": 0,
+          "buys": 1,
+          "sells": 1,
+          "volume_usd": 238.95,
+          "volume_usd_display": "238.95",
+          "note": "Watch-only. These trades are not copied and do not enter paper P&L. USD is an estimate, not an execution price."
+        },
+        {
+          "wallet": "FqJMNzzY1DHz2F1Pt6F7VqCxBWdu8cK2TbfTrYT9zQbT",
+          "wallet_short": "FqJMNzz\u2026zQbT",
+          "events": 49,
+          "resolved": 49,
+          "unresolved": 0,
+          "buys": 12,
+          "sells": 37,
+          "volume_usd": 9860.7,
+          "volume_usd_display": "9860.70",
+          "note": "Watch-only. These trades are not copied and do not enter paper P&L. USD is an estimate, not an execution price."
+        }
+      ],
+      "total_events": 206,
+      "total_resolved": 204,
+      "total_unresolved": 2,
+      "total_volume_usd": 23368.17,
+      "total_volume_usd_display": "23368.17",
+      "note": "Observed public-wallet activity only. Volume is the sum of resolved usd_estimate values."
+    },
+    "overnight": {
+      "runs": 10,
+      "clean": 10,
+      "alerts": 0
+    },
+    "coverage_gaps": {
+      "exists": false,
+      "count": 0,
+      "gaps": [],
+      "note": "No coverage_gaps.jsonl yet; the file is created at the first outage."
+    },
+    "archived": {
+      "label": "archived",
+      "note": "Archived run (ledger reset 14:42 Europe/Athens, 11 Nov 2026). These figures are historical only and are not mixed into current paper stats, cash, or P&L.",
+      "source": "duckdb",
+      "query_method": "duckdb_attach_readonly",
+      "database": "archive/run1-20261111/paper.sqlite3",
+      "signals": 10,
+      "fills": 3,
+      "skips": 7,
+      "fill_rate": 0.3,
+      "fill_rate_display": "30.0%",
+      "avg_signal_to_observe_s": 25719.9,
+      "median_signal_to_observe_s": 13790.5,
+      "avg_fill_signal_to_observe_s": 20.0,
+      "open_cost_usdc": 75.15,
+      "open_cost_usdc_display": "75.15",
+      "realized_pnl_usdc": 0.0,
+      "realized_pnl_usdc_display": "0.00",
+      "leaders": [
+        {
+          "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+          "wallet_short": "7vBb4gR\u2026arNx",
+          "solscan": "https://solscan.io/account/7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+          "signals": 10,
+          "fills": 3,
+          "skips": 7,
+          "fill_rate": 0.3,
+          "fill_rate_display": "30.0%",
+          "avg_signal_to_observe_s": 25719.9,
+          "median_signal_to_observe_s": 13790.5,
+          "avg_fill_signal_to_observe_s": 20.0,
+          "open_cost_usdc": 75.15,
+          "open_cost_usdc_display": "75.15",
+          "realized_pnl_usdc": 0.0,
+          "realized_pnl_usdc_display": "0.00",
+          "skips_by_reason": [
+            {
+              "reason": "outside the 45-second signal window",
+              "count": 7
+            }
+          ]
+        },
+        {
+          "wallet": "CiNxknJj1E57wfWv7P1vR7mYg7yJ5BuTS6nr5i1AQ728",
+          "wallet_short": "CiNxknJ\u2026Q728",
+          "solscan": "https://solscan.io/account/CiNxknJj1E57wfWv7P1vR7mYg7yJ5BuTS6nr5i1AQ728",
+          "signals": 0,
+          "fills": 0,
+          "skips": 0,
+          "fill_rate": null,
+          "fill_rate_display": "\u2014",
+          "avg_signal_to_observe_s": null,
+          "median_signal_to_observe_s": null,
+          "avg_fill_signal_to_observe_s": null,
+          "open_cost_usdc": 0.0,
+          "open_cost_usdc_display": "0.00",
+          "realized_pnl_usdc": 0.0,
+          "realized_pnl_usdc_display": "0.00",
+          "skips_by_reason": []
+        },
+        {
+          "wallet": "4ueq9Qy3ECqaAjm1T7aqt1PJ343kJcwWQ2Vjuxb2SaSu",
+          "wallet_short": "4ueq9Qy\u2026SaSu",
+          "solscan": "https://solscan.io/account/4ueq9Qy3ECqaAjm1T7aqt1PJ343kJcwWQ2Vjuxb2SaSu",
+          "signals": 0,
+          "fills": 0,
+          "skips": 0,
+          "fill_rate": null,
+          "fill_rate_display": "\u2014",
+          "avg_signal_to_observe_s": null,
+          "median_signal_to_observe_s": null,
+          "avg_fill_signal_to_observe_s": null,
+          "open_cost_usdc": 0.0,
+          "open_cost_usdc_display": "0.00",
+          "realized_pnl_usdc": 0.0,
+          "realized_pnl_usdc_display": "0.00",
+          "skips_by_reason": []
+        }
+      ],
+      "markers": [
+        {
+          "time": 1794335195,
+          "time_iso": "2026-11-10T20:26:35+02:00",
+          "position": "belowBar",
+          "color": "#16a34a",
+          "shape": "arrowUp",
+          "text": "BUY 25.05",
+          "side": "buy",
+          "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+          "wallet_short": "7vBb4gR\u2026arNx",
+          "signature": "5zYqgbr5z5pX47EyxwVExo7mRyuM3Uq62iHDbZYd4VaNsCjauzeL7gxaBTdcQD2hSxtte6kgqogm5qK6Lq4z4urt",
+          "solscan": "https://solscan.io/tx/5zYqgbr5z5pX47EyxwVExo7mRyuM3Uq62iHDbZYd4VaNsCjauzeL7gxaBTdcQD2hSxtte6kgqogm5qK6Lq4z4urt",
+          "reason": "all paper rules passed",
+          "run": "archived"
+        },
+        {
+          "time": 1794335852,
+          "time_iso": "2026-11-10T20:37:32+02:00",
+          "position": "belowBar",
+          "color": "#16a34a",
+          "shape": "arrowUp",
+          "text": "BUY 25.05",
+          "side": "buy",
+          "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+          "wallet_short": "7vBb4gR\u2026arNx",
+          "signature": "4kdVDzqjLA21UMZRTWgEqKY1HWYaJeGFrE2bmskoTy9DmnEE1gczRi8P4og2eStfqRYEywjNfPt3ucnUtnT2RCax",
+          "solscan": "https://solscan.io/tx/4kdVDzqjLA21UMZRTWgEqKY1HWYaJeGFrE2bmskoTy9DmnEE1gczRi8P4og2eStfqRYEywjNfPt3ucnUtnT2RCax",
+          "reason": "all paper rules passed",
+          "run": "archived"
+        },
+        {
+          "time": 1794341770,
+          "time_iso": "2026-11-10T22:16:10+02:00",
+          "position": "belowBar",
+          "color": "#16a34a",
+          "shape": "arrowUp",
+          "text": "BUY 25.05",
+          "side": "buy",
+          "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+          "wallet_short": "7vBb4gR\u2026arNx",
+          "signature": "Wyo6q1cbwuYjxCRzgSgjxWwRpuxhhHAaXsAjNRAft8NKSwdBrfQhFu8ez1KqbrVc3R3qnjgH5w6XV6XXcNMbzxU",
+          "solscan": "https://solscan.io/tx/Wyo6q1cbwuYjxCRzgSgjxWwRpuxhhHAaXsAjNRAft8NKSwdBrfQhFu8ez1KqbrVc3R3qnjgH5w6XV6XXcNMbzxU",
+          "reason": "all paper rules passed",
+          "run": "archived"
+        }
+      ],
+      "reset_at": "2026-11-11T14:42:00+02:00"
+    }
+  },
+  "charts": {
+    "price": {
+      "ok": true,
+      "symbol": "JUP/USDC",
+      "source": "GeckoTerminal OHLCV API v2",
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/pools/Et6HnPjetV8AzmxNAfzKJ6ax5VM82ZB7phY465Ns5iZW/ohlcv/hour?aggregate=1&limit=168&currency=token&token=base&include_empty_intervals=true",
+      "pool": "Et6HnPjetV8AzmxNAfzKJ6ax5VM82ZB7phY465Ns5iZW",
+      "pool_url": "https://www.geckoterminal.com/solana/pools/Et6HnPjetV8AzmxNAfzKJ6ax5VM82ZB7phY465Ns5iZW",
+      "pool_label": "JUP/USDC (high-volume Solana pool)",
+      "timeframe": "1h",
+      "currency": "USDC",
+      "note": "Hourly on-pool JUP/USDC candles, fetched at dashboard refresh. The public site is static and does not call this API or use any key.",
+      "candles": [
+        {
+          "time": 1793800800,
+          "open": 0.24976011659808,
+          "high": 0.257903175181554,
+          "low": 0.24840657520309395,
+          "close": 0.25679224232093495,
+          "volume": 82745.78061200009
+        },
+        {
+          "time": 1793804400,
+          "open": 0.25679224232093495,
+          "high": 0.265653706602089,
+          "low": 0.25679224232093495,
+          "close": 0.261287706150396,
+          "volume": 212595.45381299994
+        },
+        {
+          "time": 1793808000,
+          "open": 0.261287706150396,
+          "high": 0.26610518244465503,
+          "low": 0.25953966462220396,
+          "close": 0.262515876218221,
+          "volume": 111092.40728799999
+        },
+        {
+          "time": 1793811600,
+          "open": 0.262515876218221,
+          "high": 0.263015048664147,
+          "low": 0.259126256527476,
+          "close": 0.260408422768927,
+          "volume": 39805.227261999986
+        },
+        {
+          "time": 1793815200,
+          "open": 0.260408422768927,
+          "high": 0.261556691704544,
+          "low": 0.25720559454090497,
+          "close": 0.25778868431820795,
+          "volume": 60092.361674
+        },
+        {
+          "time": 1793818800,
+          "open": 0.25778868431820795,
+          "high": 0.259928187774871,
+          "low": 0.25592716134399796,
+          "close": 0.25677596500697997,
+          "volume": 195049.21194900005
+        },
+        {
+          "time": 1793822400,
+          "open": 0.25677596500697997,
+          "high": 0.259773142274044,
+          "low": 0.256056375932739,
+          "close": 0.25888109664541,
+          "volume": 51600.244123000004
+        },
+        {
+          "time": 1793826000,
+          "open": 0.25888109664541,
+          "high": 0.263094188583676,
+          "low": 0.25888109664541,
+          "close": 0.26299027207702497,
+          "volume": 59818.31352799999
+        },
+        {
+          "time": 1793829600,
+          "open": 0.26299027207702497,
+          "high": 0.265409052413226,
+          "low": 0.26299027207702497,
+          "close": 0.263826567559863,
+          "volume": 82966.44986400002
+        },
+        {
+          "time": 1793833200,
+          "open": 0.263826567559863,
+          "high": 0.26383069033099493,
+          "low": 0.258929057357869,
+          "close": 0.25953788828271496,
+          "volume": 278083.524254
+        },
+        {
+          "time": 1793836800,
+          "open": 0.25953788828271496,
+          "high": 0.262908124357085,
+          "low": 0.25953788828271496,
+          "close": 0.25980797370258796,
+          "volume": 221634.655344
+        },
+        {
+          "time": 1793840400,
+          "open": 0.25980797370258796,
+          "high": 0.262784679340827,
+          "low": 0.256711799848021,
+          "close": 0.262286126827851,
+          "volume": 123649.5136709999
+        },
+        {
+          "time": 1793844000,
+          "open": 0.262286126827851,
+          "high": 0.264208010941615,
+          "low": 0.260617760617761,
+          "close": 0.263220026424849,
+          "volume": 21855.360623
+        },
+        {
+          "time": 1793847600,
+          "open": 0.263220026424849,
+          "high": 0.266091857598916,
+          "low": 0.262389913983601,
+          "close": 0.262570343067023,
+          "volume": 138609.92842500022
+        },
+        {
+          "time": 1793851200,
+          "open": 0.262570343067023,
+          "high": 0.26326748416143897,
+          "low": 0.26090445005140694,
+          "close": 0.261772434417398,
+          "volume": 149546.58669599995
+        },
+        {
+          "time": 1793854800,
+          "open": 0.261772434417398,
+          "high": 0.261772434417398,
+          "low": 0.259422748193192,
+          "close": 0.260294556345319,
+          "volume": 88136.790786
+        },
+        {
+          "time": 1793858400,
+          "open": 0.260294556345319,
+          "high": 0.26177058519548896,
+          "low": 0.258674091748702,
+          "close": 0.260980980344042,
+          "volume": 131046.06536800016
+        },
+        {
+          "time": 1793862000,
+          "open": 0.260980980344042,
+          "high": 0.261877119739648,
+          "low": 0.259332023575639,
+          "close": 0.260733198363746,
+          "volume": 13267.61039200001
+        },
+        {
+          "time": 1793865600,
+          "open": 0.260733198363746,
+          "high": 0.264280787388256,
+          "low": 0.26034203003594897,
+          "close": 0.26407223476298,
+          "volume": 13930.642518999997
+        },
+        {
+          "time": 1793869200,
+          "open": 0.26407223476298,
+          "high": 0.264511553684725,
+          "low": 0.26316874901133397,
+          "close": 0.263949521790684,
+          "volume": 8005.355667000001
+        },
+        {
+          "time": 1793872800,
+          "open": 0.263949521790684,
+          "high": 0.264235313421552,
+          "low": 0.260947299590804,
+          "close": 0.26109,
+          "volume": 62764.968231
+        },
+        {
+          "time": 1793876400,
+          "open": 0.26109,
+          "high": 0.261730451022542,
+          "low": 0.260170754076266,
+          "close": 0.260834244782394,
+          "volume": 12456.787294999998
+        },
+        {
+          "time": 1793880000,
+          "open": 0.260834244782394,
+          "high": 0.260834244782394,
+          "low": 0.255594734159381,
+          "close": 0.257191882556371,
+          "volume": 19427.50292
+        },
+        {
+          "time": 1793883600,
+          "open": 0.257191882556371,
+          "high": 0.258244897501152,
+          "low": 0.256569322313572,
+          "close": 0.25781736296208996,
+          "volume": 43614.244683
+        },
+        {
+          "time": 1793887200,
+          "open": 0.25781736296208996,
+          "high": 0.257957564597617,
+          "low": 0.248623276174543,
+          "close": 0.249727391044356,
+          "volume": 171015.87788
+        },
+        {
+          "time": 1793890800,
+          "open": 0.249727391044356,
+          "high": 0.249727391044356,
+          "low": 0.234022378976176,
+          "close": 0.236836719498015,
+          "volume": 16983.141475
+        },
+        {
+          "time": 1793894400,
+          "open": 0.236836719498015,
+          "high": 0.24382157740112498,
+          "low": 0.236836719498015,
+          "close": 0.24110410254343498,
+          "volume": 145737.95088600015
+        },
+        {
+          "time": 1793898000,
+          "open": 0.24110410254343498,
+          "high": 0.24131030748409396,
+          "low": 0.23762469857919197,
+          "close": 0.23864916221632496,
+          "volume": 67548.75004
+        },
+        {
+          "time": 1793901600,
+          "open": 0.23864916221632496,
+          "high": 0.24138923523988595,
+          "low": 0.237290732116892,
+          "close": 0.24096936590657597,
+          "volume": 26521.196590000018
+        },
+        {
+          "time": 1793905200,
+          "open": 0.24096936590657597,
+          "high": 0.245108298055127,
+          "low": 0.23885934882497697,
+          "close": 0.24479205308105495,
+          "volume": 13451.166802000012
+        },
+        {
+          "time": 1793908800,
+          "open": 0.24479205308105495,
+          "high": 0.24551010862820197,
+          "low": 0.24253646721063798,
+          "close": 0.24341365193673797,
+          "volume": 12146.997653000002
+        },
+        {
+          "time": 1793912400,
+          "open": 0.24341365193673797,
+          "high": 0.243552276168891,
+          "low": 0.24013282710331801,
+          "close": 0.24130941179342597,
+          "volume": 6976.2815439999995
+        },
+        {
+          "time": 1793916000,
+          "open": 0.24130941179342597,
+          "high": 0.24207275160021496,
+          "low": 0.23969163511637095,
+          "close": 0.24056893222693698,
+          "volume": 17409.628175000005
+        },
+        {
+          "time": 1793919600,
+          "open": 0.24056893222693698,
+          "high": 0.241273956115175,
+          "low": 0.23583777232686998,
+          "close": 0.23941938126913898,
+          "volume": 55241.309009000004
+        },
+        {
+          "time": 1793923200,
+          "open": 0.23941938126913898,
+          "high": 0.24616843068303595,
+          "low": 0.23939286533317797,
+          "close": 0.245417861635127,
+          "volume": 112373.006147
+        },
+        {
+          "time": 1793926800,
+          "open": 0.245417861635127,
+          "high": 0.24612991475290397,
+          "low": 0.243737119515392,
+          "close": 0.24612991475290397,
+          "volume": 7619.7432690000005
+        },
+        {
+          "time": 1793930400,
+          "open": 0.24612991475290397,
+          "high": 0.248083348557664,
+          "low": 0.24474187380497098,
+          "close": 0.24677724899505601,
+          "volume": 84249.78797400005
+        },
+        {
+          "time": 1793934000,
+          "open": 0.24677724899505601,
+          "high": 0.24705931941601497,
+          "low": 0.24461135074636295,
+          "close": 0.24491227807653695,
+          "volume": 8793.538002999998
+        },
+        {
+          "time": 1793937600,
+          "open": 0.24491227807653695,
+          "high": 0.245710145892829,
+          "low": 0.24404203199747998,
+          "close": 0.244695175763797,
+          "volume": 7743.204347999999
+        },
+        {
+          "time": 1793941200,
+          "open": 0.244695175763797,
+          "high": 0.24681204317526598,
+          "low": 0.24329501915708798,
+          "close": 0.246090374598895,
+          "volume": 5742.514002000003
+        },
+        {
+          "time": 1793944800,
+          "open": 0.246090374598895,
+          "high": 0.24908075568637697,
+          "low": 0.245025287102638,
+          "close": 0.248300969433136,
+          "volume": 5650.564213999999
+        },
+        {
+          "time": 1793948400,
+          "open": 0.248300969433136,
+          "high": 0.24897042610483197,
+          "low": 0.24549249963899297,
+          "close": 0.24875037308034098,
+          "volume": 10090.860764
+        },
+        {
+          "time": 1793952000,
+          "open": 0.24875037308034098,
+          "high": 0.249374137466926,
+          "low": 0.24749299475795097,
+          "close": 0.247808235588809,
+          "volume": 20914.40943199999
+        },
+        {
+          "time": 1793955600,
+          "open": 0.247808235588809,
+          "high": 0.250664471435242,
+          "low": 0.247808235588809,
+          "close": 0.248722701175668,
+          "volume": 66118.639136
+        },
+        {
+          "time": 1793959200,
+          "open": 0.248722701175668,
+          "high": 0.24945494345312297,
+          "low": 0.24729176632709296,
+          "close": 0.24753073998459696,
+          "volume": 9897.518801000004
+        },
+        {
+          "time": 1793962800,
+          "open": 0.24753073998459696,
+          "high": 0.24917409527678497,
+          "low": 0.24699009271415598,
+          "close": 0.24827127688657097,
+          "volume": 9955.521456
+        },
+        {
+          "time": 1793966400,
+          "open": 0.24827127688657097,
+          "high": 0.24940969439849597,
+          "low": 0.24748936170212799,
+          "close": 0.247857729150679,
+          "volume": 9737.931536999999
+        },
+        {
+          "time": 1793970000,
+          "open": 0.247857729150679,
+          "high": 0.24889376727232398,
+          "low": 0.24734953994269698,
+          "close": 0.24861353717349996,
+          "volume": 10788.151783999998
+        },
+        {
+          "time": 1793973600,
+          "open": 0.24861353717349996,
+          "high": 0.254242240879311,
+          "low": 0.24601962286351298,
+          "close": 0.250653188430005,
+          "volume": 111197.54044699999
+        },
+        {
+          "time": 1793977200,
+          "open": 0.250653188430005,
+          "high": 0.250946281711673,
+          "low": 0.24665910949639097,
+          "close": 0.248124161462906,
+          "volume": 128428.41834500001
+        },
+        {
+          "time": 1793980800,
+          "open": 0.248124161462906,
+          "high": 0.24874479452153597,
+          "low": 0.24518634816183896,
+          "close": 0.247640601087158,
+          "volume": 27357.871327
+        },
+        {
+          "time": 1793984400,
+          "open": 0.247640601087158,
+          "high": 0.247640601087158,
+          "low": 0.24398801176331597,
+          "close": 0.245775704391788,
+          "volume": 27555.181457000002
+        },
+        {
+          "time": 1793988000,
+          "open": 0.245775704391788,
+          "high": 0.24676241682576297,
+          "low": 0.24468542389900896,
+          "close": 0.24544342905931,
+          "volume": 9546.433073
+        },
+        {
+          "time": 1793991600,
+          "open": 0.24544342905931,
+          "high": 0.246032930864744,
+          "low": 0.24359919073933195,
+          "close": 0.24482113345823997,
+          "volume": 6482.878531000002
+        },
+        {
+          "time": 1793995200,
+          "open": 0.24482113345823997,
+          "high": 0.246263434770571,
+          "low": 0.244100322595215,
+          "close": 0.244630319240924,
+          "volume": 4607.34482
+        },
+        {
+          "time": 1793998800,
+          "open": 0.244630319240924,
+          "high": 0.245554767331275,
+          "low": 0.243971676067789,
+          "close": 0.245034226082638,
+          "volume": 4134.101557999999
+        },
+        {
+          "time": 1794002400,
+          "open": 0.245034226082638,
+          "high": 0.24658141735883898,
+          "low": 0.243685936952892,
+          "close": 0.243685936952892,
+          "volume": 9541.390610000002
+        },
+        {
+          "time": 1794006000,
+          "open": 0.243685936952892,
+          "high": 0.24387713751844495,
+          "low": 0.243002677640731,
+          "close": 0.24320550496843096,
+          "volume": 4552.747973999998
+        },
+        {
+          "time": 1794009600,
+          "open": 0.24320550496843096,
+          "high": 0.24383383780319895,
+          "low": 0.24306779183006497,
+          "close": 0.24348985219956998,
+          "volume": 2703.4021329999996
+        },
+        {
+          "time": 1794013200,
+          "open": 0.24348985219956998,
+          "high": 0.24439870729807397,
+          "low": 0.24276384066977097,
+          "close": 0.243009781329457,
+          "volume": 7381.920695000008
+        },
+        {
+          "time": 1794016800,
+          "open": 0.243009781329457,
+          "high": 0.24347687119258798,
+          "low": 0.241380044010799,
+          "close": 0.241380044010799,
+          "volume": 2875.934612000001
+        },
+        {
+          "time": 1794020400,
+          "open": 0.241380044010799,
+          "high": 0.242190757431036,
+          "low": 0.23966143903715298,
+          "close": 0.240401314743077,
+          "volume": 2984.3814089999987
+        },
+        {
+          "time": 1794024000,
+          "open": 0.240401314743077,
+          "high": 0.24087670319814197,
+          "low": 0.24036050640711096,
+          "close": 0.24080874533879695,
+          "volume": 1221.5853220000017
+        },
+        {
+          "time": 1794027600,
+          "open": 0.24080874533879695,
+          "high": 0.242065576371299,
+          "low": 0.240295748613678,
+          "close": 0.24185810025253698,
+          "volume": 6381.596275999999
+        },
+        {
+          "time": 1794031200,
+          "open": 0.24185810025253698,
+          "high": 0.242781950888818,
+          "low": 0.24185810025253698,
+          "close": 0.242592757725371,
+          "volume": 18596.88268400001
+        },
+        {
+          "time": 1794034800,
+          "open": 0.242592757725371,
+          "high": 0.24302448437703597,
+          "low": 0.241744885007191,
+          "close": 0.24276817138652895,
+          "volume": 4685.274853
+        },
+        {
+          "time": 1794038400,
+          "open": 0.24276817138652895,
+          "high": 0.24282716124879497,
+          "low": 0.24150183440660497,
+          "close": 0.24240032075193996,
+          "volume": 428.44711
+        },
+        {
+          "time": 1794042000,
+          "open": 0.24240032075193996,
+          "high": 0.24240032075193996,
+          "low": 0.240096143968801,
+          "close": 0.240316543462168,
+          "volume": 28589.78291799999
+        },
+        {
+          "time": 1794045600,
+          "open": 0.240316543462168,
+          "high": 0.240748906493125,
+          "low": 0.239565374797549,
+          "close": 0.24036248832571197,
+          "volume": 2462.7688460000018
+        },
+        {
+          "time": 1794049200,
+          "open": 0.24036248832571197,
+          "high": 0.24103001204495297,
+          "low": 0.23988060186505397,
+          "close": 0.240784411682821,
+          "volume": 4077.160671
+        },
+        {
+          "time": 1794052800,
+          "open": 0.240784411682821,
+          "high": 0.240871138369097,
+          "low": 0.23982575064679001,
+          "close": 0.240283716168335,
+          "volume": 7593.414931
+        },
+        {
+          "time": 1794056400,
+          "open": 0.240283716168335,
+          "high": 0.24217695196027397,
+          "low": 0.24016103968839497,
+          "close": 0.241737598160363,
+          "volume": 2200.4129310000008
+        },
+        {
+          "time": 1794060000,
+          "open": 0.241737598160363,
+          "high": 0.244427139169268,
+          "low": 0.24104899237307298,
+          "close": 0.242030940482622,
+          "volume": 78558.87341999996
+        },
+        {
+          "time": 1794063600,
+          "open": 0.242030940482622,
+          "high": 0.242129794058415,
+          "low": 0.24060899094884697,
+          "close": 0.241039233907895,
+          "volume": 14625.28030699999
+        },
+        {
+          "time": 1794067200,
+          "open": 0.241039233907895,
+          "high": 0.24160942739682395,
+          "low": 0.240585881300951,
+          "close": 0.24073621599999998,
+          "volume": 54546.80681999999
+        },
+        {
+          "time": 1794070800,
+          "open": 0.24073621599999998,
+          "high": 0.24240320456201997,
+          "low": 0.24073621599999998,
+          "close": 0.242178824822397,
+          "volume": 3942.6262509999997
+        },
+        {
+          "time": 1794074400,
+          "open": 0.242178824822397,
+          "high": 0.243854005207152,
+          "low": 0.241758786746558,
+          "close": 0.243854005207152,
+          "volume": 4839.123848000001
+        },
+        {
+          "time": 1794078000,
+          "open": 0.243854005207152,
+          "high": 0.243854005207152,
+          "low": 0.234234234234234,
+          "close": 0.24233173235081298,
+          "volume": 5510.599747999999
+        },
+        {
+          "time": 1794081600,
+          "open": 0.24233173235081298,
+          "high": 0.24237634508356096,
+          "low": 0.23879290863390495,
+          "close": 0.23908923059110795,
+          "volume": 6270.119537999999
+        },
+        {
+          "time": 1794085200,
+          "open": 0.23908923059110795,
+          "high": 0.23961666010545796,
+          "low": 0.23803670361466497,
+          "close": 0.23942188757779798,
+          "volume": 97051.094354
+        },
+        {
+          "time": 1794088800,
+          "open": 0.23942188757779798,
+          "high": 0.241138040530034,
+          "low": 0.23934152635947797,
+          "close": 0.24068669877771096,
+          "volume": 18443.845858999994
+        },
+        {
+          "time": 1794092400,
+          "open": 0.24068669877771096,
+          "high": 0.24291181074425997,
+          "low": 0.238805970149254,
+          "close": 0.24275090769794497,
+          "volume": 10992.792157000009
+        },
+        {
+          "time": 1794096000,
+          "open": 0.24275090769794497,
+          "high": 0.24330478317933601,
+          "low": 0.241155559411293,
+          "close": 0.241155559411293,
+          "volume": 21951.369165
+        },
+        {
+          "time": 1794099600,
+          "open": 0.241155559411293,
+          "high": 0.24155450236966797,
+          "low": 0.23967748956045098,
+          "close": 0.23993225195263598,
+          "volume": 28633.80576999999
+        },
+        {
+          "time": 1794103200,
+          "open": 0.23993225195263598,
+          "high": 0.24061974870823996,
+          "low": 0.23892948322147697,
+          "close": 0.23986050021970196,
+          "volume": 1755.5326310000012
+        },
+        {
+          "time": 1794106800,
+          "open": 0.23986050021970196,
+          "high": 0.24084301322308302,
+          "low": 0.23986050021970196,
+          "close": 0.24022635258703698,
+          "volume": 3469.629647000001
+        },
+        {
+          "time": 1794110400,
+          "open": 0.24022635258703698,
+          "high": 0.24094390898268397,
+          "low": 0.239644315319007,
+          "close": 0.24004588099203897,
+          "volume": 12521.404161000002
+        },
+        {
+          "time": 1794114000,
+          "open": 0.24004588099203897,
+          "high": 0.24070022567645,
+          "low": 0.23945970520673798,
+          "close": 0.24070022567645,
+          "volume": 1839.159268000001
+        },
+        {
+          "time": 1794117600,
+          "open": 0.24070022567645,
+          "high": 0.24147284739754,
+          "low": 0.23986378037770895,
+          "close": 0.23986378037770895,
+          "volume": 10921.318865000001
+        },
+        {
+          "time": 1794121200,
+          "open": 0.23986378037770895,
+          "high": 0.24180103271086498,
+          "low": 0.23970677145631497,
+          "close": 0.2415517861158,
+          "volume": 53532.26692299999
+        },
+        {
+          "time": 1794124800,
+          "open": 0.2415517861158,
+          "high": 0.24164253846924097,
+          "low": 0.24018015958818198,
+          "close": 0.24073499359033598,
+          "volume": 108446.12869
+        },
+        {
+          "time": 1794128400,
+          "open": 0.24073499359033598,
+          "high": 0.24073499359033598,
+          "low": 0.238802856684598,
+          "close": 0.239599659396587,
+          "volume": 5340.035286
+        },
+        {
+          "time": 1794132000,
+          "open": 0.239599659396587,
+          "high": 0.23989715191557798,
+          "low": 0.238802561074389,
+          "close": 0.23931476288117798,
+          "volume": 17656.543643
+        },
+        {
+          "time": 1794135600,
+          "open": 0.23931476288117798,
+          "high": 0.242305379869491,
+          "low": 0.23931476288117798,
+          "close": 0.242103915991507,
+          "volume": 4653.254243999999
+        },
+        {
+          "time": 1794139200,
+          "open": 0.242103915991507,
+          "high": 0.243110684462739,
+          "low": 0.240557652667677,
+          "close": 0.240660014653143,
+          "volume": 18908.354515999992
+        },
+        {
+          "time": 1794142800,
+          "open": 0.240660014653143,
+          "high": 0.241888622700602,
+          "low": 0.238662312650847,
+          "close": 0.23897895594005097,
+          "volume": 20040.801329000005
+        },
+        {
+          "time": 1794146400,
+          "open": 0.23897895594005097,
+          "high": 0.24033502472244095,
+          "low": 0.237920850665936,
+          "close": 0.239742192673132,
+          "volume": 35680.90753400001
+        },
+        {
+          "time": 1794150000,
+          "open": 0.239742192673132,
+          "high": 0.240344192887677,
+          "low": 0.23926990439859,
+          "close": 0.239727884869787,
+          "volume": 7239.864954999997
+        },
+        {
+          "time": 1794153600,
+          "open": 0.239727884869787,
+          "high": 0.240419538964623,
+          "low": 0.23709636544106796,
+          "close": 0.23737286311949396,
+          "volume": 8503.204155999998
+        },
+        {
+          "time": 1794157200,
+          "open": 0.23737286311949396,
+          "high": 0.237790362731555,
+          "low": 0.23677468443407199,
+          "close": 0.23773532528473898,
+          "volume": 5985.064278
+        },
+        {
+          "time": 1794160800,
+          "open": 0.23773532528473898,
+          "high": 0.240958084296096,
+          "low": 0.23759693068129098,
+          "close": 0.240217056243728,
+          "volume": 14004.372754999993
+        },
+        {
+          "time": 1794164400,
+          "open": 0.240217056243728,
+          "high": 0.240217056243728,
+          "low": 0.23893796615935098,
+          "close": 0.23950427510117997,
+          "volume": 12808.301713999997
+        },
+        {
+          "time": 1794168000,
+          "open": 0.23950427510117997,
+          "high": 0.239607145759138,
+          "low": 0.23717551174652596,
+          "close": 0.23758868726629,
+          "volume": 13480.47898200001
+        },
+        {
+          "time": 1794171600,
+          "open": 0.23758868726629,
+          "high": 0.23828515797932998,
+          "low": 0.224475516673112,
+          "close": 0.22705996347857998,
+          "volume": 31712.37223200002
+        },
+        {
+          "time": 1794175200,
+          "open": 0.22705996347857998,
+          "high": 0.23194443812313498,
+          "low": 0.22705996347857998,
+          "close": 0.23113847129069498,
+          "volume": 71309.523392
+        },
+        {
+          "time": 1794178800,
+          "open": 0.23113847129069498,
+          "high": 0.23623046820600196,
+          "low": 0.23053173795798398,
+          "close": 0.23167538286348596,
+          "volume": 13598.325922000002
+        },
+        {
+          "time": 1794182400,
+          "open": 0.23167538286348596,
+          "high": 0.23559304535485195,
+          "low": 0.23032211587295298,
+          "close": 0.23511293772478098,
+          "volume": 12689.218444000002
+        },
+        {
+          "time": 1794186000,
+          "open": 0.23511293772478098,
+          "high": 0.237672289976879,
+          "low": 0.23319362864121798,
+          "close": 0.236224722018354,
+          "volume": 12319.510188000004
+        },
+        {
+          "time": 1794189600,
+          "open": 0.236224722018354,
+          "high": 0.238116231587452,
+          "low": 0.235752310486723,
+          "close": 0.23696771211679898,
+          "volume": 36778.564089999985
+        },
+        {
+          "time": 1794193200,
+          "open": 0.23696771211679898,
+          "high": 0.23755388114836298,
+          "low": 0.23479567506548496,
+          "close": 0.23609770919417497,
+          "volume": 8163.262670000001
+        },
+        {
+          "time": 1794196800,
+          "open": 0.23609770919417497,
+          "high": 0.237522342912141,
+          "low": 0.23555054690872496,
+          "close": 0.23606222820147496,
+          "volume": 9912.951919000001
+        },
+        {
+          "time": 1794200400,
+          "open": 0.23606222820147496,
+          "high": 0.23644855179147597,
+          "low": 0.233345953506938,
+          "close": 0.23398088666659897,
+          "volume": 9323.018516999999
+        },
+        {
+          "time": 1794204000,
+          "open": 0.23398088666659897,
+          "high": 0.23433226064972495,
+          "low": 0.23117115614768197,
+          "close": 0.232225227373081,
+          "volume": 6925.003136000001
+        },
+        {
+          "time": 1794207600,
+          "open": 0.232225227373081,
+          "high": 0.23249294791873398,
+          "low": 0.22789293117499998,
+          "close": 0.22967207119346597,
+          "volume": 32902.04561499998
+        },
+        {
+          "time": 1794211200,
+          "open": 0.22967207119346597,
+          "high": 0.234673911633215,
+          "low": 0.22896427800836897,
+          "close": 0.23456662217057697,
+          "volume": 15505.870239999995
+        },
+        {
+          "time": 1794214800,
+          "open": 0.23456662217057697,
+          "high": 0.235532901358247,
+          "low": 0.23296169316234897,
+          "close": 0.23434947996435396,
+          "volume": 15956.520260000001
+        },
+        {
+          "time": 1794218400,
+          "open": 0.23434947996435396,
+          "high": 0.23473321331288402,
+          "low": 0.232914519416177,
+          "close": 0.23349652971996798,
+          "volume": 7124.4011470000005
+        },
+        {
+          "time": 1794222000,
+          "open": 0.23349652971996798,
+          "high": 0.237554894324206,
+          "low": 0.232524883480077,
+          "close": 0.23404901269266395,
+          "volume": 14456.372602000003
+        },
+        {
+          "time": 1794225600,
+          "open": 0.23404901269266395,
+          "high": 0.24014194937077,
+          "low": 0.23376239058939696,
+          "close": 0.239186033272889,
+          "volume": 23244.51548000001
+        },
+        {
+          "time": 1794229200,
+          "open": 0.239186033272889,
+          "high": 0.24041002967054298,
+          "low": 0.23806867484814698,
+          "close": 0.23929999999999996,
+          "volume": 148962.72248299993
+        },
+        {
+          "time": 1794232800,
+          "open": 0.23929999999999996,
+          "high": 0.243143623528348,
+          "low": 0.238633813720485,
+          "close": 0.242312488865135,
+          "volume": 105367.73801399997
+        },
+        {
+          "time": 1794236400,
+          "open": 0.242312488865135,
+          "high": 0.25121103551568696,
+          "low": 0.240787160432365,
+          "close": 0.25107843375406,
+          "volume": 301064.80830199993
+        },
+        {
+          "time": 1794240000,
+          "open": 0.25107843375406,
+          "high": 0.252713395651464,
+          "low": 0.24922600619195,
+          "close": 0.251014137072105,
+          "volume": 153787.45914699987
+        },
+        {
+          "time": 1794243600,
+          "open": 0.251014137072105,
+          "high": 0.25624086459289497,
+          "low": 0.248777251014916,
+          "close": 0.255769300703855,
+          "volume": 33351.81107600001
+        },
+        {
+          "time": 1794247200,
+          "open": 0.255769300703855,
+          "high": 0.256549955983358,
+          "low": 0.250194626755748,
+          "close": 0.255638233738396,
+          "volume": 240349.17804799997
+        },
+        {
+          "time": 1794250800,
+          "open": 0.255638233738396,
+          "high": 0.25838535671013196,
+          "low": 0.253255844840046,
+          "close": 0.25563649389538995,
+          "volume": 111597.95540299997
+        },
+        {
+          "time": 1794254400,
+          "open": 0.25563649389538995,
+          "high": 0.258083417743619,
+          "low": 0.253626132883302,
+          "close": 0.255951797376984,
+          "volume": 39173.67889500001
+        },
+        {
+          "time": 1794258000,
+          "open": 0.255951797376984,
+          "high": 0.256861594445807,
+          "low": 0.25238418590434797,
+          "close": 0.25432069084418896,
+          "volume": 5269.648299999998
+        },
+        {
+          "time": 1794261600,
+          "open": 0.25432069084418896,
+          "high": 0.256264150982873,
+          "low": 0.253184341041387,
+          "close": 0.254294365829585,
+          "volume": 25167.801456000005
+        },
+        {
+          "time": 1794265200,
+          "open": 0.254294365829585,
+          "high": 0.254319896424971,
+          "low": 0.251758391244238,
+          "close": 0.252887817022191,
+          "volume": 16952.811834000004
+        },
+        {
+          "time": 1794268800,
+          "open": 0.252887817022191,
+          "high": 0.253911769909092,
+          "low": 0.251783653668755,
+          "close": 0.25350607256446395,
+          "volume": 28719.664571999998
+        },
+        {
+          "time": 1794272400,
+          "open": 0.25350607256446395,
+          "high": 0.25603615729720797,
+          "low": 0.252820114502842,
+          "close": 0.25291981545501196,
+          "volume": 20626.693615999997
+        },
+        {
+          "time": 1794276000,
+          "open": 0.25291981545501196,
+          "high": 0.25291981545501196,
+          "low": 0.25007234704474995,
+          "close": 0.251971516007533,
+          "volume": 20985.451769000014
+        },
+        {
+          "time": 1794279600,
+          "open": 0.251971516007533,
+          "high": 0.25302388791182895,
+          "low": 0.250354421582945,
+          "close": 0.25141641265326703,
+          "volume": 32499.228059999987
+        },
+        {
+          "time": 1794283200,
+          "open": 0.25141641265326703,
+          "high": 0.254556289674292,
+          "low": 0.25110474293806,
+          "close": 0.25203488907948,
+          "volume": 12939.942453999995
+        },
+        {
+          "time": 1794286800,
+          "open": 0.25203488907948,
+          "high": 0.254251830047466,
+          "low": 0.250530785562633,
+          "close": 0.25274383416131296,
+          "volume": 30501.790433
+        },
+        {
+          "time": 1794290400,
+          "open": 0.25274383416131296,
+          "high": 0.25667696114345,
+          "low": 0.25171989143081897,
+          "close": 0.256108768589603,
+          "volume": 20941.685449999994
+        },
+        {
+          "time": 1794294000,
+          "open": 0.256108768589603,
+          "high": 0.25705277519406394,
+          "low": 0.252925056465915,
+          "close": 0.25431768583468195,
+          "volume": 26537.241599999994
+        },
+        {
+          "time": 1794297600,
+          "open": 0.25431768583468195,
+          "high": 0.255035096700998,
+          "low": 0.25219298245614,
+          "close": 0.254040026736917,
+          "volume": 38786.87657399998
+        },
+        {
+          "time": 1794301200,
+          "open": 0.254040026736917,
+          "high": 0.254190600956834,
+          "low": 0.25169946525222897,
+          "close": 0.252658210883651,
+          "volume": 78643.40005
+        },
+        {
+          "time": 1794304800,
+          "open": 0.252658210883651,
+          "high": 0.253154059719466,
+          "low": 0.25030210541876896,
+          "close": 0.25052848362785496,
+          "volume": 91885.74947099999
+        },
+        {
+          "time": 1794308400,
+          "open": 0.25052848362785496,
+          "high": 0.253712585324436,
+          "low": 0.24980289262680197,
+          "close": 0.25334984893248397,
+          "volume": 195261.50804300024
+        },
+        {
+          "time": 1794312000,
+          "open": 0.25334984893248397,
+          "high": 0.254633779230725,
+          "low": 0.25172846206010396,
+          "close": 0.254487029396804,
+          "volume": 37327.290907999995
+        },
+        {
+          "time": 1794315600,
+          "open": 0.254487029396804,
+          "high": 0.25559674619336,
+          "low": 0.249189825062875,
+          "close": 0.252648440154215,
+          "volume": 87970.67166400001
+        },
+        {
+          "time": 1794319200,
+          "open": 0.252648440154215,
+          "high": 0.25718536677639897,
+          "low": 0.25256671421691995,
+          "close": 0.256422276547033,
+          "volume": 136713.97435799998
+        },
+        {
+          "time": 1794322800,
+          "open": 0.256422276547033,
+          "high": 0.26057221076892095,
+          "low": 0.249083351329593,
+          "close": 0.253313150733413,
+          "volume": 156650.52739099998
+        },
+        {
+          "time": 1794326400,
+          "open": 0.253313150733413,
+          "high": 0.25685735083211,
+          "low": 0.25017653579981597,
+          "close": 0.25165736094423596,
+          "volume": 140102.319856
+        },
+        {
+          "time": 1794330000,
+          "open": 0.25165736094423596,
+          "high": 0.254532532837724,
+          "low": 0.25010668086935,
+          "close": 0.25399156617256097,
+          "volume": 100706.83627799997
+        },
+        {
+          "time": 1794333600,
+          "open": 0.25399156617256097,
+          "high": 0.25755735447032496,
+          "low": 0.25275221996091496,
+          "close": 0.25517369080068597,
+          "volume": 63555.577776000006
+        },
+        {
+          "time": 1794337200,
+          "open": 0.25517369080068597,
+          "high": 0.255623595195101,
+          "low": 0.252051477789695,
+          "close": 0.252981893861792,
+          "volume": 77489.90340300002
+        },
+        {
+          "time": 1794340800,
+          "open": 0.252981893861792,
+          "high": 0.258036575473381,
+          "low": 0.25155947335622,
+          "close": 0.255714274250774,
+          "volume": 111609.63728899998
+        },
+        {
+          "time": 1794344400,
+          "open": 0.255714274250774,
+          "high": 0.25753172589685,
+          "low": 0.249643569402542,
+          "close": 0.25009570623289396,
+          "volume": 117548.185137
+        },
+        {
+          "time": 1794348000,
+          "open": 0.25009570623289396,
+          "high": 0.25132250080003093,
+          "low": 0.24897623507790398,
+          "close": 0.24978856938328098,
+          "volume": 33459.957822999975
+        },
+        {
+          "time": 1794351600,
+          "open": 0.24978856938328098,
+          "high": 0.254597840012884,
+          "low": 0.24927334120804698,
+          "close": 0.254597840012884,
+          "volume": 24468.211376000007
+        },
+        {
+          "time": 1794355200,
+          "open": 0.254597840012884,
+          "high": 0.256410882475567,
+          "low": 0.253358208935469,
+          "close": 0.25351232526798,
+          "volume": 72451.83452099998
+        },
+        {
+          "time": 1794358800,
+          "open": 0.25351232526798,
+          "high": 0.259547890995944,
+          "low": 0.25241637155812496,
+          "close": 0.25577399043332194,
+          "volume": 105083.57799499997
+        },
+        {
+          "time": 1794362400,
+          "open": 0.25577399043332194,
+          "high": 0.25985998127677495,
+          "low": 0.254699874889716,
+          "close": 0.257796967201554,
+          "volume": 24874.923637000007
+        },
+        {
+          "time": 1794366000,
+          "open": 0.257796967201554,
+          "high": 0.26189097370044695,
+          "low": 0.257612305639273,
+          "close": 0.260129237014629,
+          "volume": 44617.28801699999
+        },
+        {
+          "time": 1794369600,
+          "open": 0.260129237014629,
+          "high": 0.26275478770996596,
+          "low": 0.2597,
+          "close": 0.26042526463281596,
+          "volume": 42008.62302100001
+        },
+        {
+          "time": 1794373200,
+          "open": 0.26042526463281596,
+          "high": 0.263768559561063,
+          "low": 0.259118133216195,
+          "close": 0.263336486253691,
+          "volume": 15512.861937000001
+        },
+        {
+          "time": 1794376800,
+          "open": 0.263336486253691,
+          "high": 0.263336486253691,
+          "low": 0.257501452755535,
+          "close": 0.25801165331391096,
+          "volume": 39899.845978000005
+        },
+        {
+          "time": 1794380400,
+          "open": 0.25801165331391096,
+          "high": 0.25801165331391096,
+          "low": 0.25584275623432595,
+          "close": 0.25642248284656793,
+          "volume": 7069.285846999999
+        },
+        {
+          "time": 1794384000,
+          "open": 0.25642248284656793,
+          "high": 0.25824587596523396,
+          "low": 0.254751814002719,
+          "close": 0.25554349293492895,
+          "volume": 9029.268063
+        },
+        {
+          "time": 1794387600,
+          "open": 0.25554349293492895,
+          "high": 0.25688238620783,
+          "low": 0.25447644124908697,
+          "close": 0.25686006460982597,
+          "volume": 11418.603092999998
+        },
+        {
+          "time": 1794391200,
+          "open": 0.25686006460982597,
+          "high": 0.259478672985782,
+          "low": 0.255769152068512,
+          "close": 0.258481633066601,
+          "volume": 31653.921199999982
+        },
+        {
+          "time": 1794394800,
+          "open": 0.258481633066601,
+          "high": 0.259324007936161,
+          "low": 0.25711399715169997,
+          "close": 0.257820377247129,
+          "volume": 15618.793904999997
+        },
+        {
+          "time": 1794398400,
+          "open": 0.257820377247129,
+          "high": 0.25828370733832295,
+          "low": 0.25640442889258097,
+          "close": 0.257819176734606,
+          "volume": 24130.065166
+        },
+        {
+          "time": 1794402000,
+          "open": 0.257819176734606,
+          "high": 0.260443048705933,
+          "low": 0.257170645079865,
+          "close": 0.259292963430799,
+          "volume": 16166.693261999999
+        }
+      ],
+      "count": 168,
+      "error": null
+    },
+    "markers": [],
+    "equity": [
+      {
+        "time": 1794401832,
+        "t": "14:57",
+        "iso": "2026-11-11T14:57:12+02:00",
+        "label": "2026-11-11 14:57:12 EET (Europe/Athens)",
+        "equity": 1000.0,
+        "equity_display": "1000.00",
+        "kind": "start"
+      },
+      {
+        "time": 1794403737,
+        "t": "15:28",
+        "iso": "2026-11-11T15:28:57+02:00",
+        "label": "2026-11-11 15:28:57 EET (Europe/Athens)",
+        "equity": 1000.0,
+        "equity_display": "1000.00",
+        "kind": "mark"
+      }
+    ],
+    "archived": {
+      "label": "Archived run (ledger reset 14:42 Europe/Athens, 11 Nov 2026)",
+      "reset_at": "2026-11-11T14:42:00+02:00",
+      "note": "Historical only. Not mixed into current paper stats or P&L.",
+      "markers": [
+        {
+          "time": 1794335195,
+          "time_iso": "2026-11-10T20:26:35+02:00",
+          "position": "belowBar",
+          "color": "#16a34a",
+          "shape": "arrowUp",
+          "text": "BUY 25.05",
+          "side": "buy",
+          "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+          "wallet_short": "7vBb4gR\u2026arNx",
+          "signature": "5zYqgbr5z5pX47EyxwVExo7mRyuM3Uq62iHDbZYd4VaNsCjauzeL7gxaBTdcQD2hSxtte6kgqogm5qK6Lq4z4urt",
+          "solscan": "https://solscan.io/tx/5zYqgbr5z5pX47EyxwVExo7mRyuM3Uq62iHDbZYd4VaNsCjauzeL7gxaBTdcQD2hSxtte6kgqogm5qK6Lq4z4urt",
+          "reason": "all paper rules passed",
+          "run": "archived"
+        },
+        {
+          "time": 1794335852,
+          "time_iso": "2026-11-10T20:37:32+02:00",
+          "position": "belowBar",
+          "color": "#16a34a",
+          "shape": "arrowUp",
+          "text": "BUY 25.05",
+          "side": "buy",
+          "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+          "wallet_short": "7vBb4gR\u2026arNx",
+          "signature": "4kdVDzqjLA21UMZRTWgEqKY1HWYaJeGFrE2bmskoTy9DmnEE1gczRi8P4og2eStfqRYEywjNfPt3ucnUtnT2RCax",
+          "solscan": "https://solscan.io/tx/4kdVDzqjLA21UMZRTWgEqKY1HWYaJeGFrE2bmskoTy9DmnEE1gczRi8P4og2eStfqRYEywjNfPt3ucnUtnT2RCax",
+          "reason": "all paper rules passed",
+          "run": "archived"
+        },
+        {
+          "time": 1794341770,
+          "time_iso": "2026-11-10T22:16:10+02:00",
+          "position": "belowBar",
+          "color": "#16a34a",
+          "shape": "arrowUp",
+          "text": "BUY 25.05",
+          "side": "buy",
+          "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+          "wallet_short": "7vBb4gR\u2026arNx",
+          "signature": "Wyo6q1cbwuYjxCRzgSgjxWwRpuxhhHAaXsAjNRAft8NKSwdBrfQhFu8ez1KqbrVc3R3qnjgH5w6XV6XXcNMbzxU",
+          "solscan": "https://solscan.io/tx/Wyo6q1cbwuYjxCRzgSgjxWwRpuxhhHAaXsAjNRAft8NKSwdBrfQhFu8ez1KqbrVc3R3qnjgH5w6XV6XXcNMbzxU",
+          "reason": "all paper rules passed",
+          "run": "archived"
+        }
+      ],
+      "equity": [
+        {
+          "time": 1794335195,
+          "t": "20:26",
+          "iso": "2026-11-10T20:26:35+02:00",
+          "label": "2026-11-10 20:26:35 EET (Europe/Athens)",
+          "equity": 1000.0,
+          "equity_display": "1000.00",
+          "kind": "start"
+        },
+        {
+          "time": 1794335196,
+          "t": "20:26",
+          "iso": "2026-11-10T20:26:35+02:00",
+          "label": "2026-11-10 20:26:35 EET (Europe/Athens)",
+          "equity": 999.929888,
+          "equity_display": "999.93",
+          "kind": "fill"
+        },
+        {
+          "time": 1794335852,
+          "t": "20:37",
+          "iso": "2026-11-10T20:37:32+02:00",
+          "label": "2026-11-10 20:37:32 EET (Europe/Athens)",
+          "equity": 999.626127,
+          "equity_display": "999.63",
+          "kind": "fill"
+        },
+        {
+          "time": 1794341770,
+          "t": "22:16",
+          "iso": "2026-11-10T22:16:10+02:00",
+          "label": "2026-11-10 22:16:10 EET (Europe/Athens)",
+          "equity": 999.692177,
+          "equity_display": "999.69",
+          "kind": "fill"
+        },
+        {
+          "time": 1794403737,
+          "t": "15:28",
+          "iso": "2026-11-11T15:28:57+02:00",
+          "label": "2026-11-11 15:28:57 EET (Europe/Athens)",
+          "equity": 1000.705458,
+          "equity_display": "1000.71",
+          "kind": "mark"
+        }
+      ],
+      "fills": 3,
+      "skips": 7
+    }
+  },
+  "quantstats": {
+    "ready": false,
+    "placeholder": "not enough data yet",
+    "reason": "Need at least 10 paper fills and 5 days of marked-to-market equity. This ledger has 0 fills over 1 day.",
+    "fills": 0,
+    "days": 1,
+    "min_fills": 10,
+    "min_days": 5,
+    "tearsheet": "tearsheet.html",
+    "metrics": null
   }
 }

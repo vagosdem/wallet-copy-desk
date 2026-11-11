@@ -6,7 +6,7 @@
   <title>Wallet Copy Desk — paper monitor</title>
   <meta name="description" content="Paper-mode Solana USDC/JUP copy desk dashboard. Simulated fills plus clearly separated observed, watch-only GMGN wallet activity.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect rx='14' width='64' height='64' fill='%2316a34a'/><text x='32' y='44' text-anchor='middle' font-size='36' fill='white' font-family='sans-serif'>P</text></svg>">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="vendor/lightweight-charts.standalone.production.js"></script>
   <style>
     :root {
       --bg: #f5f5f5;
@@ -76,6 +76,12 @@
     .error { background: var(--red-bg); color: var(--red-ink); padding: 14px 16px; border-radius: 12px; }
     .live-ok { color: var(--green-ink); }
     .chart-box { position: relative; height: 220px; margin-top: 8px; }
+    .chart-box.price { height: 320px; }
+    .banner { background: #fff7ed; color: #9a3412; border-radius: 10px; padding: 8px 12px; font-size: 12px; margin: 8px 0; line-height: 1.45; }
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 10px 0 14px; }
+    .metric { background: #f9fafb; border-radius: 12px; padding: 10px 12px; }
+    .metric .kpi-label { margin-bottom: 2px; }
+    .metric .kpi-num { font-size: 18px; }
   </style>
 </head>
 <body>
@@ -95,7 +101,9 @@
     let livePrice = null;
     let liveAt = null;
     let liveError = null;
-    let chart = null;
+    let priceChart = null;
+    let equityChart = null;
+    let chartObservers = [];
     const state = {
       gmgnWallet: "all",
       gmgnSide: "all",
@@ -107,6 +115,8 @@
       range: "ALL",
       sortKey: "observed_time_iso",
       sortDir: "desc",
+      showArchived: false,
+      archivedDefaulted: false,
     };
 
     function esc(value) {
@@ -187,10 +197,28 @@
       render();
     }
 
-    function equityPoints() {
-      const series = DATA.equity_series || [];
-      const now = Date.now();
+    function pointUnix(p) {
+      if (p && typeof p.time === "number" && p.time > 0) return p.time;
+      const parsed = Date.parse(p && p.iso);
+      if (!Number.isNaN(parsed)) return Math.floor(parsed / 1000);
+      return null;
+    }
+
+    function applyRange(points) {
       const hours = { "1H": 1, "6H": 6, "1D": 24, ALL: null }[state.range];
+      if (!hours) return points;
+      const cut = Math.floor(Date.now() / 1000) - hours * 3600;
+      const filtered = points.filter((p) => {
+        const t = pointUnix(p);
+        return t != null && t >= cut;
+      });
+      return filtered.length ? filtered : points.slice(-2);
+    }
+
+    function currentEquityPoints() {
+      const series = (DATA.charts && DATA.charts.equity && DATA.charts.equity.length)
+        ? DATA.charts.equity
+        : (DATA.equity_series || []);
       const marked = markedFigures();
       const points = series.map((p) => ({ ...p }));
       if (points.length && livePrice != null) {
@@ -198,10 +226,12 @@
         if (last.kind === "mark") {
           last.equity = marked.equity;
           last.equity_display = money(marked.equity);
+          last.time = Math.floor(Date.now() / 1000);
           last.iso = new Date().toISOString();
           last.t = athensNowLabel().slice(0, 5);
         } else {
           points.push({
+            time: Math.floor(Date.now() / 1000),
             t: athensNowLabel().slice(0, 5),
             iso: new Date().toISOString(),
             equity: marked.equity,
@@ -210,61 +240,248 @@
           });
         }
       }
-      if (!hours) return points;
-      const cut = now - hours * 3600 * 1000;
-      const filtered = points.filter((p) => {
-        const t = Date.parse(p.iso);
-        return !Number.isNaN(t) && t >= cut;
-      });
-      return filtered.length ? filtered : points.slice(-2);
+      return applyRange(points);
     }
 
-    function drawChart() {
-      const canvas = document.getElementById("equityChart");
-      if (!canvas || !window.Chart) return;
-      const points = equityPoints();
-      const labels = points.map((p) => p.t);
-      const values = points.map((p) => p.equity);
-      const data = {
-        labels,
-        datasets: [{
-          data: values,
-          borderColor: GREEN,
-          backgroundColor: "rgba(22,163,74,0.18)",
-          fill: true,
-          tension: 0.25,
-          pointRadius: (ctx) => ctx.dataIndex === values.length - 1 ? 4 : 0,
-          pointBackgroundColor: GREEN,
-          borderWidth: 2.25,
-        }],
+    function destroyCharts() {
+      chartObservers.forEach((ro) => ro.disconnect());
+      chartObservers = [];
+      if (priceChart) { priceChart.remove(); priceChart = null; }
+      if (equityChart) { equityChart.remove(); equityChart = null; }
+    }
+
+    function lwOptions(el, height) {
+      return {
+        width: el.clientWidth,
+        height: height || el.clientHeight || 220,
+        layout: { background: { color: "#ffffff" }, textColor: "#6b7280", fontFamily: FONT },
+        grid: { vertLines: { color: "#ececec" }, horzLines: { color: "#ececec" } },
+        rightPriceScale: { borderColor: "#ececec" },
+        timeScale: { borderColor: "#ececec", timeVisible: true, secondsVisible: false },
+        crosshair: { horzLine: { color: "#d1d5db" }, vertLine: { color: "#d1d5db" } },
+        handleScroll: true,
+        handleScale: true,
       };
-      const options = {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            callbacks: {
-              label: (ctx) => (ctx.parsed.y != null ? ctx.parsed.y.toFixed(2) + " USDC" : ""),
-            },
-          },
-        },
-        scales: {
-          x: { ticks: { color: "#9ca3af", font: { size: 10, family: FONT } }, grid: { display: false } },
-          y: {
-            ticks: { color: "#9ca3af", font: { size: 10, family: FONT }, callback: (v) => Number(v).toFixed(2) },
-            grid: { color: "#ececec" },
-          },
-        },
-      };
-      if (chart && chart.canvas !== canvas) { chart.destroy(); chart = null; }
-      if (chart) {
-        chart.data = data;
-        chart.options = options;
-        chart.update("none");
-      } else {
-        chart = new Chart(canvas, { type: "line", data, options });
+    }
+
+    function watchSize(el, chart) {
+      if (typeof ResizeObserver !== "function") return;
+      const ro = new ResizeObserver(() => {
+        if (!el.isConnected) return;
+        chart.applyOptions({ width: el.clientWidth });
+      });
+      ro.observe(el);
+      chartObservers.push(ro);
+    }
+
+    function uniqueTimes(rows) {
+      const out = [];
+      let last = null;
+      rows.forEach((row) => {
+        let t = row.time;
+        if (typeof t !== "number") return;
+        if (last != null && t <= last) t = last + 1;
+        out.push({ ...row, time: t });
+        last = t;
+      });
+      return out;
+    }
+
+    function drawPriceChart() {
+      const el = document.getElementById("priceChart");
+      if (!el || !window.LightweightCharts) return;
+      const charts = DATA.charts || {};
+      const candles = (charts.price && charts.price.candles) || [];
+      if (!candles.length) {
+        el.innerHTML = `<div class="muted" style="padding:16px">No price candles in this snapshot.</div>`;
+        return;
       }
+      priceChart = LightweightCharts.createChart(el, lwOptions(el, el.clientHeight || 320));
+      const series = priceChart.addCandlestickSeries({
+        upColor: GREEN,
+        downColor: "#dc2626",
+        borderVisible: false,
+        wickUpColor: GREEN,
+        wickDownColor: "#dc2626",
+      });
+      series.setData(candles.map((c) => ({
+        time: c.time, open: c.open, high: c.high, low: c.low, close: c.close
+      })));
+      const markers = [];
+      (charts.markers || []).forEach((m) => {
+        markers.push({ time: m.time, position: m.position, color: m.color, shape: m.shape, text: m.text });
+      });
+      if (state.showArchived) {
+        ((charts.archived && charts.archived.markers) || []).forEach((m) => {
+          markers.push({
+            time: m.time,
+            position: m.position,
+            color: m.side === "buy" ? "#15803d" : "#b91c1c",
+            shape: m.shape,
+            text: "ARCHIVED " + (m.text || m.side || ""),
+          });
+        });
+      }
+      markers.sort((a, b) => a.time - b.time);
+      if (markers.length) series.setMarkers(markers);
+      priceChart.timeScale().fitContent();
+      watchSize(el, priceChart);
+    }
+
+    function drawEquityChart() {
+      const el = document.getElementById("equityChart");
+      if (!el || !window.LightweightCharts) return;
+      equityChart = LightweightCharts.createChart(el, lwOptions(el, el.clientHeight || 220));
+      const current = uniqueTimes(currentEquityPoints().map((p) => ({
+        time: pointUnix(p), value: p.equity
+      })).filter((p) => p.time != null && p.value != null));
+      const currentSeries = equityChart.addAreaSeries({
+        lineColor: GREEN,
+        topColor: "rgba(22,163,74,0.28)",
+        bottomColor: "rgba(22,163,74,0.02)",
+        lineWidth: 2,
+        title: "Current",
+      });
+      if (current.length) currentSeries.setData(current);
+      if (state.showArchived) {
+        const archived = uniqueTimes((((DATA.charts || {}).archived || {}).equity || []).map((p) => ({
+          time: pointUnix(p), value: p.equity
+        })).filter((p) => p.time != null && p.value != null));
+        const archivedSeries = equityChart.addLineSeries({
+          color: "#c2410c",
+          lineWidth: 2,
+          lineStyle: 2,
+          title: "Archived run",
+        });
+        if (archived.length) archivedSeries.setData(archived);
+      }
+      equityChart.timeScale().fitContent();
+      watchSize(el, equityChart);
+    }
+
+    function drawCharts() {
+      drawPriceChart();
+      drawEquityChart();
+    }
+
+    function priceChartHtml() {
+      const charts = DATA.charts || {};
+      const price = charts.price || {};
+      const archived = charts.archived || {};
+      const currentN = (charts.markers || []).length;
+      const archivedN = (archived.markers || []).length;
+      const sourceLine = price.ok
+        ? `${esc(price.source || "")} · ${esc(price.timeframe || "")} · ${esc(price.currency || "")} · ${price.count || 0} candles, fetched at refresh`
+        : "Price history unavailable at the last refresh.";
+      return `
+        <div class="card">
+          <div class="row" style="justify-content:space-between;align-items:flex-start">
+            <div class="title" style="margin:0">JUP/USDC price</div>
+            <button type="button" id="archivedToggle" class="${state.showArchived ? "active" : ""}">${state.showArchived ? "Hide archived run" : "Show archived run"}</button>
+          </div>
+          <div class="muted" style="font-size:12px;margin:8px 0 6px">
+            ${sourceLine}${price.pool_url ? ` · <a href="${esc(price.pool_url)}" target="_blank" rel="noreferrer">pool</a>` : ""}
+          </div>
+          ${state.showArchived
+            ? `<div class="banner">Showing ${archivedN} fill marker${archivedN === 1 ? "" : "s"} from the archived run (reset 14:42 Europe/Athens, 11 Nov 2026). These trades are not in the current ledger and are not mixed into current P&amp;L. Current fills on this chart: ${currentN}.</div>`
+            : (currentN === 0 ? `<div class="muted" style="font-size:12px;margin-bottom:8px">No paper fills on the current ledger yet. You can display the archived run's ${archivedN} fills on this chart for reference.</div>` : "")}
+          <div class="chart-box price" id="priceChart"></div>
+          <div class="faint" style="font-size:11px;margin-top:6px">
+            Green arrows are paper buys, red arrows are paper sells. Candles are baked into data.json at refresh; the public site does not call the price API or use any key.
+          </div>
+        </div>`;
+    }
+
+    function analyticsHtml() {
+      const a = DATA.analytics;
+      if (!a) return "";
+      const cur = a.current || {};
+      const gmgn = a.gmgn || {};
+      const gaps = a.coverage_gaps || {};
+      const arch = a.archived;
+      const leaders = cur.leaders || [];
+      const overnight = a.overnight || {};
+      return `
+        <div class="card">
+          <div class="title">Paper analytics</div>
+          <div class="muted" style="font-size:12px;margin:-6px 0 10px">Computed with DuckDB from a read-only copy of the current ledger. ${esc(cur.note || "")}</div>
+          <div class="metrics">
+            <div class="metric"><div class="kpi-label">SIGNALS</div><div class="kpi-num">${cur.signals || 0}</div></div>
+            <div class="metric"><div class="kpi-label">FILLS</div><div class="kpi-num">${cur.fills || 0}</div></div>
+            <div class="metric"><div class="kpi-label">SKIPS</div><div class="kpi-num">${cur.skips || 0}</div></div>
+            <div class="metric"><div class="kpi-label">FILL RATE</div><div class="kpi-num">${esc(cur.fill_rate_display || "—")}</div></div>
+            <div class="metric"><div class="kpi-label">AVG LATENCY</div><div class="kpi-num">${cur.avg_signal_to_observe_s != null ? Number(cur.avg_signal_to_observe_s).toFixed(1) + "s" : "—"}</div></div>
+            <div class="metric"><div class="kpi-label">OPEN COST</div><div class="kpi-num">${esc(cur.open_cost_usdc_display || "0.00")}</div></div>
+            <div class="metric"><div class="kpi-label">REALIZED P&amp;L</div><div class="kpi-num">${esc(cur.realized_pnl_usdc_display || "0.00")}</div></div>
+          </div>
+          <div style="overflow:auto">
+            <table>
+              <thead><tr><th>Leader</th><th>Signals</th><th>Fills</th><th>Skips</th><th>Fill rate</th><th>Avg latency</th><th>Fill latency</th><th>Open cost</th><th>Realized</th><th>Skip reasons</th></tr></thead>
+              <tbody>
+                ${leaders.map((w) => `
+                  <tr>
+                    <td>${esc(w.wallet_short)}</td>
+                    <td class="tabular">${w.signals}</td>
+                    <td class="tabular">${w.fills}</td>
+                    <td class="tabular">${w.skips}</td>
+                    <td class="tabular">${esc(w.fill_rate_display)}</td>
+                    <td class="tabular">${w.avg_signal_to_observe_s != null ? Number(w.avg_signal_to_observe_s).toFixed(1) + "s" : "—"}</td>
+                    <td class="tabular">${w.avg_fill_signal_to_observe_s != null ? Number(w.avg_fill_signal_to_observe_s).toFixed(1) + "s" : "—"}</td>
+                    <td class="tabular">${esc(w.open_cost_usdc_display)}</td>
+                    <td class="tabular">${esc(w.realized_pnl_usdc_display)}</td>
+                    <td>${(w.skips_by_reason || []).length ? (w.skips_by_reason).map((r) => esc(r.reason) + " (" + r.count + ")").join("; ") : "—"}</td>
+                  </tr>`).join("")}
+              </tbody>
+            </table>
+          </div>
+          <div class="muted" style="font-size:12px;margin-top:12px">Coverage gaps: ${gaps.exists ? (gaps.count + " logged") : "none yet (file is created at the first outage)"}. Overnight: ${overnight.clean || 0} clean / ${overnight.alerts || 0} alert across ${overnight.runs || 0} runs.</div>
+          <div class="title" style="margin:16px 0 8px">GMGN watch-only volume</div>
+          <div class="muted" style="font-size:12px;margin-bottom:8px">${esc(gmgn.note || "These trades are not copied.")} Desk total ≈ $${esc(gmgn.total_volume_usd_display || "0.00")} across ${gmgn.total_resolved || 0} resolved trades.</div>
+          <div style="overflow:auto">
+            <table>
+              <thead><tr><th>Wallet</th><th>Resolved</th><th>Unresolved</th><th>Buys</th><th>Sells</th><th>Est. volume (USD)</th></tr></thead>
+              <tbody>
+                ${(gmgn.wallets || []).map((w) => `
+                  <tr>
+                    <td>${esc(w.wallet_short)}</td>
+                    <td class="tabular">${w.resolved}</td>
+                    <td class="tabular">${w.unresolved}</td>
+                    <td class="tabular">${w.buys}</td>
+                    <td class="tabular">${w.sells}</td>
+                    <td class="tabular">≈$${esc(w.volume_usd_display)}</td>
+                  </tr>`).join("")}
+              </tbody>
+            </table>
+          </div>
+          ${arch ? `<div class="banner" style="margin-top:16px"><strong>Archived run</strong> — ${arch.fills} fills, ${arch.skips} skips, fill rate ${esc(arch.fill_rate_display || "—")}, open cost ${esc(arch.open_cost_usdc_display)} USDC (reset 14:42 Europe/Athens, 11 Nov 2026). ${esc(arch.note || "")}</div>` : ""}
+        </div>`;
+    }
+
+    function quantstatsHtml() {
+      const q = DATA.quantstats;
+      if (!q) return "";
+      if (!q.ready) {
+        return `
+          <div class="card">
+            <div class="title">QuantStats tearsheet</div>
+            <div class="muted" style="font-size:13px;line-height:1.5">${esc(q.placeholder || "not enough data yet")}. ${esc(q.reason || "")}</div>
+            <div style="margin-top:10px"><a href="tearsheet.html">Open placeholder</a></div>
+          </div>`;
+      }
+      const m = q.metrics || {};
+      const win = m.win_rate != null ? (Number(m.win_rate) * 100).toFixed(1) + "%" : "—";
+      const dd = m.max_drawdown_pct != null ? Number(m.max_drawdown_pct).toFixed(2) + "%" : "—";
+      return `
+        <div class="card">
+          <div class="title">QuantStats tearsheet</div>
+          <div class="muted" style="font-size:12px;margin:-6px 0 10px">${esc(q.note || "Paper-mode marked-to-market daily equity.")}</div>
+          <div class="metrics">
+            <div class="metric"><div class="kpi-label">SHARPE</div><div class="kpi-num">${m.sharpe != null ? Number(m.sharpe).toFixed(2) : "—"}</div></div>
+            <div class="metric"><div class="kpi-label">MAX DRAWDOWN</div><div class="kpi-num">${esc(dd)}</div></div>
+            <div class="metric"><div class="kpi-label">WIN RATE</div><div class="kpi-num">${esc(win)}</div></div>
+          </div>
+          <a href="tearsheet.html">Open full tearsheet</a>
+        </div>`;
     }
 
     function headerHtml(m) {
@@ -324,9 +541,10 @@
           <div class="filters" style="margin:14px 0 0">
             ${ranges.map((r) => `<button type="button" data-range="${r}" class="${state.range === r ? "active" : ""}">${r}</button>`).join("")}
           </div>
-          <div class="chart-box"><canvas id="equityChart"></canvas></div>
+          <div class="chart-box" id="equityChart"></div>
           <div class="faint" style="font-size:11px;margin-top:6px">
-            Equity at fill prices; last point marked to market${livePrice != null ? " with the live JUP price" : ""}.
+            Current paper equity (green), last point marked to market${livePrice != null ? " with the live JUP price" : ""}.
+            ${state.showArchived ? "The orange dashed line is the archived run and is not mixed into current P&amp;L. " : ""}
             Open ${esc(k.open_jup_display)} JUP · mark ${esc(money(m.openMark))} USDC · cost ${esc(k.open_cost_usdc_display)} USDC.
           </div>
         </div>`;
@@ -579,11 +797,14 @@
       if (!DATA) return;
       const m = markedFigures();
       const app = document.getElementById("app");
+      destroyCharts();
       app.innerHTML = `
         ${headerHtml(m)}
         <div class="grid" style="gap:12px">
           ${priceStripHtml(m)}
+          ${priceChartHtml()}
           ${kpiHtml(m)}
+          ${analyticsHtml()}
           ${leadersHtml(m)}
           ${tradesHtml()}
           ${gmgnHtml()}
@@ -591,18 +812,22 @@
             ${activityHtml()}
             <div class="grid" style="gap:12px">
               ${riskHtml(m)}
+              ${quantstatsHtml()}
               ${overnightHtml()}
             </div>
           </div>
           <div class="footer">
-            ${esc(DATA.disclaimer)} This is a public paper-mode monitor. Numbers update when data.json is republished; the JUP mark is polled live in the browser every 30 seconds and open positions are re-marked, but fills still come from the paper ledger. Times are Europe/Athens.
+            ${esc(DATA.disclaimer)} This is a public paper-mode monitor. Numbers update when data.json is republished; the JUP mark is polled live in the browser every 30 seconds and open positions are re-marked, but fills still come from the paper ledger. Price candles and analytics are baked in at refresh. Times are Europe/Athens.
+            · <a href="tearsheet.html">QuantStats tearsheet</a>
           </div>
         </div>`;
       bind();
-      drawChart();
+      drawCharts();
     }
 
     function bind() {
+      const archived = document.getElementById("archivedToggle");
+      if (archived) archived.addEventListener("click", () => { state.showArchived = !state.showArchived; render(); });
       const gw = document.getElementById('gmgnWalletFilter');
       if (gw) gw.addEventListener('change', () => { state.gmgnWallet = gw.value; render(); });
       const gs = document.getElementById('gmgnSideFilter');
@@ -686,6 +911,11 @@
         const res = await fetch("data.json", { cache: "no-store" });
         if (!res.ok) throw new Error("Could not load data.json (" + res.status + ")");
         DATA = await res.json();
+        if (!state.archivedDefaulted) {
+          const currentMarkers = (DATA.charts && DATA.charts.markers) || [];
+          state.showArchived = currentMarkers.length === 0 && (((DATA.charts || {}).archived || {}).markers || []).length > 0;
+          state.archivedDefaulted = true;
+        }
         render();
         pollPrice();
         setInterval(pollPrice, 30000);
