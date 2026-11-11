@@ -1,9 +1,9 @@
 {
   "mode": "paper",
   "disclaimer": "Paper figures are simulated. GMGN watch-only rows are observed public-wallet activity, not copied. No live orders are placed from this desk.",
-  "generated_at": "2026-11-11 23:16:22 EET (Europe/Athens)",
-  "generated_at_iso": "2026-11-11T23:16:22+02:00",
-  "generated_at_hhmm": "23:16",
+  "generated_at": "2026-11-11 23:18:37 EET (Europe/Athens)",
+  "generated_at_iso": "2026-11-11T23:18:37+02:00",
+  "generated_at_hhmm": "23:18",
   "timezone": "Europe/Athens",
   "watcher": {
     "up": true,
@@ -21,16 +21,16 @@
     "source": "Jupiter Price API v3",
     "source_url": "https://api.jup.ag/price/v3?ids=JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
     "note": "USD mark used as a USDC proxy. 1h change is from the public GeckoTerminal JUP/USDC pool, fetched at refresh.",
-    "usd": 0.259383895378,
-    "usd_display": "0.259384",
-    "change_1h_pct": -0.553,
-    "change_24h_pct": 1.207721,
-    "marked_at": "2026-11-11 23:16:22 EET (Europe/Athens)",
-    "marked_at_iso": "2026-11-11T23:16:22+02:00",
-    "marked_at_hhmm": "23:16",
+    "usd": 0.25889018217,
+    "usd_display": "0.258890",
+    "change_1h_pct": -0.6,
+    "change_24h_pct": 0.857113,
+    "marked_at": "2026-11-11 23:18:38 EET (Europe/Athens)",
+    "marked_at_iso": "2026-11-11T23:18:38+02:00",
+    "marked_at_hhmm": "23:18",
     "raw": {
-      "liquidity": 5561830.208709347,
-      "blockId": 468270759
+      "liquidity": 5559255.422580076,
+      "blockId": 468271347
     }
   },
   "kpis": {
@@ -41,28 +41,28 @@
     "open_jup_display": "363.163906",
     "open_cost_usdc": 96.151128,
     "open_cost_usdc_display": "96.15",
-    "open_mark_usdc": 94.198869,
-    "open_mark_usdc_display": "94.20",
-    "equity_usdc": 997.602479,
-    "equity_usdc_display": "997.60",
-    "equity_change_usdc": -2.397521,
-    "equity_change_usdc_display": "2.40",
+    "open_mark_usdc": 94.01957,
+    "open_mark_usdc_display": "94.02",
+    "equity_usdc": 997.42318,
+    "equity_usdc_display": "997.42",
+    "equity_change_usdc": -2.57682,
+    "equity_change_usdc_display": "2.58",
     "equity_change_sign": "down",
-    "equity_change_pct": -0.2398,
+    "equity_change_pct": -0.2577,
     "fills": 7,
     "skips": 12,
     "realized_pnl_usdc": -0.445262,
     "realized_pnl_usdc_display": "-0.45",
-    "unrealized_pnl_usdc": -1.952259,
-    "unrealized_pnl_usdc_display": "-1.95",
+    "unrealized_pnl_usdc": -2.131558,
+    "unrealized_pnl_usdc_display": "-2.13",
     "closed_trades": 2,
     "closed_wins": 0,
     "closed_losses": 2,
     "closed_label": "0 win / 2 loss on 2 closed sells",
-    "equity_multiple": 0.9976,
+    "equity_multiple": 0.9974,
     "equity_multiple_display": "1.00x",
-    "lifetime_pnl_usdc": -2.397521,
-    "lifetime_pnl_usdc_display": "-2.40",
+    "lifetime_pnl_usdc": -2.57682,
+    "lifetime_pnl_usdc_display": "-2.58",
     "win_loss_record": "0W 2L"
   },
   "equity_series": [
@@ -123,10 +123,10 @@
       "kind": "fill"
     },
     {
-      "t": "23:16",
-      "iso": "2026-11-11T23:16:22+02:00",
-      "equity": 997.602479,
-      "equity_display": "997.60",
+      "t": "23:18",
+      "iso": "2026-11-11T23:18:38+02:00",
+      "equity": 997.42318,
+      "equity_display": "997.42",
       "kind": "mark"
     }
   ],
@@ -142,14 +142,14 @@
       "open_jup_display": "363.163906",
       "open_cost_usdc": 96.151128,
       "open_cost_usdc_display": "96.15",
-      "open_mark_usdc": 94.198869,
-      "open_mark_usdc_display": "94.20",
+      "open_mark_usdc": 94.01957,
+      "open_mark_usdc_display": "94.02",
       "deployed_usdc": 96.151128,
       "deployed_usdc_display": "96.15",
       "realized_pnl_usdc": -0.445262,
       "realized_pnl_usdc_display": "-0.45",
-      "unrealized_pnl_usdc": -1.952259,
-      "unrealized_pnl_usdc_display": "-1.95",
+      "unrealized_pnl_usdc": -2.131558,
+      "unrealized_pnl_usdc_display": "-2.13",
       "cash_note": "Paper cash is held at desk level, not split by leader. Deployed is this wallet's open cost."
     },
     {
@@ -675,23 +675,23 @@
         "cost_basis_display": "0.264760",
         "invalidation_price": 0.23828363,
         "invalidation_price_display": "0.238284",
-        "mark_price": 0.2593839,
-        "mark_price_display": "0.259384",
-        "pct_from_cost": -2.0304,
-        "room_to_invalidation_pct_of_cost": 7.9696,
-        "pct_above_invalidation": 8.8551,
+        "mark_price": 0.25889018,
+        "mark_price_display": "0.258890",
+        "pct_from_cost": -2.2169,
+        "room_to_invalidation_pct_of_cost": 7.7831,
+        "pct_above_invalidation": 8.6479,
         "hit": false
       }
     ]
   },
   "overnight": {
     "has_runs": true,
-    "label": "last run 2026-11-11 22:12:14 EET (Europe/Athens) \u00b7 clean",
-    "last_run": "2026-11-11 22:12:14 EET (Europe/Athens)",
-    "last_run_iso": "2026-11-11T22:12:14+02:00",
+    "label": "last run 2026-11-11 23:17:40 EET (Europe/Athens) \u00b7 clean",
+    "last_run": "2026-11-11 23:17:40 EET (Europe/Athens)",
+    "last_run_iso": "2026-11-11T23:17:40+02:00",
     "last_result": "clean",
-    "last_text": "Watcher and GMGN tracker running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 1.11% below cost (mark 95.08 USDC vs 96.15 USDC cost at 0.261818 USDC/JUP) and has not hit the 10% invalidation level.",
-    "clean_count": 11,
+    "last_text": "Watcher, GMGN tracker, and GMGN book running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 2.18% below cost (mark 94.05 USDC vs 96.15 USDC cost at 0.258981 USDC/JUP) and has not hit the 10% invalidation level; GMGN book has no open lots (filtered equity 999.51 USDC, 5 fills and 1 stop; shadow equity 998.70 USDC, 7 fills and 2 stops).",
+    "clean_count": 12,
     "alert_count": 0,
     "runs": [
       {
@@ -770,6 +770,13 @@
         "result": "clean",
         "text": "Watcher and GMGN tracker running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 1.11% below cost (mark 95.08 USDC vs 96.15 USDC cost at 0.261818 USDC/JUP) and has not hit the 10% invalidation level.",
         "alert": false
+      },
+      {
+        "time": "2026-11-11 23:17:40 EET (Europe/Athens)",
+        "time_iso": "2026-11-11T23:17:40+02:00",
+        "result": "clean",
+        "text": "Watcher, GMGN tracker, and GMGN book running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 2.18% below cost (mark 94.05 USDC vs 96.15 USDC cost at 0.258981 USDC/JUP) and has not hit the 10% invalidation level; GMGN book has no open lots (filtered equity 999.51 USDC, 5 fills and 1 stop; shadow equity 998.70 USDC, 7 fills and 2 stops).",
+        "alert": false
       }
     ]
   },
@@ -803,8 +810,17 @@
         "color": "#4f46e5",
         "bg": "#eef2ff",
         "has_activity": true,
-        "event_count": 33,
+        "event_count": 34,
         "events": [
+          {
+            "bot_id": "desk-lead",
+            "bot_name": "Desk Lead",
+            "who": "copy",
+            "source": "overnight",
+            "time": "2026-11-11 23:17:40 EET (Europe/Athens)",
+            "time_iso": "2026-11-11T23:17:40+02:00",
+            "summary": "Overnight watch: clean \u2014 Watcher, GMGN tracker, and GMGN book running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 2.18% below cost (mark 94.05 USDC vs 96.15 USDC cost at 0\u2026"
+          },
           {
             "bot_id": "desk-lead",
             "bot_name": "Desk Lead",
@@ -1267,6 +1283,15 @@
         "bot_name": "Desk Lead",
         "who": "copy",
         "source": "overnight",
+        "time": "2026-11-11 23:17:40 EET (Europe/Athens)",
+        "time_iso": "2026-11-11T23:17:40+02:00",
+        "summary": "Overnight watch: clean \u2014 Watcher, GMGN tracker, and GMGN book running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 2.18% below cost (mark 94.05 USDC vs 96.15 USDC cost at 0\u2026"
+      },
+      {
+        "bot_id": "desk-lead",
+        "bot_name": "Desk Lead",
+        "who": "copy",
+        "source": "overnight",
         "time": "2026-11-11 22:12:14 EET (Europe/Athens)",
         "time_iso": "2026-11-11T22:12:14+02:00",
         "summary": "Overnight watch: clean \u2014 Watcher and GMGN tracker running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 1.11% below cost (mark 95.08 USDC vs 96.15 USDC cost at 0.261818 USDC\u2026"
@@ -1645,12 +1670,12 @@
     "running_at_snapshot": false,
     "status": "running",
     "poll_interval_seconds": 60,
-    "last_cycle_completed_at": "2026-11-11T23:15:50+02:00",
-    "last_cycle_completed_ts": 1794431750.2339892,
-    "heartbeat_at": "2026-11-11T23:15:50+02:00",
+    "last_cycle_completed_at": "2026-11-11T23:17:50+02:00",
+    "last_cycle_completed_ts": 1794431870.2383966,
+    "heartbeat_at": "2026-11-11T23:17:50+02:00",
     "paused_until": null,
     "last_error": null,
-    "rpc_calls": 1802,
+    "rpc_calls": 1809,
     "rpc_error_count": 10,
     "coverage_warnings": [],
     "malformed_event_rows": 0,
@@ -1673,8 +1698,8 @@
         "trade_count": 223,
         "unresolved_count": 2,
         "pending_count": 0,
-        "last_poll_at": "2026-11-11T23:15:41+02:00",
-        "last_poll_ts": 1794431741.573282,
+        "last_poll_at": "2026-11-11T23:17:41+02:00",
+        "last_poll_ts": 1794431861.2247844,
         "stale_at_snapshot": false,
         "coverage": "caught_up",
         "successful_fetched": 311,
@@ -1697,8 +1722,8 @@
         "trade_count": 2,
         "unresolved_count": 0,
         "pending_count": 0,
-        "last_poll_at": "2026-11-11T23:15:44+02:00",
-        "last_poll_ts": 1794431744.2537637,
+        "last_poll_at": "2026-11-11T23:17:44+02:00",
+        "last_poll_ts": 1794431864.2168407,
         "stale_at_snapshot": false,
         "coverage": "caught_up",
         "successful_fetched": 41,
@@ -1721,12 +1746,12 @@
         "trade_count": 127,
         "unresolved_count": 0,
         "pending_count": 0,
-        "last_poll_at": "2026-11-11T23:15:47+02:00",
-        "last_poll_ts": 1794431747.2610984,
+        "last_poll_at": "2026-11-11T23:17:47+02:00",
+        "last_poll_ts": 1794431867.2584114,
         "stale_at_snapshot": false,
         "coverage": "caught_up",
-        "successful_fetched": 320,
-        "ignored_non_swaps": 193,
+        "successful_fetched": 321,
+        "ignored_non_swaps": 194,
         "failed_skipped": 2
       }
     ],
@@ -12792,8 +12817,8 @@
       "note": "Observed public-wallet activity only. Volume is the sum of resolved usd_estimate values."
     },
     "overnight": {
-      "runs": 11,
-      "clean": 11,
+      "runs": 12,
+      "clean": 12,
       "alerts": 0
     },
     "coverage_gaps": {
@@ -14316,10 +14341,10 @@
         {
           "time": 1794430800,
           "open": 0.25927832879532603,
-          "high": 0.25958391346874,
+          "high": 0.259617616237188,
           "low": 0.257984865414499,
-          "close": 0.259582355052285,
-          "volume": 3099.8721780000005
+          "close": 0.258958570996541,
+          "volume": 7095.123573000002
         }
       ],
       "count": 168,
@@ -14506,12 +14531,12 @@
         "kind": "fill"
       },
       {
-        "time": 1794431782,
-        "t": "23:16",
-        "iso": "2026-11-11T23:16:22+02:00",
-        "label": "2026-11-11 23:16:22 EET (Europe/Athens)",
-        "equity": 997.602479,
-        "equity_display": "997.60",
+        "time": 1794431917,
+        "t": "23:18",
+        "iso": "2026-11-11T23:18:37+02:00",
+        "label": "2026-11-11 23:18:37 EET (Europe/Athens)",
+        "equity": 997.42318,
+        "equity_display": "997.42",
         "kind": "mark"
       }
     ],
@@ -14604,12 +14629,12 @@
           "kind": "fill"
         },
         {
-          "time": 1794431782,
-          "t": "23:16",
-          "iso": "2026-11-11T23:16:22+02:00",
-          "label": "2026-11-11 23:16:22 EET (Europe/Athens)",
-          "equity": 1000.766198,
-          "equity_display": "1000.77",
+          "time": 1794431917,
+          "t": "23:18",
+          "iso": "2026-11-11T23:18:37+02:00",
+          "label": "2026-11-11 23:18:37 EET (Europe/Athens)",
+          "equity": 1000.621699,
+          "equity_display": "1000.62",
           "kind": "mark"
         }
       ],
@@ -14631,16 +14656,16 @@
   "ticker": {
     "source": "GeckoTerminal public API (no key; fetched at refresh)",
     "note": "1h changes for JUP/USDC and tokens recently traded by the watch-only GMGN wallets. Tokens without a public 1h figure are omitted, not invented.",
-    "fetched_at": "2026-11-11 23:16:22 EET (Europe/Athens)",
-    "fetched_at_iso": "2026-11-11T23:16:22+02:00",
-    "fetched_at_hhmm": "23:16",
+    "fetched_at": "2026-11-11 23:18:37 EET (Europe/Athens)",
+    "fetched_at_iso": "2026-11-11T23:18:37+02:00",
+    "fetched_at_hhmm": "23:18",
     "items": [
       {
         "symbol": "JUP",
         "pair": "JUP/USDC",
         "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
-        "change_1h_pct": -0.553,
-        "price_usd": 0.259558,
+        "change_1h_pct": -0.6,
+        "price_usd": 0.259528,
         "pool_name": "JUP / USDC",
         "source": "GeckoTerminal public API",
         "origin": "paper_pair"
@@ -14649,8 +14674,8 @@
         "symbol": "WoW",
         "pair": "WoW",
         "mint": "WARcTjZyqpwsU3ATmaJkd9qAHUQVFGDWXgXbvseRaFT",
-        "change_1h_pct": 303.71,
-        "price_usd": 1.6e-05,
+        "change_1h_pct": 383.07,
+        "price_usd": 2e-05,
         "pool_name": "WoW / GLDx",
         "source": "GeckoTerminal public API",
         "origin": "gmgn_watch_only"
@@ -14659,8 +14684,8 @@
         "symbol": "Max",
         "pair": "Max",
         "mint": "5qaP7oKUqKffwwo5DaEqDoTtsBLMpdbQTxEkCDaTpump",
-        "change_1h_pct": 2868.27,
-        "price_usd": 0.001295,
+        "change_1h_pct": 3351.32,
+        "price_usd": 0.001506,
         "pool_name": "Max / SOL",
         "source": "GeckoTerminal public API",
         "origin": "gmgn_watch_only"
@@ -14679,7 +14704,7 @@
         "symbol": "mini",
         "pair": "mini",
         "mint": "DjV9FM5qfBLTgoRYKoW3KKLGZ86KnZAV88g1hNWEpump",
-        "change_1h_pct": -49.6,
+        "change_1h_pct": -49.68,
         "price_usd": 3e-06,
         "pool_name": "mini / PUMP",
         "source": "GeckoTerminal public API",
@@ -14689,7 +14714,7 @@
         "symbol": "WALK",
         "pair": "WALK",
         "mint": "CG14X6YJ5JeRx7NuyztnUNL1kufHramkJubLyMohpump",
-        "change_1h_pct": 86.57,
+        "change_1h_pct": 76.35,
         "price_usd": 6e-06,
         "pool_name": "WALK / SOL",
         "source": "GeckoTerminal public API",
@@ -14699,7 +14724,7 @@
         "symbol": "GODZILLA",
         "pair": "GODZILLA",
         "mint": "5oovW26rqcURLQ3P9bcGskn364dXJqPGJ5HBKoQ7pump",
-        "change_1h_pct": 25.43,
+        "change_1h_pct": 22.67,
         "price_usd": 1.5e-05,
         "pool_name": "GODZILLA / SOL",
         "source": "GeckoTerminal public API",
@@ -14719,8 +14744,8 @@
         "symbol": "Chvinci",
         "pair": "Chvinci",
         "mint": "CwFLWiEGef1i7nbbDdAUdm6PAgreuxhDsC6KmDCMpump",
-        "change_1h_pct": 176.97,
-        "price_usd": 3.6e-05,
+        "change_1h_pct": 173.5,
+        "price_usd": 4.2e-05,
         "pool_name": "Chvinci / SOL",
         "source": "GeckoTerminal public API",
         "origin": "gmgn_watch_only"
@@ -14737,9 +14762,9 @@
     "timezone": "Europe/Athens",
     "start_at": "2026-11-11 22:12:14 EET (Europe/Athens)",
     "start_at_iso": "2026-11-11T22:12:14+02:00",
-    "end_at": "2026-11-11 22:12:14 EET (Europe/Athens)",
-    "end_at_iso": "2026-11-11T22:12:14+02:00",
-    "checks": 1,
+    "end_at": "2026-11-11 23:17:40 EET (Europe/Athens)",
+    "end_at_iso": "2026-11-11T23:17:40+02:00",
+    "checks": 2,
     "alerts": 0,
     "fills": 0,
     "closed_trades": 0,
@@ -14750,13 +14775,13 @@
     "start_cash_usdc": null,
     "end_cash_usdc": null,
     "start_open_mark_usdc": 95.08,
-    "end_open_mark_usdc": 95.08,
+    "end_open_mark_usdc": 94.05,
     "multiple": null,
     "multiple_display": null,
     "best_trade": null,
     "worst_trade": null,
     "invalidation": "Invalidation alert at 10% below cost",
-    "note": "In progress night shift 11 Nov 22:00 \u2192 12 Nov 07:00 Europe/Athens. 1 checks, 0 alerts, 0 paper fills. Invalidation alert at 10% below cost. No closed paper trades this shift, so there is no best or worst trade to show. Start or end equity could not be reconstructed from the overnight marks and is left blank."
+    "note": "In progress night shift 11 Nov 22:00 \u2192 12 Nov 07:00 Europe/Athens. 2 checks, 0 alerts, 0 paper fills. Invalidation alert at 10% below cost. No closed paper trades this shift, so there is no best or worst trade to show. Start or end equity could not be reconstructed from the overnight marks and is left blank."
   },
   "ui": {
     "status_line": "2 leaders \u00b7 6 agents \u00b7 night shift 22:00 \u2192 07:00",
@@ -14774,9 +14799,9 @@
         "bg": "#eef2ff",
         "has_activity": true,
         "last_action": {
-          "summary": "Overnight watch: clean \u2014 Watcher and GMGN tracker running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 1.11% below cost (mark 95.08 USDC vs 96.15 USDC cost at 0.261818 USDC\u2026",
-          "time": "2026-11-11 22:12:14 EET (Europe/Athens)",
-          "time_iso": "2026-11-11T22:12:14+02:00",
+          "summary": "Overnight watch: clean \u2014 Watcher, GMGN tracker, and GMGN book running; one paper JUP position on 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx is 2.18% below cost (mark 94.05 USDC vs 96.15 USDC cost at 0\u2026",
+          "time": "2026-11-11 23:17:40 EET (Europe/Athens)",
+          "time_iso": "2026-11-11T23:17:40+02:00",
           "source": "overnight",
           "bot_name": "Desk Lead"
         }
