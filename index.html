@@ -65,7 +65,9 @@
     .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; padding: 2px 7px; border-radius: 6px; }
     .tag.BUY { background: #dcfce7; color: #166534; }
     .tag.SELL { background: #fee2e2; color: #991b1b; }
-    .tag.SKIP, .tag.UNRESOLVED { background: #f3f4f6; color: #6b7280; }
+    .tag.SKIP, .tag.UNRESOLVED, .tag.KEEP { background: #f3f4f6; color: #6b7280; }
+    .tag.ADD { background: #dcfce7; color: #166534; }
+    .tag.DROP { background: #fee2e2; color: #991b1b; }
     .feed { display: flex; flex-direction: column; max-height: 420px; overflow: auto; }
     .feed-item { padding: 10px 0; border-top: 1px solid var(--line); font-size: 13px; line-height: 1.45; }
     .feed-item:first-child { border-top: 0; }
@@ -74,7 +76,8 @@
     .timeline { display: flex; flex-direction: column; gap: 10px; }
     .tl { position: relative; padding-left: 16px; border-left: 2px solid var(--line); margin-left: 4px; }
     .tl::before { content: ""; position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 99px; background: var(--green); }
-    .tl.alert::before { background: var(--red); }
+    .tl.alert::before, .tl.drop::before { background: var(--red); }
+    .tl.add::before { background: var(--green); }
     .muted { color: var(--muted); } .faint { color: var(--faint); }
     .up { color: var(--green); } .down { color: var(--red); }
     .footer { font-size: 11px; color: var(--faint); margin-top: 16px; line-height: 1.5; }
@@ -571,6 +574,45 @@
         </div>`;
     }
 
+
+    function rotationHtml() {
+      const r = DATA.rotation || {};
+      const events = r.events || [];
+      const leaders = r.current_leaders || DATA.leaders || [];
+      const last = r.last_rotation_at ? `Last rotation ${esc(r.last_rotation_at)}` : "No live rotation recorded yet";
+      const run = r.last_run || {};
+      const counts = r.last_rotation_at
+        ? `${leaders.length} current · ${((run.added || []).length)} added · ${((run.dropped || []).length)} dropped on the last run`
+        : `${leaders.length} current leaders from wallets.txt`;
+      return `
+        <div class="card">
+          <div class="title">Leader rotation</div>
+          <div class="muted" style="font-size:12px;margin:-6px 0 10px">${esc(last)} · ${esc(counts)}</div>
+          <div class="muted" style="font-size:12px;margin-bottom:10px;line-height:1.45">${esc(r.note || "")}</div>
+          <div style="font-size:13px;line-height:1.55;margin-bottom:10px">
+            ${leaders.length ? leaders.map((w) => `<a href="${esc(w.solscan)}" target="_blank" rel="noreferrer">${esc(w.wallet_short || w.wallet)}</a>`).join(" · ") : "No leaders in wallets.txt"}
+          </div>
+          ${events.length === 0 ? `<div class="muted">No adds or drops logged yet.</div>` : `
+            <div class="timeline">
+              ${events.map((ev) => {
+                const evs = (ev.evidence || []).slice(0, 3).map((s) =>
+                  `<a href="${esc(s.solscan)}" target="_blank" rel="noreferrer">${esc(s.signature_short)}</a>`
+                ).join(" · ");
+                return `
+                <div class="tl ${esc(ev.action)}">
+                  <div class="row" style="gap:8px">
+                    <span class="tag ${esc((ev.action || "").toUpperCase())}">${esc((ev.action || "").toUpperCase())}</span>
+                    <a href="${esc(ev.solscan)}" target="_blank" rel="noreferrer">${esc(ev.wallet_short || ev.wallet)}</a>
+                    <span class="faint tabular" style="margin-left:auto;font-size:11px">${esc(ev.time_hhmm || "")}</span>
+                  </div>
+                  <div style="font-size:12px;margin-top:4px">${esc(ev.reason || "")}</div>
+                  ${evs ? `<div class="faint" style="font-size:11px;margin-top:2px">evidence ${evs}</div>` : ""}
+                </div>`;
+              }).join("")}
+            </div>`}
+        </div>`;
+    }
+
     function leadersHtml(m) {
       return `
         <div class="card">
@@ -883,6 +925,7 @@
           ${componentCardsHtml()}
           ${riskHtml(m)}
           ${leadersHtml(m)}
+          ${rotationHtml()}
           ${priceChartHtml()}
           ${analyticsHtml()}
           ${quantstatsHtml()}
@@ -933,6 +976,7 @@
               </div>
             </div>
             ${priceChartHtml()}
+            ${rotationHtml()}
           </div>
           <div class="grid" style="gap:12px">
             <div class="card">
