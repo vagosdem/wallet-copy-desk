@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Wallet Copy Desk — paper monitor</title>
-  <meta name="description" content="Paper-mode Solana USDC/JUP copy desk dashboard. Simulated fills only.">
+  <meta name="description" content="Paper-mode Solana USDC/JUP copy desk dashboard. Simulated fills plus clearly separated observed, watch-only GMGN wallet activity.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect rx='14' width='64' height='64' fill='%2316a34a'/><text x='32' y='44' text-anchor='middle' font-size='36' fill='white' font-family='sans-serif'>P</text></svg>">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
   <style>
@@ -97,6 +97,9 @@
     let liveError = null;
     let chart = null;
     const state = {
+      gmgnWallet: "all",
+      gmgnSide: "all",
+      gmgnToken: "",
       wallet: "all",
       kind: "all",
       date: "",
@@ -254,6 +257,7 @@
           },
         },
       };
+      if (chart && chart.canvas !== canvas) { chart.destroy(); chart = null; }
       if (chart) {
         chart.data = data;
         chart.options = options;
@@ -503,6 +507,74 @@
         </div>`;
     }
 
+    function gmgnTokenHtml(token) {
+      if (!token) return 'unresolved';
+      const mint = String(token.mint || '');
+      const symbol = token.symbol || (mint ? mint.slice(0, 7) + '…' + mint.slice(-4) : 'unknown mint');
+      return `<span title="${esc(mint)}">${esc(token.amount)} ${esc(symbol)}</span>`;
+    }
+
+    function gmgnFilteredEvents(g) {
+      const query = state.gmgnToken.trim().toLowerCase();
+      return (g.events || []).filter((ev) => {
+        if (state.gmgnWallet !== 'all' && ev.wallet !== state.gmgnWallet) return false;
+        if (state.gmgnSide !== 'all' && (ev.status !== 'resolved' ? 'unresolved' : ev.side) !== state.gmgnSide) return false;
+        if (query) {
+          const tokens = [ev.input, ev.output, ...(ev.asset_changes || [])].filter(Boolean);
+          if (!tokens.some((t) => (String(t.mint || '') + ' ' + String(t.symbol || '')).toLowerCase().includes(query))) return false;
+        }
+        return true;
+      });
+    }
+
+    function gmgnHtml() {
+      const g = DATA.gmgn;
+      if (!g?.enabled) return '';
+      const age = Math.max(0, (Date.now() - Date.parse(DATA.generated_at_iso)) / 1000);
+      const stale = age > 180;
+      const status = stale ? 'Published snapshot stale — current tracker status unconfirmed' :
+        (g.status === 'paused' ? 'Tracker paused at snapshot' : ((g.wallets || []).some(w => w.stale_at_snapshot) ? 'Polling stale at snapshot' : (g.running_at_snapshot ? 'Tracker running at snapshot' : 'Tracker not running at snapshot')));
+      const rows = gmgnFilteredEvents(g);
+      const cards = (g.wallets || []).map((w) => `
+        <div class="wallet-card" style="cursor:default;overflow-wrap:anywhere">
+          <a href="${esc(w.solscan)}" target="_blank" rel="noreferrer">${esc(w.wallet_short)}</a>
+          <div class="muted" style="font-size:12px;margin-top:6px">${esc(w.label)} · unverified tab label</div>
+          <div style="font-size:13px;line-height:1.6;margin-top:8px">7D P&amp;L: ${esc(w.pnl_7d || 'unavailable')}<br>30D P&amp;L: ${esc(w.pnl_30d || 'unavailable')}</div>
+          <div class="faint" style="font-size:11px">as reported by GMGN · captured, not live or independently verified</div>
+          <div class="tabular" style="margin-top:8px;font-weight:650">${esc(w.trade_count)} decoded trades · ${esc(w.unresolved_count)} unresolved</div>
+          <div class="muted" style="font-size:12px;margin-top:4px">Since tracker start · ${esc(w.pending_count)} pending<br>Coverage: ${esc(w.coverage)}${w.stale_at_snapshot ? ' · stale at snapshot' : ''}<br>Last recorded poll: ${esc(w.last_poll_at || 'not yet')} (Europe/Athens)</div>
+          <a href="${esc(w.source_url)}" target="_blank" rel="noreferrer" style="font-size:12px">GMGN source</a>
+        </div>`).join('');
+      return `<section class="card" id="gmgn-watch-only">
+        <h2 class="title">GMGN smart money (watch-only)</h2>
+        <p style="font-size:13px;line-height:1.5;margin-top:0"><strong>These trades are not copied.</strong> Observed public-wallet swaps do not enter paper positions or P&amp;L. Smart Money is unverified ranking-tab provenance; no whale/KOL classification is claimed.</p>
+        <div class="muted" style="font-size:12px;line-height:1.6;margin-bottom:12px">
+          ${esc(status)} · PID at snapshot ${esc(g.pid || '—')} · local polling ${esc(g.poll_interval_seconds)}s<br>
+          Tracking started ${esc(g.tracking_started_at || 'not started')} (Europe/Athens) · ${esc(g.total_resolved)} decoded trades · ${esc(g.total_unresolved)} unresolved<br>
+          Last completed local cycle ${esc(g.last_cycle_completed_at || 'initializing')} (Europe/Athens) · published snapshot ${esc(Math.floor(age / 60))} min old
+          ${g.paused_until ? `<br>Pause recorded until ${esc(g.paused_until)}` : ''}
+          ${g.last_error ? `<br>Recorded RPC issue: ${esc(g.last_error)}` : ''}
+          ${(g.coverage_warnings || []).length || g.malformed_event_rows ? `<br>Coverage requires review: ${esc((g.coverage_warnings || []).join('; '))} ${esc(g.malformed_event_rows || 0)} malformed rows` : ''}
+        </div>
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));margin-bottom:16px">${cards}</div>
+        <div class="filters">
+          <select id="gmgnWalletFilter" aria-label="GMGN wallet"><option value="all">All GMGN wallets</option>${(g.wallets || []).map((w) => `<option value="${esc(w.wallet)}"${state.gmgnWallet === w.wallet ? ' selected' : ''}>${esc(w.wallet_short)}</option>`).join('')}</select>
+          <select id="gmgnSideFilter" aria-label="GMGN trade side">${[['all','All sides'],['buy','Buy'],['sell','Sell'],['swap','Token swap'],['unresolved','Unresolved']].map(([v,l])=>`<option value="${v}"${state.gmgnSide === v ? ' selected' : ''}>${l}</option>`).join('')}</select>
+          <input id="gmgnTokenFilter" type="text" value="${esc(state.gmgnToken)}" placeholder="Filter token mint or symbol" aria-label="GMGN token mint or symbol" style="font:inherit;border:1px solid var(--line);border-radius:999px;padding:5px 10px;max-width:100%">
+          <button id="gmgnApplyToken" type="button">Filter token</button>
+          <span class="muted" style="font-size:12px">${rows.length} feed rows · newest ${esc(g.events_in_feed)} of ${esc(g.total_events)} observations</span>
+        </div>
+        ${rows.length ? `<div style="overflow:auto;max-height:480px"><table><thead><tr><th>Time / wallet</th><th>Side / venue</th><th>Token in</th><th>Token out</th><th>USD estimate</th><th>Coverage / evidence</th></tr></thead><tbody>${rows.map((ev) => `<tr>
+          <td style="min-width:155px">${esc(ev.time || ev.time_iso || 'unknown chain time')}<br><span class="muted">${esc(ev.wallet_short)}</span></td>
+          <td>${esc(ev.status !== 'resolved' ? 'UNRESOLVED' : String(ev.side || '').toUpperCase())}<br><span class="muted">${esc(ev.venue || 'unknown venue')}</span></td>
+          <td style="overflow-wrap:anywhere">${gmgnTokenHtml(ev.input)}</td><td style="overflow-wrap:anywhere">${gmgnTokenHtml(ev.output)}</td>
+          <td title="${esc(ev.usd_basis?.method || 'USD estimate unavailable')}">${ev.usd_estimate != null ? '≈$' + esc(Number(ev.usd_estimate).toFixed(2)) : 'unavailable'}</td>
+          <td style="min-width:150px">${esc(ev.reason || 'decoded net flow')}<div class="faint" style="font-size:11px">${esc((ev.flags || []).join('; '))}</div><a href="${esc(ev.solscan)}" target="_blank" rel="noreferrer">Solscan</a></td>
+        </tr>`).join('')}</tbody></table></div>` : `<div class="muted" style="font-size:13px">${g.total_events ? 'No observations match these filters.' : 'Waiting for new finalized wallet swaps after tracking began; historical trades were intentionally excluded.'}</div>`}
+        <div class="faint" style="font-size:11px;line-height:1.6;margin-top:14px">${esc(g.coverage_note)}<br>${esc(g.publication_note)} The browser checks for a newer published snapshot every 60s. Unknown symbols remain mint addresses; USD marks are estimates, not execution prices.</div>
+      </section>`;
+    }
+
     function render() {
       if (!DATA) return;
       const m = markedFigures();
@@ -514,6 +586,7 @@
           ${kpiHtml(m)}
           ${leadersHtml(m)}
           ${tradesHtml()}
+          ${gmgnHtml()}
           <div class="grid cols-2">
             ${activityHtml()}
             <div class="grid" style="gap:12px">
@@ -530,6 +603,16 @@
     }
 
     function bind() {
+      const gw = document.getElementById('gmgnWalletFilter');
+      if (gw) gw.addEventListener('change', () => { state.gmgnWallet = gw.value; render(); });
+      const gs = document.getElementById('gmgnSideFilter');
+      if (gs) gs.addEventListener('change', () => { state.gmgnSide = gs.value; render(); });
+      const gt = document.getElementById('gmgnTokenFilter');
+      const applyToken = () => { state.gmgnToken = gt?.value || ''; render(); };
+      if (gt) gt.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') applyToken(); });
+      const ga = document.getElementById('gmgnApplyToken');
+      if (ga) ga.addEventListener('click', applyToken);
+
       document.querySelectorAll("button[data-range]").forEach((btn) => {
         btn.addEventListener("click", () => { state.range = btn.getAttribute("data-range"); render(); });
       });
@@ -588,6 +671,15 @@
       render();
     }
 
+    async function pollPublishedData() {
+      try {
+        const res = await fetch('data.json', {cache: 'no-store'});
+        if (!res.ok) return;
+        const next = await res.json();
+        if (next?.generated_at_iso && next?.kpis) { DATA = next; render(); }
+      } catch (_) { /* Keep the last snapshot; its age is displayed explicitly. */ }
+    }
+
     async function boot() {
       const app = document.getElementById("app");
       try {
@@ -597,6 +689,7 @@
         render();
         pollPrice();
         setInterval(pollPrice, 30000);
+        setInterval(pollPublishedData, 60000);
       } catch (err) {
         app.innerHTML = `<div class="error">Could not load the paper dashboard data. ${esc(err.message || err)}</div>`;
       }
