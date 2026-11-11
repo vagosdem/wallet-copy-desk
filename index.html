@@ -1054,6 +1054,103 @@
       requestAnimationFrame(frame);
     }
 
+    // ---- GMGN copy book (PAPER) — separate isolated paper ledger, read from gmgn_book.json ----
+    let GBOOK = null;
+    async function pollCopyBook() {
+      try {
+        const res = await fetch('gmgn_book.json', {cache: 'no-store'});
+        if (!res.ok) return;
+        const next = await res.json();
+        if (next && next.books) { const first = !GBOOK; GBOOK = next; if (DATA) render(); }
+      } catch (_) { /* Keep last snapshot; age shown. */ }
+    }
+    function cbMoney(x, sign) {
+      if (x === null || x === undefined) return '—';
+      const s = Math.abs(Number(x)).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      return (sign ? (x > 0 ? '+' : x < 0 ? '−' : '') : (x < 0 ? '−' : '')) + s;
+    }
+    function cbTok(t) {
+      if (!t) return '—';
+      return `<a href="${esc(t.solscan)}" target="_blank" rel="noreferrer" title="${esc(t.mint)}">${esc(t.symbol || t.short)}</a>`;
+    }
+    function cbPrice(p) {
+      if (p === null || p === undefined || !isFinite(p)) return '—';
+      return Number(p).toPrecision(4);
+    }
+    function cbOutcome(o) {
+      if (!o) return '—';
+      const color = o.status === 'fill' ? 'var(--green-ink)' : o.status === 'skip' ? 'var(--muted)' : 'var(--blue)';
+      return `<span style="color:${color}">${esc(o.text)}</span>`;
+    }
+    function copyBookHtml() {
+      const g = GBOOK;
+      if (!g) return '';
+      const age = Math.max(0, (Date.now() - Date.parse(g.generated_at)) / 1000);
+      const f = g.books.filtered || {}, s = g.books.shadow || {};
+      const kpi = (label, a, b) => `<div class="metric"><div class="kpi-label">${label}</div><div class="kpi-num" style="font-size:16px">${a}</div><div class="faint tabular" style="font-size:11px">shadow ${b}</div></div>`;
+      const pnlColor = (x) => x > 0 ? 'var(--green-ink)' : x < 0 ? 'var(--red-ink)' : 'inherit';
+      const header = `<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,120px),1fr));margin-bottom:14px">
+        ${kpi('PAPER CASH', cbMoney(f.cash_usdc), cbMoney(s.cash_usdc))}
+        ${kpi('EQUITY (MARKED)', cbMoney(f.equity_usdc) + (f.equity_fully_marked ? '' : '*'), cbMoney(s.equity_usdc) + (s.equity_fully_marked ? '' : '*'))}
+        ${kpi('REALIZED P&amp;L', `<span style="color:${pnlColor(f.realized_pnl_usdc)}">${cbMoney(f.realized_pnl_usdc, true)}</span>`, cbMoney(s.realized_pnl_usdc, true))}
+        ${kpi('OPEN LOTS', f.open_lots ?? 0, s.open_lots ?? 0)}
+        ${kpi('FILLS', f.fills ?? 0, s.fills ?? 0)}
+        ${kpi('SKIPS', f.skips ?? 0, s.skips ?? 0)}
+        ${kpi('STOPS -6%', f.stops ?? 0, s.stops ?? 0)}
+      </div>`;
+      const feed = (g.feed || []).slice(0, 150);
+      const feedHtml = feed.length ? `<div style="overflow:auto;max-height:520px"><table><thead><tr><th>Time (Athens)</th><th>Leader</th><th>Side</th><th>Token</th><th>Leader tx</th><th>Lag chain→seen→quote</th><th>Filtered book</th><th>Shadow book</th></tr></thead><tbody>${feed.map((e) => e.kind === 'stop' ? `<tr>
+          <td class="tabular">${esc((e.time || '').slice(11, 19))}</td><td>${esc(e.leader)}</td>
+          <td><span class="pill" style="background:var(--red-bg);color:var(--red-ink)">STOP</span></td><td>${cbTok(e.token)}</td><td>—</td><td>—</td>
+          <td>${e.book === 'filtered' ? `<span style="color:var(--red-ink)">${esc(e.text)}</span>` : '—'}</td>
+          <td>${e.book === 'shadow' ? `<span style="color:var(--red-ink)">${esc(e.text)}</span>` : '—'}</td></tr>` : `<tr>
+          <td class="tabular" title="${esc(e.time)}">${esc((e.time || '').slice(11, 19))}</td>
+          <td>${esc(e.leader)}</td>
+          <td><span class="pill" style="background:${e.side === 'buy' ? 'var(--green-bg)' : 'var(--red-bg)'};color:${e.side === 'buy' ? 'var(--green-ink)' : 'var(--red-ink)'}">${esc(String(e.side).toUpperCase())}</span></td>
+          <td>${cbTok(e.token)}<div class="faint" style="font-size:11px">${esc(e.leader_amount || '')}</div></td>
+          <td><a href="${esc(e.tx)}" target="_blank" rel="noreferrer">${esc(e.sig_short)}</a></td>
+          <td class="tabular">${esc(e.lag_observe_s)}s → ${e.lag_quote_s === null ? '—' : esc(e.lag_quote_s) + 's'}</td>
+          <td>${cbOutcome(e.filtered)}</td><td>${cbOutcome(e.shadow)}</td></tr>`).join('')}</tbody></table></div>`
+        : `<div class="muted" style="font-size:13px">No leader swaps captured yet since the book started (${esc(g.started_at || '—')}, Europe/Athens). Earlier trades are intentionally not copied.</div>`;
+      const posRows = ['filtered', 'shadow'].flatMap((b) => ((g.books[b] || {}).positions || []).map((p) => ({...p, book: b})));
+      const posHtml = posRows.length ? `<div style="overflow:auto"><table><thead><tr><th>Book</th><th>Lot</th><th>Leader</th><th>Token</th><th>Opened</th><th>Cost</th><th>Mark (net)</th><th>P&amp;L %</th><th>Stop at (net)</th><th>Price now / stop (USDC/token)</th></tr></thead><tbody>${posRows.map((p) => `<tr>
+          <td>${esc(p.book)}</td><td class="tabular">#${esc(p.lot_id)}</td><td>${esc(p.leader)}</td><td>${cbTok(p.token)}</td>
+          <td class="tabular">${esc((p.opened || '').slice(11, 19))}</td><td class="tabular">${cbMoney(p.cost_usdc)}</td>
+          <td class="tabular">${cbMoney(p.mark_usdc)}<div class="faint" style="font-size:11px">${esc((p.mark_at || 'not marked').slice(11, 19))}</div></td>
+          <td class="tabular" style="color:${pnlColor(p.pnl_pct)}">${p.pnl_pct === null ? '—' : esc((p.pnl_pct > 0 ? '+' : '') + p.pnl_pct.toFixed(2) + '%')}</td>
+          <td class="tabular">${cbMoney(p.stop_value_usdc)}</td>
+          <td class="tabular">${esc(cbPrice(p.mark_price_usdc_per_token))} / ${esc(cbPrice(p.stop_price_usdc_per_token))}</td></tr>`).join('')}</tbody></table></div>`
+        : `<div class="muted" style="font-size:13px">No open paper positions.</div>`;
+      const skipList = (b) => (b.skips_by_reason || []).length ? (b.skips_by_reason || []).map(([r, n]) => `<div class="row" style="justify-content:space-between;font-size:13px;padding:3px 0;border-bottom:1px solid var(--line)"><span>${esc(r)}</span><span class="tabular" style="font-weight:650">${esc(n)}</span></div>`).join('') : '<div class="muted" style="font-size:13px">None yet.</div>';
+      const leaders = (g.per_leader || []).map((l) => `<div class="wallet-card" style="cursor:default;overflow-wrap:anywhere">
+          <a href="${esc(l.solscan)}" target="_blank" rel="noreferrer" style="font-weight:650">${esc(l.leader)}</a>
+          <div class="tabular" style="font-size:13px;line-height:1.6;margin-top:6px">${esc(l.signals)} swaps (${esc(l.buys)} buy / ${esc(l.sells)} sell)<br>paper fills: ${esc(l.filtered_fills)} filtered · ${esc(l.shadow_fills)} shadow</div>
+          <div class="muted" style="font-size:12px;margin-top:4px">${esc(Number(l.txs_seen).toLocaleString())} txs seen · ${esc(Number(l.failed_filtered).toLocaleString())} failed (ignored)<br>${esc(l.not_signed_by_leader)} not signed by leader · ${esc(l.unsupported)} unsupported · ${esc(l.pending)} queued</div>
+        </div>`).join('');
+      const gaps = (g.gaps || []).map((x) => `<li>${esc(x.leader)}: ${esc(x.reason)} ×${esc(x.count)} (last ${esc((x.last || '').slice(11, 19))})</li>`).join('');
+      const p = g.process || {};
+      return `<section class="card" id="gmgn-copy-book" style="margin-top:12px">
+        <div class="row" style="justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+          <h2 class="title" style="margin:0">GMGN copy book <span class="pill" style="background:#fef3c7;color:#92400e">PAPER</span></h2>
+          <div class="muted" style="font-size:12px">${p.running ? 'Book running' : 'Book NOT running'} at snapshot · snapshot ${esc(Math.floor(age / 60))} min old · ${esc((g.generated_at || '').slice(11, 19))} Europe/Athens</div>
+        </div>
+        <p style="font-size:13px;line-height:1.5;margin:8px 0 12px"><strong>Simulated paper trades only — nothing is bought or sold for real.</strong> Copies hubz, theo and motioncat: buy 10 USDC when they buy, sell the fraction they sell, flat −6% stop per buy. Priced with Jupiter quotes, 2% haircut and 0.05 USDC fee per fill. Separate from the USDC/JUP paper ledger above. The shadow book uses the same signals without the leader-exited and token-risk filters.</p>
+        ${header}
+        <h3 class="kpi-label" style="margin:14px 0 8px">Live activity (newest first)</h3>
+        ${feedHtml}
+        <h3 class="kpi-label" style="margin:18px 0 8px">Open paper positions</h3>
+        ${posHtml}
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));margin-top:18px">
+          <div><h3 class="kpi-label" style="margin:0 0 8px">Skips by reason · filtered</h3>${skipList(f)}</div>
+          <div><h3 class="kpi-label" style="margin:0 0 8px">Skips by reason · shadow</h3>${skipList(s)}</div>
+        </div>
+        <h3 class="kpi-label" style="margin:18px 0 8px">Per leader</h3>
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))">${leaders}</div>
+        <h3 class="kpi-label" style="margin:18px 0 8px">Coverage notes</h3>
+        <ul class="muted" style="font-size:12px;line-height:1.6;margin:0;padding-left:18px">${gaps || '<li>None</li>'}<li>Equity marks open lots at a Jupiter sell quote net of costs (* = some lots not yet marked, valued at cost). The −6% stop is a trigger; fills can land below it.</li><li>Only swaps of one token against SOL or USDC signed by the leader are copied. RPC 429s this session: ${esc(p.rpc_429 ?? '—')}; shared-RPC pauses for main watcher: ${esc(p.main_new_429 ?? '—')}.</li></ul>
+      </section>`;
+    }
+
     function render() {
       if (!DATA) return;
       const m = markedFigures();
@@ -1064,6 +1161,7 @@
         <div class="wrap">
           ${headerHtml(m)}
           ${state.view === "live" ? liveViewHtml(m) : deskViewHtml(m)}
+          ${copyBookHtml()}
           ${footerHtml()}
         </div>
         ${recapModalHtml()}`;
@@ -1178,6 +1276,8 @@
         pollPrice();
         setInterval(pollPrice, 30000);
         setInterval(pollPublishedData, 60000);
+        pollCopyBook();
+        setInterval(pollCopyBook, 60000);
       } catch (err) {
         app.innerHTML = `<div class="wrap"><div class="error">Could not load the paper dashboard data. ${esc(err.message || err)}</div></div>`;
       }
