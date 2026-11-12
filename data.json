@@ -1,9 +1,9 @@
 {
   "mode": "paper",
   "disclaimer": "Paper figures are simulated. GMGN watch-only rows are observed public-wallet activity, not copied. No live orders are placed from this desk.",
-  "generated_at": "2026-11-12 02:20:46 EET (Europe/Athens)",
-  "generated_at_iso": "2026-11-12T02:20:46+02:00",
-  "generated_at_hhmm": "02:20",
+  "generated_at": "2026-11-12 02:25:59 EET (Europe/Athens)",
+  "generated_at_iso": "2026-11-12T02:25:59+02:00",
+  "generated_at_hhmm": "02:25",
   "timezone": "Europe/Athens",
   "watcher": {
     "up": true,
@@ -14,23 +14,23 @@
     "log_exists": true,
     "log_has_start": true,
     "log_has_stop": false,
-    "last_log_line": "scan failed for 4ueq9Qy3ECqaAjm1T7aqt1PJ343kJcwWQ2Vjuxb2SaSu: HTTP 429"
+    "last_log_line": "scan failed for 7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx: HTTP 429"
   },
   "price": {
     "symbol": "JUP/USDC",
     "source": "Jupiter Price API v3",
     "source_url": "https://api.jup.ag/price/v3?ids=JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
     "note": "USD mark used as a USDC proxy. 1h change is from the public GeckoTerminal JUP/USDC pool, fetched at refresh.",
-    "usd": 0.256187418957,
-    "usd_display": "0.256187",
-    "change_1h_pct": 0.846,
-    "change_24h_pct": 0.657244,
-    "marked_at": "2026-11-12 02:20:47 EET (Europe/Athens)",
-    "marked_at_iso": "2026-11-12T02:20:47+02:00",
-    "marked_at_hhmm": "02:20",
+    "usd": 0.2569522831,
+    "usd_display": "0.256952",
+    "change_1h_pct": 0.572,
+    "change_24h_pct": 0.988178,
+    "marked_at": "2026-11-12 02:26:00 EET (Europe/Athens)",
+    "marked_at_iso": "2026-11-12T02:26:00+02:00",
+    "marked_at_hhmm": "02:26",
     "raw": {
-      "liquidity": 5536968.5558726275,
-      "blockId": 468322129
+      "liquidity": 5539614.820695289,
+      "blockId": 468323586
     }
   },
   "kpis": {
@@ -41,28 +41,28 @@
     "open_jup_display": "363.163906",
     "open_cost_usdc": 96.151128,
     "open_cost_usdc_display": "96.15",
-    "open_mark_usdc": 93.038024,
-    "open_mark_usdc_display": "93.04",
-    "equity_usdc": 996.441634,
-    "equity_usdc_display": "996.44",
-    "equity_change_usdc": -3.558366,
-    "equity_change_usdc_display": "3.56",
+    "open_mark_usdc": 93.315795,
+    "open_mark_usdc_display": "93.32",
+    "equity_usdc": 996.719405,
+    "equity_usdc_display": "996.72",
+    "equity_change_usdc": -3.280595,
+    "equity_change_usdc_display": "3.28",
     "equity_change_sign": "down",
-    "equity_change_pct": -0.3558,
+    "equity_change_pct": -0.3281,
     "fills": 7,
     "skips": 12,
     "realized_pnl_usdc": -0.445262,
     "realized_pnl_usdc_display": "-0.45",
-    "unrealized_pnl_usdc": -3.113104,
-    "unrealized_pnl_usdc_display": "-3.11",
+    "unrealized_pnl_usdc": -2.835333,
+    "unrealized_pnl_usdc_display": "-2.84",
     "closed_trades": 2,
     "closed_wins": 0,
     "closed_losses": 2,
     "closed_label": "0 win / 2 loss on 2 closed sells",
-    "equity_multiple": 0.9964,
+    "equity_multiple": 0.9967,
     "equity_multiple_display": "1.00x",
-    "lifetime_pnl_usdc": -3.558366,
-    "lifetime_pnl_usdc_display": "-3.56",
+    "lifetime_pnl_usdc": -3.280595,
+    "lifetime_pnl_usdc_display": "-3.28",
     "win_loss_record": "0W 2L"
   },
   "equity_series": [
@@ -123,10 +123,10 @@
       "kind": "fill"
     },
     {
-      "t": "02:20",
-      "iso": "2026-11-12T02:20:47+02:00",
-      "equity": 996.441634,
-      "equity_display": "996.44",
+      "t": "02:26",
+      "iso": "2026-11-12T02:26:00+02:00",
+      "equity": 996.719405,
+      "equity_display": "996.72",
       "kind": "mark"
     }
   ],
@@ -142,14 +142,14 @@
       "open_jup_display": "363.163906",
       "open_cost_usdc": 96.151128,
       "open_cost_usdc_display": "96.15",
-      "open_mark_usdc": 93.038024,
-      "open_mark_usdc_display": "93.04",
+      "open_mark_usdc": 93.315795,
+      "open_mark_usdc_display": "93.32",
       "deployed_usdc": 96.151128,
       "deployed_usdc_display": "96.15",
       "realized_pnl_usdc": -0.445262,
       "realized_pnl_usdc_display": "-0.45",
-      "unrealized_pnl_usdc": -3.113104,
-      "unrealized_pnl_usdc_display": "-3.11",
+      "unrealized_pnl_usdc": -2.835333,
+      "unrealized_pnl_usdc_display": "-2.84",
       "cash_note": "Paper cash is held at desk level, not split by leader. Deployed is this wallet's open cost."
     },
     {
@@ -675,11 +675,11 @@
         "cost_basis_display": "0.264760",
         "invalidation_price": 0.23828363,
         "invalidation_price_display": "0.238284",
-        "mark_price": 0.25618742,
-        "mark_price_display": "0.256187",
-        "pct_from_cost": -3.2377,
-        "room_to_invalidation_pct_of_cost": 6.7623,
-        "pct_above_invalidation": 7.5136,
+        "mark_price": 0.25695228,
+        "mark_price_display": "0.256952",
+        "pct_from_cost": -2.9488,
+        "room_to_invalidation_pct_of_cost": 7.0512,
+        "pct_above_invalidation": 7.8346,
         "hit": false
       }
     ]
@@ -1743,15 +1743,15 @@
     "tracking_started_ts": 1794361308.7669125,
     "pid": null,
     "running_at_snapshot": false,
-    "status": "paused",
+    "status": "polling",
     "poll_interval_seconds": 60,
-    "last_cycle_completed_at": "2026-11-12T02:10:42+02:00",
-    "last_cycle_completed_ts": 1794442242.9802895,
-    "heartbeat_at": "2026-11-12T02:20:19+02:00",
-    "paused_until": "2026-11-12T02:24:19+02:00",
-    "last_error": "getSignaturesForAddress persistently unavailable; circuit paused 300s",
-    "rpc_calls": 2267,
-    "rpc_error_count": 31,
+    "last_cycle_completed_at": "2026-11-12T02:25:16+02:00",
+    "last_cycle_completed_ts": 1794443116.5797112,
+    "heartbeat_at": "2026-11-12T02:25:43+02:00",
+    "paused_until": null,
+    "last_error": null,
+    "rpc_calls": 2292,
+    "rpc_error_count": 32,
     "coverage_warnings": [],
     "malformed_event_rows": 0,
     "coverage_note": "From initial startup only; no earlier history. Durable restart catch-up; pending/unknown routes remain explicit. Trade counts include resolved swaps only.",
@@ -1770,16 +1770,16 @@
         "pnl_30d": "+7.7% / +$27.4K",
         "pnl_attribution": "as reported by GMGN; captured snapshot, not independently verified or live",
         "win_rate_as_reported": "30D 45.3%",
-        "trade_count": 223,
+        "trade_count": 229,
         "unresolved_count": 2,
-        "pending_count": 4,
-        "last_poll_at": "2026-11-12T02:17:31+02:00",
-        "last_poll_ts": 1794442651.294124,
-        "stale_at_snapshot": true,
+        "pending_count": 9,
+        "last_poll_at": "2026-11-12T02:25:19+02:00",
+        "last_poll_ts": 1794443119.5980108,
+        "stale_at_snapshot": false,
         "coverage": "pending",
-        "successful_fetched": 316,
-        "ignored_non_swaps": 91,
-        "failed_skipped": 0
+        "successful_fetched": 323,
+        "ignored_non_swaps": 92,
+        "failed_skipped": 1
       },
       {
         "wallet": "EXyRocWQQMWXrHFgeaH9pwAsUZQDvPz4m8qJFbmmJYiu",
@@ -1797,12 +1797,12 @@
         "trade_count": 6,
         "unresolved_count": 1,
         "pending_count": 0,
-        "last_poll_at": "2026-11-12T02:09:03+02:00",
-        "last_poll_ts": 1794442143.7045083,
-        "stale_at_snapshot": true,
+        "last_poll_at": "2026-11-12T02:25:22+02:00",
+        "last_poll_ts": 1794443122.5927525,
+        "stale_at_snapshot": false,
         "coverage": "caught_up",
-        "successful_fetched": 68,
-        "ignored_non_swaps": 61,
+        "successful_fetched": 72,
+        "ignored_non_swaps": 65,
         "failed_skipped": 0
       },
       {
@@ -1818,19 +1818,612 @@
         "pnl_30d": "+10.5% / +$64.3K",
         "pnl_attribution": "as reported by GMGN; captured snapshot, not independently verified or live",
         "win_rate_as_reported": "30D 42.7%",
-        "trade_count": 151,
+        "trade_count": 156,
         "unresolved_count": 0,
-        "pending_count": 0,
-        "last_poll_at": "2026-11-12T02:09:51+02:00",
-        "last_poll_ts": 1794442191.8616192,
-        "stale_at_snapshot": true,
-        "coverage": "caught_up",
-        "successful_fetched": 356,
-        "ignored_non_swaps": 205,
-        "failed_skipped": 2
+        "pending_count": 5,
+        "last_poll_at": "2026-11-12T02:25:25+02:00",
+        "last_poll_ts": 1794443125.5452838,
+        "stale_at_snapshot": false,
+        "coverage": "pending",
+        "successful_fetched": 363,
+        "ignored_non_swaps": 207,
+        "failed_skipped": 3
       }
     ],
     "events": [
+      {
+        "event_id": "FqJMNzzY1DHz2F1Pt6F7VqCxBWdu8cK2TbfTrYT9zQbT:3QwcXAmtMyWGaduaZ3Sm3Vu5Z16iST32Ndog1pRNxcGRGFFTFHutBZunPzyLrXjq2z1L5bUejzdw4HwPcDJbbpXH",
+        "wallet": "FqJMNzzY1DHz2F1Pt6F7VqCxBWdu8cK2TbfTrYT9zQbT",
+        "signature": "3QwcXAmtMyWGaduaZ3Sm3Vu5Z16iST32Ndog1pRNxcGRGFFTFHutBZunPzyLrXjq2z1L5bUejzdw4HwPcDJbbpXH",
+        "status": "resolved",
+        "side": "sell",
+        "venue": "Jupiter v6 / Pump AMM",
+        "venues": [
+          "Jupiter v6",
+          "Pump AMM"
+        ],
+        "input": {
+          "mint": "Ereedz94JPD19GHJpe3uPYsKYE4qBspNYeyHtUetpump",
+          "symbol": null,
+          "amount": "29995227.476397"
+        },
+        "output": {
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "symbol": "USDC",
+          "amount": "156.125973"
+        },
+        "asset_changes": [
+          {
+            "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "symbol": "USDC",
+            "amount": "156.125973",
+            "signed_amount": "156.125973"
+          },
+          {
+            "mint": "Ereedz94JPD19GHJpe3uPYsKYE4qBspNYeyHtUetpump",
+            "symbol": null,
+            "amount": "29995227.476397",
+            "signed_amount": "-29995227.476397"
+          }
+        ],
+        "usd_estimate": 156.125973,
+        "usd_basis": {
+          "method": "USDC at USD parity",
+          "estimated": true
+        },
+        "time": "2026-11-12 02:16:44 EET (Europe/Athens)",
+        "time_iso": "2026-11-12T02:16:44+02:00",
+        "observed_at": "2026-11-12T02:25:43+02:00",
+        "reason": null,
+        "flags": [
+          "unknown_token_symbol_use_mint"
+        ],
+        "mode": "watch_only",
+        "copied": false,
+        "wallet_short": "FqJMNzz\u2026zQbT",
+        "solscan": "https://solscan.io/tx/3QwcXAmtMyWGaduaZ3Sm3Vu5Z16iST32Ndog1pRNxcGRGFFTFHutBZunPzyLrXjq2z1L5bUejzdw4HwPcDJbbpXH"
+      },
+      {
+        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:5sWD4nKPsgMCyDyKWYs3g6NSwP2etEXqa2Y7ri26Xduu1AEQ7F82iMQfSDoGDCPUFi6AGt368rfx7oXaNLwnikpY",
+        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
+        "signature": "5sWD4nKPsgMCyDyKWYs3g6NSwP2etEXqa2Y7ri26Xduu1AEQ7F82iMQfSDoGDCPUFi6AGt368rfx7oXaNLwnikpY",
+        "status": "resolved",
+        "side": "sell",
+        "venue": "Orca Whirlpool / Pump AMM",
+        "venues": [
+          "Orca Whirlpool",
+          "Pump AMM"
+        ],
+        "input": {
+          "mint": "D8GWC95Nd3XN4wWzMH5aT4CoAPnafoQQ1sPKNZ42R2Lb",
+          "symbol": null,
+          "amount": "25221465.883552"
+        },
+        "output": {
+          "mint": "So11111111111111111111111111111111111111112",
+          "symbol": "SOL",
+          "amount": "0.932497506"
+        },
+        "asset_changes": [
+          {
+            "mint": "D8GWC95Nd3XN4wWzMH5aT4CoAPnafoQQ1sPKNZ42R2Lb",
+            "symbol": null,
+            "amount": "25221465.883552",
+            "signed_amount": "-25221465.883552"
+          },
+          {
+            "mint": "So11111111111111111111111111111111111111112",
+            "symbol": "SOL",
+            "amount": "0.932497506",
+            "signed_amount": "0.932497506"
+          }
+        ],
+        "usd_estimate": 77.95119289909665,
+        "usd_basis": {
+          "method": "SOL at current indicative mark, not historical execution price",
+          "estimated": true,
+          "sol_usd": 83.59399612066808,
+          "marked_at": "2026-11-12T02:24:26+02:00",
+          "source": "Jupiter Price API v3"
+        },
+        "time": "2026-11-12 02:17:51 EET (Europe/Athens)",
+        "time_iso": "2026-11-12T02:17:51+02:00",
+        "observed_at": "2026-11-12T02:25:40+02:00",
+        "reason": null,
+        "flags": [
+          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
+          "unknown_token_symbol_use_mint"
+        ],
+        "mode": "watch_only",
+        "copied": false,
+        "wallet_short": "DGma4Ux\u2026iFCm",
+        "solscan": "https://solscan.io/tx/5sWD4nKPsgMCyDyKWYs3g6NSwP2etEXqa2Y7ri26Xduu1AEQ7F82iMQfSDoGDCPUFi6AGt368rfx7oXaNLwnikpY"
+      },
+      {
+        "event_id": "FqJMNzzY1DHz2F1Pt6F7VqCxBWdu8cK2TbfTrYT9zQbT:3mqTCy436qe8gXWpHzsbjsf2dytDkAy2zwy7tnXPjRBzJwcqnWz2pM3HShvvsHAowmkfbjFMMsPau3J5xYDoKMu8",
+        "wallet": "FqJMNzzY1DHz2F1Pt6F7VqCxBWdu8cK2TbfTrYT9zQbT",
+        "signature": "3mqTCy436qe8gXWpHzsbjsf2dytDkAy2zwy7tnXPjRBzJwcqnWz2pM3HShvvsHAowmkfbjFMMsPau3J5xYDoKMu8",
+        "status": "resolved",
+        "side": "sell",
+        "venue": "Jupiter v6 / Orca Whirlpool / pump.fun",
+        "venues": [
+          "Jupiter v6",
+          "Orca Whirlpool",
+          "pump.fun"
+        ],
+        "input": {
+          "mint": "C2RqyojxNG4J6ScacyYkRUGUtW8DQVNZsdhDQMGXpump",
+          "symbol": null,
+          "amount": "29529044.195103"
+        },
+        "output": {
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "symbol": "USDC",
+          "amount": "247.627940"
+        },
+        "asset_changes": [
+          {
+            "mint": "C2RqyojxNG4J6ScacyYkRUGUtW8DQVNZsdhDQMGXpump",
+            "symbol": null,
+            "amount": "29529044.195103",
+            "signed_amount": "-29529044.195103"
+          },
+          {
+            "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "symbol": "USDC",
+            "amount": "247.627940",
+            "signed_amount": "247.627940"
+          }
+        ],
+        "usd_estimate": 247.62794,
+        "usd_basis": {
+          "method": "USDC at USD parity",
+          "estimated": true
+        },
+        "time": "2026-11-12 02:16:37 EET (Europe/Athens)",
+        "time_iso": "2026-11-12T02:16:37+02:00",
+        "observed_at": "2026-11-12T02:25:37+02:00",
+        "reason": null,
+        "flags": [
+          "unknown_token_symbol_use_mint"
+        ],
+        "mode": "watch_only",
+        "copied": false,
+        "wallet_short": "FqJMNzz\u2026zQbT",
+        "solscan": "https://solscan.io/tx/3mqTCy436qe8gXWpHzsbjsf2dytDkAy2zwy7tnXPjRBzJwcqnWz2pM3HShvvsHAowmkfbjFMMsPau3J5xYDoKMu8"
+      },
+      {
+        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:1sx2V1b81rHojSmvca2Qcj2jRyzVREhxSvbx45YPAdf1ct5MHyJ8Vg5TVMjqVgp6S3SrE7HU2bQHRGxSYs96yj",
+        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
+        "signature": "1sx2V1b81rHojSmvca2Qcj2jRyzVREhxSvbx45YPAdf1ct5MHyJ8Vg5TVMjqVgp6S3SrE7HU2bQHRGxSYs96yj",
+        "status": "resolved",
+        "side": "sell",
+        "venue": "Pump AMM",
+        "venues": [
+          "Pump AMM"
+        ],
+        "input": {
+          "mint": "3c7uGViL2KZoFcuktqF8e9FZJpdS3595Ry2q4u5ypump",
+          "symbol": null,
+          "amount": "28569565.521895"
+        },
+        "output": {
+          "mint": "So11111111111111111111111111111111111111112",
+          "symbol": "SOL",
+          "amount": "0.859294352"
+        },
+        "asset_changes": [
+          {
+            "mint": "3c7uGViL2KZoFcuktqF8e9FZJpdS3595Ry2q4u5ypump",
+            "symbol": null,
+            "amount": "28569565.521895",
+            "signed_amount": "-28569565.521895"
+          },
+          {
+            "mint": "So11111111111111111111111111111111111111112",
+            "symbol": "SOL",
+            "amount": "0.859294352",
+            "signed_amount": "0.859294352"
+          }
+        ],
+        "usd_estimate": 71.83184872759999,
+        "usd_basis": {
+          "method": "SOL at current indicative mark, not historical execution price",
+          "estimated": true,
+          "sol_usd": 83.59399612066808,
+          "marked_at": "2026-11-12T02:24:26+02:00",
+          "source": "Jupiter Price API v3"
+        },
+        "time": "2026-11-12 02:17:46 EET (Europe/Athens)",
+        "time_iso": "2026-11-12T02:17:46+02:00",
+        "observed_at": "2026-11-12T02:25:34+02:00",
+        "reason": null,
+        "flags": [
+          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
+          "unknown_token_symbol_use_mint"
+        ],
+        "mode": "watch_only",
+        "copied": false,
+        "wallet_short": "DGma4Ux\u2026iFCm",
+        "solscan": "https://solscan.io/tx/1sx2V1b81rHojSmvca2Qcj2jRyzVREhxSvbx45YPAdf1ct5MHyJ8Vg5TVMjqVgp6S3SrE7HU2bQHRGxSYs96yj"
+      },
+      {
+        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:4Ej6ypNtSehqv2emB8boS6mQMsGXkPfsGUpcsYSD8kwECFVgF5Bo8f48hZsSC6nUZDwvH23NhWMSaqQ3BxG9UPck",
+        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
+        "signature": "4Ej6ypNtSehqv2emB8boS6mQMsGXkPfsGUpcsYSD8kwECFVgF5Bo8f48hZsSC6nUZDwvH23NhWMSaqQ3BxG9UPck",
+        "status": "resolved",
+        "side": "sell",
+        "venue": "Pump AMM",
+        "venues": [
+          "Pump AMM"
+        ],
+        "input": {
+          "mint": "G95DFf3fjMqvTraw2T5EduHshNsrrNcaEA4QsD1upump",
+          "symbol": null,
+          "amount": "13582438.751106"
+        },
+        "output": {
+          "mint": "So11111111111111111111111111111111111111112",
+          "symbol": "SOL",
+          "amount": "0.7950842"
+        },
+        "asset_changes": [
+          {
+            "mint": "G95DFf3fjMqvTraw2T5EduHshNsrrNcaEA4QsD1upump",
+            "symbol": null,
+            "amount": "13582438.751106",
+            "signed_amount": "-13582438.751106"
+          },
+          {
+            "mint": "So11111111111111111111111111111111111111112",
+            "symbol": "SOL",
+            "amount": "0.7950842",
+            "signed_amount": "0.7950842"
+          }
+        ],
+        "usd_estimate": 66.46426553040449,
+        "usd_basis": {
+          "method": "SOL at current indicative mark, not historical execution price",
+          "estimated": true,
+          "sol_usd": 83.59399612066808,
+          "marked_at": "2026-11-12T02:24:26+02:00",
+          "source": "Jupiter Price API v3"
+        },
+        "time": "2026-11-12 02:17:41 EET (Europe/Athens)",
+        "time_iso": "2026-11-12T02:17:41+02:00",
+        "observed_at": "2026-11-12T02:25:28+02:00",
+        "reason": null,
+        "flags": [
+          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
+          "unknown_token_symbol_use_mint"
+        ],
+        "mode": "watch_only",
+        "copied": false,
+        "wallet_short": "DGma4Ux\u2026iFCm",
+        "solscan": "https://solscan.io/tx/4Ej6ypNtSehqv2emB8boS6mQMsGXkPfsGUpcsYSD8kwECFVgF5Bo8f48hZsSC6nUZDwvH23NhWMSaqQ3BxG9UPck"
+      },
+      {
+        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:3oyrX5mi1i15Bj5FYxGJhNrXgoaMdszmv9VGEn8TvoU7Vy3ZqdMUKnQdDTfuqFzLiah1VFqZrpjLXwgwNpBRPXZ",
+        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
+        "signature": "3oyrX5mi1i15Bj5FYxGJhNrXgoaMdszmv9VGEn8TvoU7Vy3ZqdMUKnQdDTfuqFzLiah1VFqZrpjLXwgwNpBRPXZ",
+        "status": "resolved",
+        "side": "sell",
+        "venue": "pump.fun",
+        "venues": [
+          "pump.fun"
+        ],
+        "input": {
+          "mint": "DmqrKdy5JrrfxNmvzesYodNWyWS6ZKMMqHyQeJKnsnow",
+          "symbol": null,
+          "amount": "18203489.679028"
+        },
+        "output": {
+          "mint": "So11111111111111111111111111111111111111112",
+          "symbol": "SOL",
+          "amount": "0.738994644"
+        },
+        "asset_changes": [
+          {
+            "mint": "DmqrKdy5JrrfxNmvzesYodNWyWS6ZKMMqHyQeJKnsnow",
+            "symbol": null,
+            "amount": "18203489.679028",
+            "signed_amount": "-18203489.679028"
+          },
+          {
+            "mint": "So11111111111111111111111111111111111111112",
+            "symbol": "SOL",
+            "amount": "0.738994644",
+            "signed_amount": "0.738994644"
+          }
+        ],
+        "usd_estimate": 61.77551540373049,
+        "usd_basis": {
+          "method": "SOL at current indicative mark, not historical execution price",
+          "estimated": true,
+          "sol_usd": 83.59399612066808,
+          "marked_at": "2026-11-12T02:24:26+02:00",
+          "source": "Jupiter Price API v3"
+        },
+        "time": "2026-11-12 02:17:05 EET (Europe/Athens)",
+        "time_iso": "2026-11-12T02:17:05+02:00",
+        "observed_at": "2026-11-12T02:25:10+02:00",
+        "reason": null,
+        "flags": [
+          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
+          "unknown_token_symbol_use_mint"
+        ],
+        "mode": "watch_only",
+        "copied": false,
+        "wallet_short": "DGma4Ux\u2026iFCm",
+        "solscan": "https://solscan.io/tx/3oyrX5mi1i15Bj5FYxGJhNrXgoaMdszmv9VGEn8TvoU7Vy3ZqdMUKnQdDTfuqFzLiah1VFqZrpjLXwgwNpBRPXZ"
+      },
+      {
+        "event_id": "FqJMNzzY1DHz2F1Pt6F7VqCxBWdu8cK2TbfTrYT9zQbT:5sb5dEhmy6CnxeuaRLeYEEmLuh1dPLoaFdcfF5HYHMT7fooBU6oi8xEBuHQWmZW6ZSD3CrseV9rYUBMD7vNdPK31",
+        "wallet": "FqJMNzzY1DHz2F1Pt6F7VqCxBWdu8cK2TbfTrYT9zQbT",
+        "signature": "5sb5dEhmy6CnxeuaRLeYEEmLuh1dPLoaFdcfF5HYHMT7fooBU6oi8xEBuHQWmZW6ZSD3CrseV9rYUBMD7vNdPK31",
+        "status": "resolved",
+        "side": "sell",
+        "venue": "Jupiter v6 / Pump AMM",
+        "venues": [
+          "Jupiter v6",
+          "Pump AMM"
+        ],
+        "input": {
+          "mint": "EygStH4gHv1h4E8w4raYv6NGsrDiij3nbfCc26iTpump",
+          "symbol": null,
+          "amount": "3500000.00000"
+        },
+        "output": {
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "symbol": "USDC",
+          "amount": "608.399597"
+        },
+        "asset_changes": [
+          {
+            "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "symbol": "USDC",
+            "amount": "608.399597",
+            "signed_amount": "608.399597"
+          },
+          {
+            "mint": "EygStH4gHv1h4E8w4raYv6NGsrDiij3nbfCc26iTpump",
+            "symbol": null,
+            "amount": "3500000.00000",
+            "signed_amount": "-3500000.00000"
+          }
+        ],
+        "usd_estimate": 608.399597,
+        "usd_basis": {
+          "method": "USDC at USD parity",
+          "estimated": true
+        },
+        "time": "2026-11-12 02:16:15 EET (Europe/Athens)",
+        "time_iso": "2026-11-12T02:16:15+02:00",
+        "observed_at": "2026-11-12T02:25:07+02:00",
+        "reason": null,
+        "flags": [
+          "unknown_token_symbol_use_mint"
+        ],
+        "mode": "watch_only",
+        "copied": false,
+        "wallet_short": "FqJMNzz\u2026zQbT",
+        "solscan": "https://solscan.io/tx/5sb5dEhmy6CnxeuaRLeYEEmLuh1dPLoaFdcfF5HYHMT7fooBU6oi8xEBuHQWmZW6ZSD3CrseV9rYUBMD7vNdPK31"
+      },
+      {
+        "event_id": "FqJMNzzY1DHz2F1Pt6F7VqCxBWdu8cK2TbfTrYT9zQbT:3HVVr99ZLabq52T89iH8doK6tvnuw5Fih1gA5v4fiv65Vvu5xdrJ6BQu8EVahX5BEYeyjwVqeETxjL86b2ABLmnv",
+        "wallet": "FqJMNzzY1DHz2F1Pt6F7VqCxBWdu8cK2TbfTrYT9zQbT",
+        "signature": "3HVVr99ZLabq52T89iH8doK6tvnuw5Fih1gA5v4fiv65Vvu5xdrJ6BQu8EVahX5BEYeyjwVqeETxjL86b2ABLmnv",
+        "status": "resolved",
+        "side": "sell",
+        "venue": "Jupiter v6 / Pump AMM",
+        "venues": [
+          "Jupiter v6",
+          "Pump AMM"
+        ],
+        "input": {
+          "mint": "EygStH4gHv1h4E8w4raYv6NGsrDiij3nbfCc26iTpump",
+          "symbol": null,
+          "amount": "4516829.690396"
+        },
+        "output": {
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "symbol": "USDC",
+          "amount": "817.133824"
+        },
+        "asset_changes": [
+          {
+            "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "symbol": "USDC",
+            "amount": "817.133824",
+            "signed_amount": "817.133824"
+          },
+          {
+            "mint": "EygStH4gHv1h4E8w4raYv6NGsrDiij3nbfCc26iTpump",
+            "symbol": null,
+            "amount": "4516829.690396",
+            "signed_amount": "-4516829.690396"
+          }
+        ],
+        "usd_estimate": 817.133824,
+        "usd_basis": {
+          "method": "USDC at USD parity",
+          "estimated": true
+        },
+        "time": "2026-11-12 02:15:30 EET (Europe/Athens)",
+        "time_iso": "2026-11-12T02:15:30+02:00",
+        "observed_at": "2026-11-12T02:24:58+02:00",
+        "reason": null,
+        "flags": [
+          "unknown_token_symbol_use_mint"
+        ],
+        "mode": "watch_only",
+        "copied": false,
+        "wallet_short": "FqJMNzz\u2026zQbT",
+        "solscan": "https://solscan.io/tx/3HVVr99ZLabq52T89iH8doK6tvnuw5Fih1gA5v4fiv65Vvu5xdrJ6BQu8EVahX5BEYeyjwVqeETxjL86b2ABLmnv"
+      },
+      {
+        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:2bWgt8W1ggsbCV5JvuidTeN7EFUiVUTc5HWRXJdB8w17oyCQ37Dia1X5uJyG7qqAS5fUx7TFAbp9XGH7ShC8WbJ8",
+        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
+        "signature": "2bWgt8W1ggsbCV5JvuidTeN7EFUiVUTc5HWRXJdB8w17oyCQ37Dia1X5uJyG7qqAS5fUx7TFAbp9XGH7ShC8WbJ8",
+        "status": "resolved",
+        "side": "sell",
+        "venue": "Meteora DLMM / Pump AMM",
+        "venues": [
+          "Meteora DLMM",
+          "Pump AMM"
+        ],
+        "input": {
+          "mint": "G4hRkB6Cbc2C9VAwdVCP9tKp2PLBdxiNkwEpiYHbpump",
+          "symbol": null,
+          "amount": "28469768.724238"
+        },
+        "output": {
+          "mint": "So11111111111111111111111111111111111111112",
+          "symbol": "SOL",
+          "amount": "1.299448983"
+        },
+        "asset_changes": [
+          {
+            "mint": "G4hRkB6Cbc2C9VAwdVCP9tKp2PLBdxiNkwEpiYHbpump",
+            "symbol": null,
+            "amount": "28469768.724238",
+            "signed_amount": "-28469768.724238"
+          },
+          {
+            "mint": "So11111111111111111111111111111111111111112",
+            "symbol": "SOL",
+            "amount": "1.299448983",
+            "signed_amount": "1.299448983"
+          }
+        ],
+        "usd_estimate": 108.62613324390809,
+        "usd_basis": {
+          "method": "SOL at current indicative mark, not historical execution price",
+          "estimated": true,
+          "sol_usd": 83.59399612066808,
+          "marked_at": "2026-11-12T02:24:26+02:00",
+          "source": "Jupiter Price API v3"
+        },
+        "time": "2026-11-12 02:16:25 EET (Europe/Athens)",
+        "time_iso": "2026-11-12T02:16:25+02:00",
+        "observed_at": "2026-11-12T02:24:52+02:00",
+        "reason": null,
+        "flags": [
+          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
+          "unknown_token_symbol_use_mint"
+        ],
+        "mode": "watch_only",
+        "copied": false,
+        "wallet_short": "DGma4Ux\u2026iFCm",
+        "solscan": "https://solscan.io/tx/2bWgt8W1ggsbCV5JvuidTeN7EFUiVUTc5HWRXJdB8w17oyCQ37Dia1X5uJyG7qqAS5fUx7TFAbp9XGH7ShC8WbJ8"
+      },
+      {
+        "event_id": "FqJMNzzY1DHz2F1Pt6F7VqCxBWdu8cK2TbfTrYT9zQbT:3FucZM7fq2zSv9uasvoZXSwoGqFM5mw3uCUgTFxT9ncNfiXEF9cSGQhbLdJpmqQAKEkQ9wnEKyLBz253DUzqbMxQ",
+        "wallet": "FqJMNzzY1DHz2F1Pt6F7VqCxBWdu8cK2TbfTrYT9zQbT",
+        "signature": "3FucZM7fq2zSv9uasvoZXSwoGqFM5mw3uCUgTFxT9ncNfiXEF9cSGQhbLdJpmqQAKEkQ9wnEKyLBz253DUzqbMxQ",
+        "status": "resolved",
+        "side": "buy",
+        "venue": "Jupiter v6 / Pump AMM",
+        "venues": [
+          "Jupiter v6",
+          "Pump AMM"
+        ],
+        "input": {
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "symbol": "USDC",
+          "amount": "130.128359"
+        },
+        "output": {
+          "mint": "BLYdKSwcRnEmtesj5aP6NzV9EyRA9Dr83sL5yhW8pump",
+          "symbol": null,
+          "amount": "1551463.933924"
+        },
+        "asset_changes": [
+          {
+            "mint": "BLYdKSwcRnEmtesj5aP6NzV9EyRA9Dr83sL5yhW8pump",
+            "symbol": null,
+            "amount": "1551463.933924",
+            "signed_amount": "1551463.933924"
+          },
+          {
+            "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "symbol": "USDC",
+            "amount": "130.128359",
+            "signed_amount": "-130.128359"
+          }
+        ],
+        "usd_estimate": 130.128359,
+        "usd_basis": {
+          "method": "USDC at USD parity",
+          "estimated": true
+        },
+        "time": "2026-11-12 02:15:19 EET (Europe/Athens)",
+        "time_iso": "2026-11-12T02:15:19+02:00",
+        "observed_at": "2026-11-12T02:24:34+02:00",
+        "reason": null,
+        "flags": [
+          "unknown_token_symbol_use_mint"
+        ],
+        "mode": "watch_only",
+        "copied": false,
+        "wallet_short": "FqJMNzz\u2026zQbT",
+        "solscan": "https://solscan.io/tx/3FucZM7fq2zSv9uasvoZXSwoGqFM5mw3uCUgTFxT9ncNfiXEF9cSGQhbLdJpmqQAKEkQ9wnEKyLBz253DUzqbMxQ"
+      },
+      {
+        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:5r5HXPzTBiHxnXiV2Sx6JB9AkfqEcdcioNkVtaj5KVvUXKeMHGG1Yc4p3qZhRV9g8ju3JBARwtyG1XWJxt9pT2p4",
+        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
+        "signature": "5r5HXPzTBiHxnXiV2Sx6JB9AkfqEcdcioNkVtaj5KVvUXKeMHGG1Yc4p3qZhRV9g8ju3JBARwtyG1XWJxt9pT2p4",
+        "status": "resolved",
+        "side": "sell",
+        "venue": "Pump AMM",
+        "venues": [
+          "Pump AMM"
+        ],
+        "input": {
+          "mint": "DAoC8MwJx5o6XYz97ACJqQPDCXKtKEW4G7su2KLypump",
+          "symbol": null,
+          "amount": "40287701.616574"
+        },
+        "output": {
+          "mint": "So11111111111111111111111111111111111111112",
+          "symbol": "SOL",
+          "amount": "1.347405067"
+        },
+        "asset_changes": [
+          {
+            "mint": "DAoC8MwJx5o6XYz97ACJqQPDCXKtKEW4G7su2KLypump",
+            "symbol": null,
+            "amount": "40287701.616574",
+            "signed_amount": "-40287701.616574"
+          },
+          {
+            "mint": "So11111111111111111111111111111111111111112",
+            "symbol": "SOL",
+            "amount": "1.347405067",
+            "signed_amount": "1.347405067"
+          }
+        ],
+        "usd_estimate": 112.63497394376651,
+        "usd_basis": {
+          "method": "SOL at current indicative mark, not historical execution price",
+          "estimated": true,
+          "sol_usd": 83.59399612066808,
+          "marked_at": "2026-11-12T02:24:26+02:00",
+          "source": "Jupiter Price API v3"
+        },
+        "time": "2026-11-12 02:16:12 EET (Europe/Athens)",
+        "time_iso": "2026-11-12T02:16:12+02:00",
+        "observed_at": "2026-11-12T02:24:28+02:00",
+        "reason": null,
+        "flags": [
+          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
+          "unknown_token_symbol_use_mint"
+        ],
+        "mode": "watch_only",
+        "copied": false,
+        "wallet_short": "DGma4Ux\u2026iFCm",
+        "solscan": "https://solscan.io/tx/5r5HXPzTBiHxnXiV2Sx6JB9AkfqEcdcioNkVtaj5KVvUXKeMHGG1Yc4p3qZhRV9g8ju3JBARwtyG1XWJxt9pT2p4"
+      },
       {
         "event_id": "FqJMNzzY1DHz2F1Pt6F7VqCxBWdu8cK2TbfTrYT9zQbT:u1tUPcCZgwwriETFaT3sU8vsjnmyoMktYGgALnYwqMCSG6rqUmVd43mn8yf1g17a3C7xHt3iyYtjK6MQ7ZHjyop",
         "wallet": "FqJMNzzY1DHz2F1Pt6F7VqCxBWdu8cK2TbfTrYT9zQbT",
@@ -11944,618 +12537,12 @@
         "copied": false,
         "wallet_short": "DGma4Ux\u2026iFCm",
         "solscan": "https://solscan.io/tx/29MtF1VeBJRB3rntm1sAyJPhJekkRfzddu223vKEbo5MHyB3zWXRJjFVZddw83nnFyt7D8n9pXm91wLR93eD99FV"
-      },
-      {
-        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:9smjwB3TH1yF1Mf5dgR2U1ibxgbedzdQ2dtFtneBGMR9bnvbCMWYWugCuwPT6LZsZu9h1NpU2yBtDVb8F9q8Dhv",
-        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
-        "signature": "9smjwB3TH1yF1Mf5dgR2U1ibxgbedzdQ2dtFtneBGMR9bnvbCMWYWugCuwPT6LZsZu9h1NpU2yBtDVb8F9q8Dhv",
-        "status": "resolved",
-        "side": "buy",
-        "venue": "pump.fun",
-        "venues": [
-          "pump.fun"
-        ],
-        "input": {
-          "mint": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "amount": "0.2526"
-        },
-        "output": {
-          "mint": "7GN74GRVtbyjPKhgpKLJt1LsgoURXJFZRYXKZR7jpump",
-          "symbol": null,
-          "amount": "4655343.387108"
-        },
-        "asset_changes": [
-          {
-            "mint": "7GN74GRVtbyjPKhgpKLJt1LsgoURXJFZRYXKZR7jpump",
-            "symbol": null,
-            "amount": "4655343.387108",
-            "signed_amount": "4655343.387108"
-          },
-          {
-            "mint": "So11111111111111111111111111111111111111112",
-            "symbol": "SOL",
-            "amount": "0.2526",
-            "signed_amount": "-0.2526"
-          }
-        ],
-        "usd_estimate": 21.16831846811945,
-        "usd_basis": {
-          "method": "SOL at current indicative mark, not historical execution price",
-          "estimated": true,
-          "sol_usd": 83.80173581995031,
-          "marked_at": "2026-11-11T13:47:11+02:00",
-          "source": "Jupiter Price API v3"
-        },
-        "time": "2026-11-11 13:40:09 EET (Europe/Athens)",
-        "time_iso": "2026-11-11T13:40:09+02:00",
-        "observed_at": "2026-11-11T13:47:12+02:00",
-        "reason": null,
-        "flags": [
-          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
-          "unknown_token_symbol_use_mint"
-        ],
-        "mode": "watch_only",
-        "copied": false,
-        "wallet_short": "DGma4Ux\u2026iFCm",
-        "solscan": "https://solscan.io/tx/9smjwB3TH1yF1Mf5dgR2U1ibxgbedzdQ2dtFtneBGMR9bnvbCMWYWugCuwPT6LZsZu9h1NpU2yBtDVb8F9q8Dhv"
-      },
-      {
-        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:5UUk1FhNykm6Zmd83pLwED9k8rqhz4mdULBDno55wV7x6icDk1cAv1phRXBEA5tbJHb22dpWKjytfgeXoLVuYh5o",
-        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
-        "signature": "5UUk1FhNykm6Zmd83pLwED9k8rqhz4mdULBDno55wV7x6icDk1cAv1phRXBEA5tbJHb22dpWKjytfgeXoLVuYh5o",
-        "status": "resolved",
-        "side": "sell",
-        "venue": "Pump AMM",
-        "venues": [
-          "Pump AMM"
-        ],
-        "input": {
-          "mint": "EABV6iHjm281Py4JxLHMqZ9ki4psTx2giCkjCe1Apump",
-          "symbol": null,
-          "amount": "7396023.952718"
-        },
-        "output": {
-          "mint": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "amount": "0.860287907"
-        },
-        "asset_changes": [
-          {
-            "mint": "EABV6iHjm281Py4JxLHMqZ9ki4psTx2giCkjCe1Apump",
-            "symbol": null,
-            "amount": "7396023.952718",
-            "signed_amount": "-7396023.952718"
-          },
-          {
-            "mint": "So11111111111111111111111111111111111111112",
-            "symbol": "SOL",
-            "amount": "0.860287907",
-            "signed_amount": "0.860287907"
-          }
-        ],
-        "usd_estimate": 72.0601996813768,
-        "usd_basis": {
-          "method": "SOL at current indicative mark, not historical execution price",
-          "estimated": true,
-          "sol_usd": 83.76288809250552,
-          "marked_at": "2026-11-11T13:35:55+02:00",
-          "source": "Jupiter Price API v3"
-        },
-        "time": "2026-11-11 13:32:17 EET (Europe/Athens)",
-        "time_iso": "2026-11-11T13:32:17+02:00",
-        "observed_at": "2026-11-11T13:36:24+02:00",
-        "reason": null,
-        "flags": [
-          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
-          "unknown_token_symbol_use_mint"
-        ],
-        "mode": "watch_only",
-        "copied": false,
-        "wallet_short": "DGma4Ux\u2026iFCm",
-        "solscan": "https://solscan.io/tx/5UUk1FhNykm6Zmd83pLwED9k8rqhz4mdULBDno55wV7x6icDk1cAv1phRXBEA5tbJHb22dpWKjytfgeXoLVuYh5o"
-      },
-      {
-        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:3UwFv4RsMzwv8dEj5uDJKTZULfxWiKLiEg8u1hLomBaR9bLKxNLY86V8vowRBZ5kebfuAitt7jA9skScYriB9Z6j",
-        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
-        "signature": "3UwFv4RsMzwv8dEj5uDJKTZULfxWiKLiEg8u1hLomBaR9bLKxNLY86V8vowRBZ5kebfuAitt7jA9skScYriB9Z6j",
-        "status": "resolved",
-        "side": "buy",
-        "venue": "Orca Whirlpool / Pump AMM",
-        "venues": [
-          "Orca Whirlpool",
-          "Pump AMM"
-        ],
-        "input": {
-          "mint": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "amount": "1.0101"
-        },
-        "output": {
-          "mint": "D8GWC95Nd3XN4wWzMH5aT4CoAPnafoQQ1sPKNZ42R2Lb",
-          "symbol": null,
-          "amount": "25221465.883552"
-        },
-        "asset_changes": [
-          {
-            "mint": "D8GWC95Nd3XN4wWzMH5aT4CoAPnafoQQ1sPKNZ42R2Lb",
-            "symbol": null,
-            "amount": "25221465.883552",
-            "signed_amount": "25221465.883552"
-          },
-          {
-            "mint": "So11111111111111111111111111111111111111112",
-            "symbol": "SOL",
-            "amount": "1.0101",
-            "signed_amount": "-1.0101"
-          }
-        ],
-        "usd_estimate": 84.60889326223983,
-        "usd_basis": {
-          "method": "SOL at current indicative mark, not historical execution price",
-          "estimated": true,
-          "sol_usd": 83.76288809250552,
-          "marked_at": "2026-11-11T13:35:55+02:00",
-          "source": "Jupiter Price API v3"
-        },
-        "time": "2026-11-11 13:27:36 EET (Europe/Athens)",
-        "time_iso": "2026-11-11T13:27:36+02:00",
-        "observed_at": "2026-11-11T13:36:21+02:00",
-        "reason": null,
-        "flags": [
-          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
-          "unknown_token_symbol_use_mint"
-        ],
-        "mode": "watch_only",
-        "copied": false,
-        "wallet_short": "DGma4Ux\u2026iFCm",
-        "solscan": "https://solscan.io/tx/3UwFv4RsMzwv8dEj5uDJKTZULfxWiKLiEg8u1hLomBaR9bLKxNLY86V8vowRBZ5kebfuAitt7jA9skScYriB9Z6j"
-      },
-      {
-        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:66Rhr1CwVaTMiLiR2AJtJv9yd4WLfts7dV4e7d9CFrz1xJKga5Xz3GvswRzJ3wGUH6CXHFjR2z79DKipAJg9eAds",
-        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
-        "signature": "66Rhr1CwVaTMiLiR2AJtJv9yd4WLfts7dV4e7d9CFrz1xJKga5Xz3GvswRzJ3wGUH6CXHFjR2z79DKipAJg9eAds",
-        "status": "resolved",
-        "side": "sell",
-        "venue": "Pump AMM",
-        "venues": [
-          "Pump AMM"
-        ],
-        "input": {
-          "mint": "BF8KiAF4E2vdSvKpour6kdN8zK9fA2fKUjmfeXknpump",
-          "symbol": null,
-          "amount": "35742446.160838"
-        },
-        "output": {
-          "mint": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "amount": "1.30971222"
-        },
-        "asset_changes": [
-          {
-            "mint": "BF8KiAF4E2vdSvKpour6kdN8zK9fA2fKUjmfeXknpump",
-            "symbol": null,
-            "amount": "35742446.160838",
-            "signed_amount": "-35742446.160838"
-          },
-          {
-            "mint": "So11111111111111111111111111111111111111112",
-            "symbol": "SOL",
-            "amount": "1.30971222",
-            "signed_amount": "1.30971222"
-          }
-        ],
-        "usd_estimate": 109.70527811724698,
-        "usd_basis": {
-          "method": "SOL at current indicative mark, not historical execution price",
-          "estimated": true,
-          "sol_usd": 83.76288809250552,
-          "marked_at": "2026-11-11T13:35:55+02:00",
-          "source": "Jupiter Price API v3"
-        },
-        "time": "2026-11-11 13:26:57 EET (Europe/Athens)",
-        "time_iso": "2026-11-11T13:26:57+02:00",
-        "observed_at": "2026-11-11T13:36:15+02:00",
-        "reason": null,
-        "flags": [
-          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
-          "unknown_token_symbol_use_mint"
-        ],
-        "mode": "watch_only",
-        "copied": false,
-        "wallet_short": "DGma4Ux\u2026iFCm",
-        "solscan": "https://solscan.io/tx/66Rhr1CwVaTMiLiR2AJtJv9yd4WLfts7dV4e7d9CFrz1xJKga5Xz3GvswRzJ3wGUH6CXHFjR2z79DKipAJg9eAds"
-      },
-      {
-        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:5q2doexkMAszGr57uVGF1uC6q15Yv7xiuB1RHynXzwHZbwXJHQhNm7ouMgMumRP7skrYTMD18WQgoSLoGbrXP8r5",
-        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
-        "signature": "5q2doexkMAszGr57uVGF1uC6q15Yv7xiuB1RHynXzwHZbwXJHQhNm7ouMgMumRP7skrYTMD18WQgoSLoGbrXP8r5",
-        "status": "resolved",
-        "side": "buy",
-        "venue": "Pump AMM",
-        "venues": [
-          "Pump AMM"
-        ],
-        "input": {
-          "mint": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "amount": "1.0101"
-        },
-        "output": {
-          "mint": "3LAmxkAZGMxYYCPcvfYsaoxTPw43syY9QT791PTYpump",
-          "symbol": null,
-          "amount": "25518756.256934"
-        },
-        "asset_changes": [
-          {
-            "mint": "3LAmxkAZGMxYYCPcvfYsaoxTPw43syY9QT791PTYpump",
-            "symbol": null,
-            "amount": "25518756.256934",
-            "signed_amount": "25518756.256934"
-          },
-          {
-            "mint": "So11111111111111111111111111111111111111112",
-            "symbol": "SOL",
-            "amount": "1.0101",
-            "signed_amount": "-1.0101"
-          }
-        ],
-        "usd_estimate": 84.60889326223983,
-        "usd_basis": {
-          "method": "SOL at current indicative mark, not historical execution price",
-          "estimated": true,
-          "sol_usd": 83.76288809250552,
-          "marked_at": "2026-11-11T13:35:55+02:00",
-          "source": "Jupiter Price API v3"
-        },
-        "time": "2026-11-11 13:24:30 EET (Europe/Athens)",
-        "time_iso": "2026-11-11T13:24:30+02:00",
-        "observed_at": "2026-11-11T13:36:09+02:00",
-        "reason": null,
-        "flags": [
-          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
-          "unknown_token_symbol_use_mint"
-        ],
-        "mode": "watch_only",
-        "copied": false,
-        "wallet_short": "DGma4Ux\u2026iFCm",
-        "solscan": "https://solscan.io/tx/5q2doexkMAszGr57uVGF1uC6q15Yv7xiuB1RHynXzwHZbwXJHQhNm7ouMgMumRP7skrYTMD18WQgoSLoGbrXP8r5"
-      },
-      {
-        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:3pSDV4dDcYVKso5ZrKmcqEh3jHdeF246bnEWK7xcMJ1wwNcmRPwNXS99cNjUkcAMbbpYD1857CD8XjD6rz92NQSF",
-        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
-        "signature": "3pSDV4dDcYVKso5ZrKmcqEh3jHdeF246bnEWK7xcMJ1wwNcmRPwNXS99cNjUkcAMbbpYD1857CD8XjD6rz92NQSF",
-        "status": "resolved",
-        "side": "buy",
-        "venue": "pump.fun",
-        "venues": [
-          "pump.fun"
-        ],
-        "input": {
-          "mint": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "amount": "1.0101"
-        },
-        "output": {
-          "mint": "54SimvjxbKkEQgt5YxF4tdtwjhvtQk8UhDz2iaMepump",
-          "symbol": null,
-          "amount": "26583312.129798"
-        },
-        "asset_changes": [
-          {
-            "mint": "54SimvjxbKkEQgt5YxF4tdtwjhvtQk8UhDz2iaMepump",
-            "symbol": null,
-            "amount": "26583312.129798",
-            "signed_amount": "26583312.129798"
-          },
-          {
-            "mint": "So11111111111111111111111111111111111111112",
-            "symbol": "SOL",
-            "amount": "1.0101",
-            "signed_amount": "-1.0101"
-          }
-        ],
-        "usd_estimate": 84.60889326223983,
-        "usd_basis": {
-          "method": "SOL at current indicative mark, not historical execution price",
-          "estimated": true,
-          "sol_usd": 83.76288809250552,
-          "marked_at": "2026-11-11T13:35:55+02:00",
-          "source": "Jupiter Price API v3"
-        },
-        "time": "2026-11-11 13:24:27 EET (Europe/Athens)",
-        "time_iso": "2026-11-11T13:24:27+02:00",
-        "observed_at": "2026-11-11T13:36:03+02:00",
-        "reason": null,
-        "flags": [
-          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
-          "unknown_token_symbol_use_mint"
-        ],
-        "mode": "watch_only",
-        "copied": false,
-        "wallet_short": "DGma4Ux\u2026iFCm",
-        "solscan": "https://solscan.io/tx/3pSDV4dDcYVKso5ZrKmcqEh3jHdeF246bnEWK7xcMJ1wwNcmRPwNXS99cNjUkcAMbbpYD1857CD8XjD6rz92NQSF"
-      },
-      {
-        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:2Rs5o4nkfkt6LaozgPtxyeJ7VHqnCvETCrnpbNYbcFBumTAfG7K5MYwL532aCZbHNG43rAqq6CkBKNPrfBGX7ZH",
-        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
-        "signature": "2Rs5o4nkfkt6LaozgPtxyeJ7VHqnCvETCrnpbNYbcFBumTAfG7K5MYwL532aCZbHNG43rAqq6CkBKNPrfBGX7ZH",
-        "status": "resolved",
-        "side": "buy",
-        "venue": "pump.fun",
-        "venues": [
-          "pump.fun"
-        ],
-        "input": {
-          "mint": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "amount": "1.0101"
-        },
-        "output": {
-          "mint": "9b2hK6x7EQXAFKepUnsB7qRNb9fidgrcMM8j2w8fpump",
-          "symbol": null,
-          "amount": "34199203.119515"
-        },
-        "asset_changes": [
-          {
-            "mint": "9b2hK6x7EQXAFKepUnsB7qRNb9fidgrcMM8j2w8fpump",
-            "symbol": null,
-            "amount": "34199203.119515",
-            "signed_amount": "34199203.119515"
-          },
-          {
-            "mint": "So11111111111111111111111111111111111111112",
-            "symbol": "SOL",
-            "amount": "1.0101",
-            "signed_amount": "-1.0101"
-          }
-        ],
-        "usd_estimate": 84.60889326223983,
-        "usd_basis": {
-          "method": "SOL at current indicative mark, not historical execution price",
-          "estimated": true,
-          "sol_usd": 83.76288809250552,
-          "marked_at": "2026-11-11T13:35:55+02:00",
-          "source": "Jupiter Price API v3"
-        },
-        "time": "2026-11-11 13:23:43 EET (Europe/Athens)",
-        "time_iso": "2026-11-11T13:23:43+02:00",
-        "observed_at": "2026-11-11T13:35:57+02:00",
-        "reason": null,
-        "flags": [
-          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
-          "unknown_token_symbol_use_mint"
-        ],
-        "mode": "watch_only",
-        "copied": false,
-        "wallet_short": "DGma4Ux\u2026iFCm",
-        "solscan": "https://solscan.io/tx/2Rs5o4nkfkt6LaozgPtxyeJ7VHqnCvETCrnpbNYbcFBumTAfG7K5MYwL532aCZbHNG43rAqq6CkBKNPrfBGX7ZH"
-      },
-      {
-        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:5xurFzByTtsnV3sBQjC9mVxw1sYaMHwjQQr9EFeJUuBevN1avQMEcMdwpBNMwWyCQTwZjUgaNcsvrNBC6xzLwZ1C",
-        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
-        "signature": "5xurFzByTtsnV3sBQjC9mVxw1sYaMHwjQQr9EFeJUuBevN1avQMEcMdwpBNMwWyCQTwZjUgaNcsvrNBC6xzLwZ1C",
-        "status": "resolved",
-        "side": "buy",
-        "venue": "pump.fun",
-        "venues": [
-          "pump.fun"
-        ],
-        "input": {
-          "mint": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "amount": "0.25251"
-        },
-        "output": {
-          "mint": "3EX7EDfRYDSHrBBnXRfLjwuNm9e8qU5hYKqdvoRUpump",
-          "symbol": null,
-          "amount": "3271831.893606"
-        },
-        "asset_changes": [
-          {
-            "mint": "3EX7EDfRYDSHrBBnXRfLjwuNm9e8qU5hYKqdvoRUpump",
-            "symbol": null,
-            "amount": "3271831.893606",
-            "signed_amount": "3271831.893606"
-          },
-          {
-            "mint": "So11111111111111111111111111111111111111112",
-            "symbol": "SOL",
-            "amount": "0.25251",
-            "signed_amount": "-0.25251"
-          }
-        ],
-        "usd_estimate": 21.146029607725175,
-        "usd_basis": {
-          "method": "SOL at current indicative mark, not historical execution price",
-          "estimated": true,
-          "sol_usd": 83.74333534404647,
-          "marked_at": "2026-11-11T13:09:16+02:00",
-          "source": "Jupiter Price API v3"
-        },
-        "time": "2026-11-11 13:08:25 EET (Europe/Athens)",
-        "time_iso": "2026-11-11T13:08:25+02:00",
-        "observed_at": "2026-11-11T13:09:16+02:00",
-        "reason": null,
-        "flags": [
-          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
-          "unknown_token_symbol_use_mint"
-        ],
-        "mode": "watch_only",
-        "copied": false,
-        "wallet_short": "DGma4Ux\u2026iFCm",
-        "solscan": "https://solscan.io/tx/5xurFzByTtsnV3sBQjC9mVxw1sYaMHwjQQr9EFeJUuBevN1avQMEcMdwpBNMwWyCQTwZjUgaNcsvrNBC6xzLwZ1C"
-      },
-      {
-        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:2p5P2msmdbsaRzmvkfswUhqd3Teu1uVsM52BKyWwUPo4u1rZ6JJVhHCuTPaf4gR3aPA6iCRESyL1WfNgUxxcaDiP",
-        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
-        "signature": "2p5P2msmdbsaRzmvkfswUhqd3Teu1uVsM52BKyWwUPo4u1rZ6JJVhHCuTPaf4gR3aPA6iCRESyL1WfNgUxxcaDiP",
-        "status": "resolved",
-        "side": "buy",
-        "venue": "Pump AMM",
-        "venues": [
-          "Pump AMM"
-        ],
-        "input": {
-          "mint": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "amount": "1.0101"
-        },
-        "output": {
-          "mint": "1gWWhs7qrd9sBHwppQdMU2h2fTnnyoCYCSuVjFBpump",
-          "symbol": null,
-          "amount": "39892040.412653"
-        },
-        "asset_changes": [
-          {
-            "mint": "1gWWhs7qrd9sBHwppQdMU2h2fTnnyoCYCSuVjFBpump",
-            "symbol": null,
-            "amount": "39892040.412653",
-            "signed_amount": "39892040.412653"
-          },
-          {
-            "mint": "So11111111111111111111111111111111111111112",
-            "symbol": "SOL",
-            "amount": "1.0101",
-            "signed_amount": "-1.0101"
-          }
-        ],
-        "usd_estimate": 84.56716268657684,
-        "usd_basis": {
-          "method": "SOL at current indicative mark, not historical execution price",
-          "estimated": true,
-          "sol_usd": 83.72157478128585,
-          "marked_at": "2026-11-11T12:54:23+02:00",
-          "source": "Jupiter Price API v3"
-        },
-        "time": "2026-11-11 12:43:26 EET (Europe/Athens)",
-        "time_iso": "2026-11-11T12:43:26+02:00",
-        "observed_at": "2026-11-11T12:58:41+02:00",
-        "reason": null,
-        "flags": [
-          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
-          "unknown_token_symbol_use_mint"
-        ],
-        "mode": "watch_only",
-        "copied": false,
-        "wallet_short": "DGma4Ux\u2026iFCm",
-        "solscan": "https://solscan.io/tx/2p5P2msmdbsaRzmvkfswUhqd3Teu1uVsM52BKyWwUPo4u1rZ6JJVhHCuTPaf4gR3aPA6iCRESyL1WfNgUxxcaDiP"
-      },
-      {
-        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:4hFCMH9VLTY1AgxoQmLULrBr6dYzUvSRUqSM6sV95k4PkLPVyQ44h1CADwGKVDLoNmQxd8P85Lf81nLJ4wHoVckU",
-        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
-        "signature": "4hFCMH9VLTY1AgxoQmLULrBr6dYzUvSRUqSM6sV95k4PkLPVyQ44h1CADwGKVDLoNmQxd8P85Lf81nLJ4wHoVckU",
-        "status": "resolved",
-        "side": "buy",
-        "venue": "Pump AMM",
-        "venues": [
-          "Pump AMM"
-        ],
-        "input": {
-          "mint": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "amount": "1.0101"
-        },
-        "output": {
-          "mint": "66vCw5ep3BcEe72c3nqZZdJC5yHnK7gVyAs4xAd2pump",
-          "symbol": null,
-          "amount": "46613732.390379"
-        },
-        "asset_changes": [
-          {
-            "mint": "66vCw5ep3BcEe72c3nqZZdJC5yHnK7gVyAs4xAd2pump",
-            "symbol": null,
-            "amount": "46613732.390379",
-            "signed_amount": "46613732.390379"
-          },
-          {
-            "mint": "So11111111111111111111111111111111111111112",
-            "symbol": "SOL",
-            "amount": "1.0101",
-            "signed_amount": "-1.0101"
-          }
-        ],
-        "usd_estimate": 84.56716268657684,
-        "usd_basis": {
-          "method": "SOL at current indicative mark, not historical execution price",
-          "estimated": true,
-          "sol_usd": 83.72157478128585,
-          "marked_at": "2026-11-11T12:54:23+02:00",
-          "source": "Jupiter Price API v3"
-        },
-        "time": "2026-11-11 12:42:32 EET (Europe/Athens)",
-        "time_iso": "2026-11-11T12:42:32+02:00",
-        "observed_at": "2026-11-11T12:58:38+02:00",
-        "reason": null,
-        "flags": [
-          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
-          "unknown_token_symbol_use_mint"
-        ],
-        "mode": "watch_only",
-        "copied": false,
-        "wallet_short": "DGma4Ux\u2026iFCm",
-        "solscan": "https://solscan.io/tx/4hFCMH9VLTY1AgxoQmLULrBr6dYzUvSRUqSM6sV95k4PkLPVyQ44h1CADwGKVDLoNmQxd8P85Lf81nLJ4wHoVckU"
-      },
-      {
-        "event_id": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm:4jNvER74QuVW7ApCym2BqVtKoaGjcniTZ7yciLRH2EfmSSrZHqki2PTHdq6rA5WtqF8hK8FHT9QbaAftYFg8CFVs",
-        "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
-        "signature": "4jNvER74QuVW7ApCym2BqVtKoaGjcniTZ7yciLRH2EfmSSrZHqki2PTHdq6rA5WtqF8hK8FHT9QbaAftYFg8CFVs",
-        "status": "resolved",
-        "side": "buy",
-        "venue": "pump.fun",
-        "venues": [
-          "pump.fun"
-        ],
-        "input": {
-          "mint": "So11111111111111111111111111111111111111112",
-          "symbol": "SOL",
-          "amount": "1.0101"
-        },
-        "output": {
-          "mint": "DQLsLdjiusVTyrQcfd2aMXiquJdpEUysNkhTv5sfpump",
-          "symbol": null,
-          "amount": "34199202.983651"
-        },
-        "asset_changes": [
-          {
-            "mint": "DQLsLdjiusVTyrQcfd2aMXiquJdpEUysNkhTv5sfpump",
-            "symbol": null,
-            "amount": "34199202.983651",
-            "signed_amount": "34199202.983651"
-          },
-          {
-            "mint": "So11111111111111111111111111111111111111112",
-            "symbol": "SOL",
-            "amount": "1.0101",
-            "signed_amount": "-1.0101"
-          }
-        ],
-        "usd_estimate": 84.56716268657684,
-        "usd_basis": {
-          "method": "SOL at current indicative mark, not historical execution price",
-          "estimated": true,
-          "sol_usd": 83.72157478128585,
-          "marked_at": "2026-11-11T12:54:23+02:00",
-          "source": "Jupiter Price API v3"
-        },
-        "time": "2026-11-11 12:41:44 EET (Europe/Athens)",
-        "time_iso": "2026-11-11T12:41:44+02:00",
-        "observed_at": "2026-11-11T12:58:35+02:00",
-        "reason": null,
-        "flags": [
-          "native_sol_net_flow_estimate_may_include_tips_or_transfers",
-          "unknown_token_symbol_use_mint"
-        ],
-        "mode": "watch_only",
-        "copied": false,
-        "wallet_short": "DGma4Ux\u2026iFCm",
-        "solscan": "https://solscan.io/tx/4jNvER74QuVW7ApCym2BqVtKoaGjcniTZ7yciLRH2EfmSSrZHqki2PTHdq6rA5WtqF8hK8FHT9QbaAftYFg8CFVs"
       }
     ],
     "events_in_feed": 200,
-    "total_resolved": 380,
+    "total_resolved": 391,
     "total_unresolved": 3,
-    "total_events": 383,
+    "total_events": 394,
     "feed_limit": 200
   },
   "rotation": {
@@ -12802,13 +12789,13 @@
         {
           "wallet": "DGma4Uxm9JS6yLNdgYaxsZhwk2nxrRGMfMt5buXbiFCm",
           "wallet_short": "DGma4Ux\u2026iFCm",
-          "events": 225,
-          "resolved": 223,
+          "events": 231,
+          "resolved": 229,
           "unresolved": 2,
           "buys": 127,
-          "sells": 96,
-          "volume_usd": 21174.93,
-          "volume_usd_display": "21174.93",
+          "sells": 102,
+          "volume_usd": 21674.21,
+          "volume_usd_display": "21674.21",
           "note": "Watch-only. These trades are not copied and do not enter paper P&L. USD is an estimate, not an execution price."
         },
         {
@@ -12826,21 +12813,21 @@
         {
           "wallet": "FqJMNzzY1DHz2F1Pt6F7VqCxBWdu8cK2TbfTrYT9zQbT",
           "wallet_short": "FqJMNzz\u2026zQbT",
-          "events": 151,
-          "resolved": 151,
+          "events": 156,
+          "resolved": 156,
           "unresolved": 0,
-          "buys": 64,
-          "sells": 87,
-          "volume_usd": 43204.36,
-          "volume_usd_display": "43204.36",
+          "buys": 65,
+          "sells": 91,
+          "volume_usd": 45163.77,
+          "volume_usd_display": "45163.77",
           "note": "Watch-only. These trades are not copied and do not enter paper P&L. USD is an estimate, not an execution price."
         }
       ],
-      "total_events": 383,
-      "total_resolved": 380,
+      "total_events": 394,
+      "total_resolved": 391,
       "total_unresolved": 3,
-      "total_volume_usd": 66142.08,
-      "total_volume_usd_display": "66142.08",
+      "total_volume_usd": 68600.77,
+      "total_volume_usd_display": "68600.77",
       "note": "Observed public-wallet activity only. Volume is the sum of resolved usd_estimate values."
     },
     "overnight": {
@@ -12850,7 +12837,7 @@
     },
     "coverage_gaps": {
       "exists": true,
-      "count": 54,
+      "count": 59,
       "gaps": [
         {
           "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
@@ -13391,6 +13378,56 @@
           "failed_from_label": "2026-11-12 02:20:12 EET (Europe/Athens)",
           "recovered_at_label": "2026-11-12 02:20:22 EET (Europe/Athens)",
           "logged_at_label": "2026-11-12 02:20:22 EET (Europe/Athens)"
+        },
+        {
+          "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+          "failed_from": 1794442892,
+          "recovered_at": 1794442935,
+          "status": "recovered by catch-up",
+          "logged_at": 1794442935,
+          "failed_from_label": "2026-11-12 02:21:32 EET (Europe/Athens)",
+          "recovered_at_label": "2026-11-12 02:22:15 EET (Europe/Athens)",
+          "logged_at_label": "2026-11-12 02:22:15 EET (Europe/Athens)"
+        },
+        {
+          "wallet": "4ueq9Qy3ECqaAjm1T7aqt1PJ343kJcwWQ2Vjuxb2SaSu",
+          "failed_from": 1794442932,
+          "recovered_at": 1794442942,
+          "status": "recovered by catch-up",
+          "logged_at": 1794442942,
+          "failed_from_label": "2026-11-12 02:22:12 EET (Europe/Athens)",
+          "recovered_at_label": "2026-11-12 02:22:22 EET (Europe/Athens)",
+          "logged_at_label": "2026-11-12 02:22:22 EET (Europe/Athens)"
+        },
+        {
+          "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+          "failed_from": 1794442997,
+          "recovered_at": 1794443040,
+          "status": "recovered by catch-up",
+          "logged_at": 1794443040,
+          "failed_from_label": "2026-11-12 02:23:17 EET (Europe/Athens)",
+          "recovered_at_label": "2026-11-12 02:24:00 EET (Europe/Athens)",
+          "logged_at_label": "2026-11-12 02:24:00 EET (Europe/Athens)"
+        },
+        {
+          "wallet": "4ueq9Qy3ECqaAjm1T7aqt1PJ343kJcwWQ2Vjuxb2SaSu",
+          "failed_from": 1794443037,
+          "recovered_at": 1794443047,
+          "status": "recovered by catch-up",
+          "logged_at": 1794443047,
+          "failed_from_label": "2026-11-12 02:23:57 EET (Europe/Athens)",
+          "recovered_at_label": "2026-11-12 02:24:07 EET (Europe/Athens)",
+          "logged_at_label": "2026-11-12 02:24:07 EET (Europe/Athens)"
+        },
+        {
+          "wallet": "7vBb4gRWEFEeo4BqVp6gofACgnuvzxgnsvdTZ8a2arNx",
+          "failed_from": 1794443087,
+          "recovered_at": 1794443130,
+          "status": "recovered by catch-up",
+          "logged_at": 1794443130,
+          "failed_from_label": "2026-11-12 02:24:47 EET (Europe/Athens)",
+          "recovered_at_label": "2026-11-12 02:25:30 EET (Europe/Athens)",
+          "logged_at_label": "2026-11-12 02:25:30 EET (Europe/Athens)"
         }
       ],
       "note": "Rows logged when a leader scan failed and later recovered, or hit the catch-up page limit."
@@ -14858,10 +14895,10 @@
         {
           "time": 1794441600,
           "open": 0.255105766762403,
-          "high": 0.256443300607567,
+          "high": 0.25732882415920294,
           "low": 0.254009082902684,
-          "close": 0.256443300607567,
-          "volume": 12427.769542000004
+          "close": 0.2570757833774,
+          "volume": 14126.806054000004
         }
       ],
       "count": 168,
@@ -15048,12 +15085,12 @@
         "kind": "fill"
       },
       {
-        "time": 1794442846,
-        "t": "02:20",
-        "iso": "2026-11-12T02:20:46+02:00",
-        "label": "2026-11-12 02:20:46 EET (Europe/Athens)",
-        "equity": 996.441634,
-        "equity_display": "996.44",
+        "time": 1794443159,
+        "t": "02:25",
+        "iso": "2026-11-12T02:25:59+02:00",
+        "label": "2026-11-12 02:25:59 EET (Europe/Athens)",
+        "equity": 996.719405,
+        "equity_display": "996.72",
         "kind": "mark"
       }
     ],
@@ -15146,12 +15183,12 @@
           "kind": "fill"
         },
         {
-          "time": 1794442846,
-          "t": "02:20",
-          "iso": "2026-11-12T02:20:46+02:00",
-          "label": "2026-11-12 02:20:46 EET (Europe/Athens)",
-          "equity": 999.830657,
-          "equity_display": "999.83",
+          "time": 1794443159,
+          "t": "02:25",
+          "iso": "2026-11-12T02:25:59+02:00",
+          "label": "2026-11-12 02:25:59 EET (Europe/Athens)",
+          "equity": 1000.054516,
+          "equity_display": "1000.05",
           "kind": "mark"
         }
       ],
@@ -15173,97 +15210,97 @@
   "ticker": {
     "source": "GeckoTerminal public API (no key; fetched at refresh)",
     "note": "1h changes for JUP/USDC and tokens recently traded by the watch-only GMGN wallets. Tokens without a public 1h figure are omitted, not invented.",
-    "fetched_at": "2026-11-12 02:20:46 EET (Europe/Athens)",
-    "fetched_at_iso": "2026-11-12T02:20:46+02:00",
-    "fetched_at_hhmm": "02:20",
+    "fetched_at": "2026-11-12 02:25:59 EET (Europe/Athens)",
+    "fetched_at_iso": "2026-11-12T02:25:59+02:00",
+    "fetched_at_hhmm": "02:25",
     "items": [
       {
         "symbol": "JUP",
         "pair": "JUP/USDC",
         "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
-        "change_1h_pct": 0.846,
-        "price_usd": 0.255283,
+        "change_1h_pct": 0.572,
+        "price_usd": 0.254749,
         "pool_name": "JUP / USDC",
         "source": "GeckoTerminal public API",
         "origin": "paper_pair"
       },
       {
-        "symbol": "SPY",
-        "pair": "SPY",
-        "mint": "EQddKRFCa5HoE3Epeb7s6EFxqSK7gLsYgQmFwxkxpump",
-        "change_1h_pct": 188.39,
-        "price_usd": 1.8e-05,
-        "pool_name": "SPY / NVDA",
+        "symbol": "GALVANI",
+        "pair": "GALVANI",
+        "mint": "Ereedz94JPD19GHJpe3uPYsKYE4qBspNYeyHtUetpump",
+        "change_1h_pct": 5.18,
+        "price_usd": 4e-06,
+        "pool_name": "GALVANI / SOL",
         "source": "GeckoTerminal public API",
         "origin": "gmgn_watch_only"
       },
       {
-        "symbol": "POKE",
-        "pair": "POKE",
-        "mint": "Cy3bFG4L4ZjZydoV7Ak4QRihRR1PZCNBjsMqgs9upKQR",
-        "change_1h_pct": -75.87,
-        "price_usd": 8e-06,
-        "pool_name": "POKE / SOL",
+        "symbol": "SOL",
+        "pair": "SOL",
+        "mint": "So11111111111111111111111111111111111111112",
+        "change_1h_pct": 1.01,
+        "price_usd": 83.485135,
+        "pool_name": "SOL / USDC",
         "source": "GeckoTerminal public API",
         "origin": "gmgn_watch_only"
       },
       {
-        "symbol": "WOULD",
-        "pair": "WOULD",
-        "mint": "6DrxESz1eu5Ak4HnNYtRTCDZ5KzpkoxXS4GLyLLS5hMR",
-        "change_1h_pct": 75.07,
+        "symbol": "ser",
+        "pair": "ser",
+        "mint": "D8GWC95Nd3XN4wWzMH5aT4CoAPnafoQQ1sPKNZ42R2Lb",
+        "change_1h_pct": 0.0,
         "price_usd": 1.4e-05,
-        "pool_name": "WOULD / NVDAx",
+        "pool_name": "ser / SOL",
         "source": "GeckoTerminal public API",
         "origin": "gmgn_watch_only"
       },
       {
-        "symbol": "NVIDIH",
-        "pair": "NVIDIH",
-        "mint": "CKR3MGPkxvG1eVjwQae1jm7fVchgvckcqnzWKZhStPZi",
-        "change_1h_pct": 9.76,
+        "symbol": "GTF",
+        "pair": "GTF",
+        "mint": "C2RqyojxNG4J6ScacyYkRUGUtW8DQVNZsdhDQMGXpump",
+        "change_1h_pct": -6.3,
+        "price_usd": 9e-06,
+        "pool_name": "GTF / PLTRx",
+        "source": "GeckoTerminal public API",
+        "origin": "gmgn_watch_only"
+      },
+      {
+        "symbol": "\u732b",
+        "pair": "\u732b",
+        "mint": "3c7uGViL2KZoFcuktqF8e9FZJpdS3595Ry2q4u5ypump",
+        "change_1h_pct": 0.0,
         "price_usd": 3e-06,
-        "pool_name": "NVIDIH / NVDA",
+        "pool_name": "\u732b / SOL",
         "source": "GeckoTerminal public API",
         "origin": "gmgn_watch_only"
       },
       {
-        "symbol": "GODZILLA",
-        "pair": "GODZILLA",
-        "mint": "5oovW26rqcURLQ3P9bcGskn364dXJqPGJ5HBKoQ7pump",
-        "change_1h_pct": -12.67,
-        "price_usd": 1.3e-05,
-        "pool_name": "GODZILLA / SOL",
+        "symbol": "breadcat",
+        "pair": "breadcat",
+        "mint": "G95DFf3fjMqvTraw2T5EduHshNsrrNcaEA4QsD1upump",
+        "change_1h_pct": -4.34,
+        "price_usd": 5e-06,
+        "pool_name": "breadcat / SOL",
         "source": "GeckoTerminal public API",
         "origin": "gmgn_watch_only"
       },
       {
-        "symbol": "WEAN",
-        "pair": "WEAN",
-        "mint": "FRRX1HdwFi6eRW6cnxXLyRf65ry53qDxo65KF6wmkqDK",
-        "change_1h_pct": -20.26,
+        "symbol": "NIHAOCAT",
+        "pair": "NIHAOCAT",
+        "mint": "DmqrKdy5JrrfxNmvzesYodNWyWS6ZKMMqHyQeJKnsnow",
+        "change_1h_pct": -2.65,
         "price_usd": 3e-06,
-        "pool_name": "WEAN / SOL",
+        "pool_name": "NIHAOCAT / SOL",
         "source": "GeckoTerminal public API",
         "origin": "gmgn_watch_only"
       },
       {
-        "symbol": "Mustache",
-        "pair": "Mustache",
-        "mint": "7r3Hcmzzko9UrCvbCAN3QhUfojs2RqpnzH8tfeyRpump",
-        "change_1h_pct": -40.01,
-        "price_usd": 6.7e-05,
-        "pool_name": "Mustache / SOL",
-        "source": "GeckoTerminal public API",
-        "origin": "gmgn_watch_only"
-      },
-      {
-        "symbol": "HUNG",
-        "pair": "HUNG",
-        "mint": "4xgqefa5WcdHWKXzqvM9MRJqWYGaHVEUnpUL4Vq5pump",
-        "change_1h_pct": -8.33,
-        "price_usd": 0.000496,
-        "pool_name": "HUNG / NVDAx",
+        "symbol": "LARP",
+        "pair": "LARP",
+        "mint": "EygStH4gHv1h4E8w4raYv6NGsrDiij3nbfCc26iTpump",
+        "change_1h_pct": -3.56,
+        "price_usd": 0.000182,
+        "pool_name": "LARP / SOL",
         "source": "GeckoTerminal public API",
         "origin": "gmgn_watch_only"
       }
@@ -15461,11 +15498,11 @@
         "ready": true,
         "ready_label": "ready",
         "counts": {
-          "logged": 383,
-          "resolved": 380,
+          "logged": 394,
+          "resolved": 391,
           "unresolved": 3
         },
-        "count_label": "383 trades logged \u00b7 380 resolved",
+        "count_label": "394 trades logged \u00b7 391 resolved",
         "agents": [
           {
             "id": "wallet-scout",
@@ -15495,7 +15532,7 @@
         "ready_label": "ready",
         "counts": {
           "leaders": 2,
-          "gmgn_volume_usd": "66142.08"
+          "gmgn_volume_usd": "68600.77"
         },
         "count_label": "DuckDB \u00b7 Lightweight Charts \u00b7 QuantStats",
         "agents": [
@@ -15521,6 +15558,149 @@
     "note": "Agent last actions come from recorded transcripts and local logs only. No activity was invented."
   },
   "decision_feed": [
+    {
+      "time_hhmm": "02:17",
+      "time_iso": "2026-11-12T02:17:51+02:00",
+      "tag": "SELL",
+      "token": "D8GWC95\u2026R2Lb",
+      "amount": "\u2248$77.95",
+      "reason": "Orca Whirlpool / Pump AMM (GMGN watch-only)",
+      "source": "gmgn",
+      "line": "02:17 SELL D8GWC95\u2026R2Lb \u2248$77.95 \u00b7 Orca Whirlpool / Pump AMM (GMGN watch-only)",
+      "positive": false,
+      "solscan": "https://solscan.io/tx/5sWD4nKPsgMCyDyKWYs3g6NSwP2etEXqa2Y7ri26Xduu1AEQ7F82iMQfSDoGDCPUFi6AGt368rfx7oXaNLwnikpY",
+      "mode": "watch_only"
+    },
+    {
+      "time_hhmm": "02:17",
+      "time_iso": "2026-11-12T02:17:46+02:00",
+      "tag": "SELL",
+      "token": "3c7uGVi\u2026pump",
+      "amount": "\u2248$71.83",
+      "reason": "Pump AMM (GMGN watch-only)",
+      "source": "gmgn",
+      "line": "02:17 SELL 3c7uGVi\u2026pump \u2248$71.83 \u00b7 Pump AMM (GMGN watch-only)",
+      "positive": false,
+      "solscan": "https://solscan.io/tx/1sx2V1b81rHojSmvca2Qcj2jRyzVREhxSvbx45YPAdf1ct5MHyJ8Vg5TVMjqVgp6S3SrE7HU2bQHRGxSYs96yj",
+      "mode": "watch_only"
+    },
+    {
+      "time_hhmm": "02:17",
+      "time_iso": "2026-11-12T02:17:41+02:00",
+      "tag": "SELL",
+      "token": "G95DFf3\u2026pump",
+      "amount": "\u2248$66.46",
+      "reason": "Pump AMM (GMGN watch-only)",
+      "source": "gmgn",
+      "line": "02:17 SELL G95DFf3\u2026pump \u2248$66.46 \u00b7 Pump AMM (GMGN watch-only)",
+      "positive": false,
+      "solscan": "https://solscan.io/tx/4Ej6ypNtSehqv2emB8boS6mQMsGXkPfsGUpcsYSD8kwECFVgF5Bo8f48hZsSC6nUZDwvH23NhWMSaqQ3BxG9UPck",
+      "mode": "watch_only"
+    },
+    {
+      "time_hhmm": "02:17",
+      "time_iso": "2026-11-12T02:17:05+02:00",
+      "tag": "SELL",
+      "token": "DmqrKdy\u2026snow",
+      "amount": "\u2248$61.78",
+      "reason": "pump.fun (GMGN watch-only)",
+      "source": "gmgn",
+      "line": "02:17 SELL DmqrKdy\u2026snow \u2248$61.78 \u00b7 pump.fun (GMGN watch-only)",
+      "positive": false,
+      "solscan": "https://solscan.io/tx/3oyrX5mi1i15Bj5FYxGJhNrXgoaMdszmv9VGEn8TvoU7Vy3ZqdMUKnQdDTfuqFzLiah1VFqZrpjLXwgwNpBRPXZ",
+      "mode": "watch_only"
+    },
+    {
+      "time_hhmm": "02:16",
+      "time_iso": "2026-11-12T02:16:44+02:00",
+      "tag": "SELL",
+      "token": "Ereedz9\u2026pump",
+      "amount": "\u2248$156.13",
+      "reason": "Jupiter v6 / Pump AMM (GMGN watch-only)",
+      "source": "gmgn",
+      "line": "02:16 SELL Ereedz9\u2026pump \u2248$156.13 \u00b7 Jupiter v6 / Pump AMM (GMGN watch-only)",
+      "positive": false,
+      "solscan": "https://solscan.io/tx/3QwcXAmtMyWGaduaZ3Sm3Vu5Z16iST32Ndog1pRNxcGRGFFTFHutBZunPzyLrXjq2z1L5bUejzdw4HwPcDJbbpXH",
+      "mode": "watch_only"
+    },
+    {
+      "time_hhmm": "02:16",
+      "time_iso": "2026-11-12T02:16:37+02:00",
+      "tag": "SELL",
+      "token": "C2Rqyoj\u2026pump",
+      "amount": "\u2248$247.63",
+      "reason": "Jupiter v6 / Orca Whirlpool / pump.fun (GMGN watch-only)",
+      "source": "gmgn",
+      "line": "02:16 SELL C2Rqyoj\u2026pump \u2248$247.63 \u00b7 Jupiter v6 / Orca Whirlpool / pump.fun (GMGN watch-only)",
+      "positive": false,
+      "solscan": "https://solscan.io/tx/3mqTCy436qe8gXWpHzsbjsf2dytDkAy2zwy7tnXPjRBzJwcqnWz2pM3HShvvsHAowmkfbjFMMsPau3J5xYDoKMu8",
+      "mode": "watch_only"
+    },
+    {
+      "time_hhmm": "02:16",
+      "time_iso": "2026-11-12T02:16:25+02:00",
+      "tag": "SELL",
+      "token": "G4hRkB6\u2026pump",
+      "amount": "\u2248$108.63",
+      "reason": "Meteora DLMM / Pump AMM (GMGN watch-only)",
+      "source": "gmgn",
+      "line": "02:16 SELL G4hRkB6\u2026pump \u2248$108.63 \u00b7 Meteora DLMM / Pump AMM (GMGN watch-only)",
+      "positive": false,
+      "solscan": "https://solscan.io/tx/2bWgt8W1ggsbCV5JvuidTeN7EFUiVUTc5HWRXJdB8w17oyCQ37Dia1X5uJyG7qqAS5fUx7TFAbp9XGH7ShC8WbJ8",
+      "mode": "watch_only"
+    },
+    {
+      "time_hhmm": "02:16",
+      "time_iso": "2026-11-12T02:16:15+02:00",
+      "tag": "SELL",
+      "token": "EygStH4\u2026pump",
+      "amount": "\u2248$608.40",
+      "reason": "Jupiter v6 / Pump AMM (GMGN watch-only)",
+      "source": "gmgn",
+      "line": "02:16 SELL EygStH4\u2026pump \u2248$608.40 \u00b7 Jupiter v6 / Pump AMM (GMGN watch-only)",
+      "positive": false,
+      "solscan": "https://solscan.io/tx/5sb5dEhmy6CnxeuaRLeYEEmLuh1dPLoaFdcfF5HYHMT7fooBU6oi8xEBuHQWmZW6ZSD3CrseV9rYUBMD7vNdPK31",
+      "mode": "watch_only"
+    },
+    {
+      "time_hhmm": "02:16",
+      "time_iso": "2026-11-12T02:16:12+02:00",
+      "tag": "SELL",
+      "token": "DAoC8Mw\u2026pump",
+      "amount": "\u2248$112.63",
+      "reason": "Pump AMM (GMGN watch-only)",
+      "source": "gmgn",
+      "line": "02:16 SELL DAoC8Mw\u2026pump \u2248$112.63 \u00b7 Pump AMM (GMGN watch-only)",
+      "positive": false,
+      "solscan": "https://solscan.io/tx/5r5HXPzTBiHxnXiV2Sx6JB9AkfqEcdcioNkVtaj5KVvUXKeMHGG1Yc4p3qZhRV9g8ju3JBARwtyG1XWJxt9pT2p4",
+      "mode": "watch_only"
+    },
+    {
+      "time_hhmm": "02:15",
+      "time_iso": "2026-11-12T02:15:30+02:00",
+      "tag": "SELL",
+      "token": "EygStH4\u2026pump",
+      "amount": "\u2248$817.13",
+      "reason": "Jupiter v6 / Pump AMM (GMGN watch-only)",
+      "source": "gmgn",
+      "line": "02:15 SELL EygStH4\u2026pump \u2248$817.13 \u00b7 Jupiter v6 / Pump AMM (GMGN watch-only)",
+      "positive": false,
+      "solscan": "https://solscan.io/tx/3HVVr99ZLabq52T89iH8doK6tvnuw5Fih1gA5v4fiv65Vvu5xdrJ6BQu8EVahX5BEYeyjwVqeETxjL86b2ABLmnv",
+      "mode": "watch_only"
+    },
+    {
+      "time_hhmm": "02:15",
+      "time_iso": "2026-11-12T02:15:19+02:00",
+      "tag": "BUY",
+      "token": "BLYdKSw\u2026pump",
+      "amount": "\u2248$130.13",
+      "reason": "Jupiter v6 / Pump AMM (GMGN watch-only)",
+      "source": "gmgn",
+      "line": "02:15 BUY BLYdKSw\u2026pump \u2248$130.13 \u00b7 Jupiter v6 / Pump AMM (GMGN watch-only)",
+      "positive": true,
+      "solscan": "https://solscan.io/tx/3FucZM7fq2zSv9uasvoZXSwoGqFM5mw3uCUgTFxT9ncNfiXEF9cSGQhbLdJpmqQAKEkQ9wnEKyLBz253DUzqbMxQ",
+      "mode": "watch_only"
+    },
     {
       "time_hhmm": "02:07",
       "time_iso": "2026-11-12T02:07:56+02:00",
@@ -17976,149 +18156,6 @@
       "line": "15:39 BUY 7LTpcQM\u2026pump \u2248$170.03 \u00b7 Raydium AMM v4 (GMGN watch-only)",
       "positive": true,
       "solscan": "https://solscan.io/tx/3kt5pFHSyRF4P4adKrcnEqK5g6x6imP91wauQEbJkKidiE3YFfwcYWh49goXYqpK5apbBUiPWq2299gjHkPV4uuq",
-      "mode": "watch_only"
-    },
-    {
-      "time_hhmm": "15:39",
-      "time_iso": "2026-11-11T15:39:01+02:00",
-      "tag": "BUY",
-      "token": "GNDPJCw\u2026zRCq",
-      "amount": "\u2248$85.02",
-      "reason": "pump.fun (GMGN watch-only)",
-      "source": "gmgn",
-      "line": "15:39 BUY GNDPJCw\u2026zRCq \u2248$85.02 \u00b7 pump.fun (GMGN watch-only)",
-      "positive": true,
-      "solscan": "https://solscan.io/tx/5vLSc1tsk1Q5ZwCxwi5Ap8nQC6PEYkFHDsdb4kjuUQyN3etv12f5bN9MEuxPfJHUyLr2dewMN3KDke16NqvFd2HY",
-      "mode": "watch_only"
-    },
-    {
-      "time_hhmm": "15:38",
-      "time_iso": "2026-11-11T15:38:53+02:00",
-      "tag": "BUY",
-      "token": "D2hNYZW\u2026pump",
-      "amount": "\u2248$85.02",
-      "reason": "Pump AMM (GMGN watch-only)",
-      "source": "gmgn",
-      "line": "15:38 BUY D2hNYZW\u2026pump \u2248$85.02 \u00b7 Pump AMM (GMGN watch-only)",
-      "positive": true,
-      "solscan": "https://solscan.io/tx/5ac9Nhh9WjhDZTtHXvPLsUr3rHcxABqPMDFKTGMgnU9RLCMPRkSCyNGWK2RaTpiKZmEZBRsCzGE2rPTTVm5QpgUn",
-      "mode": "watch_only"
-    },
-    {
-      "time_hhmm": "15:38",
-      "time_iso": "2026-11-11T15:38:50+02:00",
-      "tag": "BUY",
-      "token": "7U2gKNN\u2026pump",
-      "amount": "\u2248$85.02",
-      "reason": "Pump AMM (GMGN watch-only)",
-      "source": "gmgn",
-      "line": "15:38 BUY 7U2gKNN\u2026pump \u2248$85.02 \u00b7 Pump AMM (GMGN watch-only)",
-      "positive": true,
-      "solscan": "https://solscan.io/tx/4qXgqWQCc4q8SeeavboYHupkxXLwBntioAKbBjYcwVWuiCxMBvUr5M7iyg9A7DRf5MJeWTPjs8MmP64bEQunEcC1",
-      "mode": "watch_only"
-    },
-    {
-      "time_hhmm": "15:38",
-      "time_iso": "2026-11-11T15:38:47+02:00",
-      "tag": "BUY",
-      "token": "Gk6mzRy\u2026mAsF",
-      "amount": "\u2248$85.02",
-      "reason": "pump.fun (GMGN watch-only)",
-      "source": "gmgn",
-      "line": "15:38 BUY Gk6mzRy\u2026mAsF \u2248$85.02 \u00b7 pump.fun (GMGN watch-only)",
-      "positive": true,
-      "solscan": "https://solscan.io/tx/65u8pxgNaMJTzu4ADxJHFUPGRYs85fSbF1TAjTousQWBm2ytajrpKw1PmPpksX9LhqLgQmNtjfnPPEaYVWHHHR9H",
-      "mode": "watch_only"
-    },
-    {
-      "time_hhmm": "15:38",
-      "time_iso": "2026-11-11T15:38:44+02:00",
-      "tag": "BUY",
-      "token": "HxaTj2A\u2026eKhn",
-      "amount": "\u2248$85.02",
-      "reason": "pump.fun (GMGN watch-only)",
-      "source": "gmgn",
-      "line": "15:38 BUY HxaTj2A\u2026eKhn \u2248$85.02 \u00b7 pump.fun (GMGN watch-only)",
-      "positive": true,
-      "solscan": "https://solscan.io/tx/2QSEvwUMWKuXC5e9L54TbJBbvNjhsqjRt8CphEgdQQawxRKuzEP8choh3LptnbYYzWR8zk4P6Vmu34jFY6CzNt7C",
-      "mode": "watch_only"
-    },
-    {
-      "time_hhmm": "15:35",
-      "time_iso": "2026-11-11T15:35:49+02:00",
-      "tag": "BUY",
-      "token": "Fprum2E\u2026pump",
-      "amount": "\u2248$84.98",
-      "reason": "pump.fun (GMGN watch-only)",
-      "source": "gmgn",
-      "line": "15:35 BUY Fprum2E\u2026pump \u2248$84.98 \u00b7 pump.fun (GMGN watch-only)",
-      "positive": true,
-      "solscan": "https://solscan.io/tx/4nicFESPLT75fw8rDjby7hX2u11fHWcndMkqpwpzT9Zwb2NDSpL2D5t281o4sosgVD2szjSu2Jmts3kiiPcp48N9",
-      "mode": "watch_only"
-    },
-    {
-      "time_hhmm": "15:34",
-      "time_iso": "2026-11-11T15:34:51+02:00",
-      "tag": "SELL",
-      "token": "6x4Z2dr\u2026pump",
-      "amount": "\u2248$83.60",
-      "reason": "Pump AMM (GMGN watch-only)",
-      "source": "gmgn",
-      "line": "15:34 SELL 6x4Z2dr\u2026pump \u2248$83.60 \u00b7 Pump AMM (GMGN watch-only)",
-      "positive": false,
-      "solscan": "https://solscan.io/tx/4bBdHfyKFDGRsTytd1fYiZv39Vsb1JiQVpndSezvTC4kpMn8r9TE1Ya7GThZJQSWBKBYTEFTQ27W7U9s18PWS4nt",
-      "mode": "watch_only"
-    },
-    {
-      "time_hhmm": "15:16",
-      "time_iso": "2026-11-11T15:16:46+02:00",
-      "tag": "BUY",
-      "token": "2SX3prn\u20269iq5",
-      "amount": "\u2248$84.96",
-      "reason": "Pump AMM (GMGN watch-only)",
-      "source": "gmgn",
-      "line": "15:16 BUY 2SX3prn\u20269iq5 \u2248$84.96 \u00b7 Pump AMM (GMGN watch-only)",
-      "positive": true,
-      "solscan": "https://solscan.io/tx/5XBZdUX6MV4TmqEmK3PBMUhSPK4GNML21pxLixWED1gPqK3ZSE8WyuFgSt3BM1B89EsrdL99rME68PMcaS7bcRRU",
-      "mode": "watch_only"
-    },
-    {
-      "time_hhmm": "15:00",
-      "time_iso": "2026-11-11T15:00:26+02:00",
-      "tag": "SELL",
-      "token": "HVg4fTk\u2026pump",
-      "amount": "\u2248$38.63",
-      "reason": "Pump AMM (GMGN watch-only)",
-      "source": "gmgn",
-      "line": "15:00 SELL HVg4fTk\u2026pump \u2248$38.63 \u00b7 Pump AMM (GMGN watch-only)",
-      "positive": false,
-      "solscan": "https://solscan.io/tx/5cCa1cbFyRY3e4Yz2kLCYu7pVXSH4TYoHCdbQ15eFeJfTWHiitx5oGni6oyPrXZMhuJxTt85LBhLUdGE6JCc4H7Z",
-      "mode": "watch_only"
-    },
-    {
-      "time_hhmm": "14:39",
-      "time_iso": "2026-11-11T14:39:25+02:00",
-      "tag": "BUY",
-      "token": "Bid8i1o\u2026pump",
-      "amount": "\u2248$59.26",
-      "reason": "Pump AMM (GMGN watch-only)",
-      "source": "gmgn",
-      "line": "14:39 BUY Bid8i1o\u2026pump \u2248$59.26 \u00b7 Pump AMM (GMGN watch-only)",
-      "positive": true,
-      "solscan": "https://solscan.io/tx/4dNfFBMWP9JxUZMNXGw5XwcJvHetWHyFF6prp9ECh8cPAr4B3xiNQns1EK3MgMGrstKQd4tSaXu1jgGdm14iktb3",
-      "mode": "watch_only"
-    },
-    {
-      "time_hhmm": "14:38",
-      "time_iso": "2026-11-11T14:38:49+02:00",
-      "tag": "BUY",
-      "token": "Bz5N9wr\u2026pump",
-      "amount": "\u2248$253.96",
-      "reason": "Pump AMM (GMGN watch-only)",
-      "source": "gmgn",
-      "line": "14:38 BUY Bz5N9wr\u2026pump \u2248$253.96 \u00b7 Pump AMM (GMGN watch-only)",
-      "positive": true,
-      "solscan": "https://solscan.io/tx/4fT4ZniHV8sJyzat4AKqsEqW9pwb8cQjL3ZwAGMiRZA3YJpG1JzHxFxEA74rFzR6ZFCEg8LpH5TfkVbe8hPf93JA",
       "mode": "watch_only"
     }
   ]
